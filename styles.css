@@ -235,6 +235,33 @@ nav ul li a.active {
     font-size: 18px;
 }
 
+/* Technology Tags in Experience Section */
+.tech-used {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed var(--border-color);
+}
+
+.tech-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.tech-item {
+    display: inline-block;
+    background-color: rgba(74, 108, 247, 0.08);
+    color: var(--primary-color);
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 13px;
+    font-weight: 500;
+    margin-right: 6px;
+    margin-bottom: 6px;
+}
+
 /* Projects Section */
 .projects-grid {
     display: grid;
@@ -429,6 +456,24 @@ nav ul li a.active {
 
 .publication-description {
     text-align: justify;
+    margin-bottom: 15px;
+}
+
+.publication-keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.keyword {
+    display: inline-block;
+    background-color: rgba(74, 108, 247, 0.08);
+    color: var(--primary-color);
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 500;
 }
 
 .research-interests {
