@@ -28,15 +28,15 @@ const PUBLICATIONS = [
 
 export default function Publications() {
   return (
-    <div className="max-w-4xl mx-auto px-6 py-16">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="mb-10"
+        className="mb-8 sm:mb-10"
       >
         <span className="text-xs font-mono text-blue-400 tracking-widest uppercase">Research</span>
-        <h2 className="text-4xl font-bold text-white/90 mt-2">Publications</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold text-white/90 mt-2">Publications</h2>
         <div className="h-1 w-16 mt-3 rounded-full" style={{ background: 'linear-gradient(90deg, #89b4fa, #cba6f7)' }} />
       </motion.div>
 
@@ -48,15 +48,16 @@ export default function Publications() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.15 }}
-            className="glass rounded-2xl p-6"
+            className="glass rounded-2xl p-4 sm:p-6"
           >
-            <div className="flex items-start gap-4">
+            <div className="flex items-start gap-3 sm:gap-4">
               {/* Icon */}
               <div
-                className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center flex-shrink-0"
                 style={{ background: `${pub.color}20` }}
               >
-                <FileText size={18} style={{ color: pub.color }} />
+                <FileText size={16} className="sm:hidden" style={{ color: pub.color }} />
+                <FileText size={18} className="hidden sm:block" style={{ color: pub.color }} />
               </div>
 
               <div className="flex-1 min-w-0">
@@ -75,18 +76,18 @@ export default function Publications() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-base font-semibold text-white/90 leading-snug mb-1">
+                <h3 className="text-sm sm:text-base font-semibold text-white/90 leading-snug mb-1">
                   {pub.title}
                 </h3>
 
                 {/* Venue */}
-                <p className="text-sm text-white/50 mb-3 flex items-center gap-1">
+                <p className="text-xs sm:text-sm text-white/50 mb-2 sm:mb-3 flex items-center gap-1">
                   <BookOpen size={12} />
                   {pub.venue}
                 </p>
 
                 {/* Abstract */}
-                <p className="text-sm text-white/55 leading-relaxed mb-4">
+                <p className="text-xs sm:text-sm text-white/55 leading-relaxed mb-3 sm:mb-4">
                   {pub.abstract}
                 </p>
 

@@ -34,7 +34,7 @@ interface HeroProps {
 
 export default function Hero({ onNavigate }: HeroProps) {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-6 py-16">
+    <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-4 sm:px-6 py-10 sm:py-16">
       {/* Animated background grid */}
       <div className="absolute inset-0 opacity-20">
         <div
@@ -58,7 +58,7 @@ export default function Hero({ onNavigate }: HeroProps) {
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ type: 'spring', stiffness: 200, delay: 0.1 }}
-          className="mx-auto mb-6 w-32 h-32 rounded-full relative"
+          className="mx-auto mb-4 sm:mb-6 w-24 h-24 sm:w-32 sm:h-32 rounded-full relative"
           style={{
             padding: '3px',
             background: 'linear-gradient(135deg, #89b4fa 0%, #cba6f7 50%, #f38ba8 100%)',
@@ -81,7 +81,7 @@ export default function Hero({ onNavigate }: HeroProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-5xl font-bold mb-3"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 sm:mb-3"
         >
           <span className="gradient-text">Mihir Inamdar</span>
         </motion.h1>
@@ -91,7 +91,7 @@ export default function Hero({ onNavigate }: HeroProps) {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="text-xl text-white/60 mb-6 h-8"
+          className="text-base sm:text-xl text-white/60 mb-4 sm:mb-6 h-7 sm:h-8"
         >
           <AnimatedRoles roles={ROLES} />
         </motion.div>
@@ -101,7 +101,7 @@ export default function Hero({ onNavigate }: HeroProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
-          className="text-white/50 text-sm max-w-xl mx-auto mb-8 leading-relaxed"
+          className="text-white/50 text-xs sm:text-sm max-w-xl mx-auto mb-6 sm:mb-8 leading-relaxed"
         >
           Building intelligent systems at the intersection of NLP, Computer Vision &amp; LLMs.
           Currently an ML Engineer at <span className="text-blue-400">Quoppo Ventures</span> &amp; Former Research Fellow at{' '}
@@ -113,24 +113,24 @@ export default function Hero({ onNavigate }: HeroProps) {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="flex flex-wrap items-center justify-center gap-3 mb-10"
+          className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-8 sm:mb-10"
         >
           <button
             onClick={() => onNavigate('Projects')}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium text-white transition-all hover:scale-105"
+            className="flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-medium text-white transition-all hover:scale-105"
             style={{ background: 'linear-gradient(135deg, #89b4fa, #cba6f7)' }}
           >
             View Projects <ArrowRight size={14} />
           </button>
           <button
             onClick={() => onNavigate('Contact')}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium text-white/80 border border-white/20 hover:border-white/40 transition-all hover:scale-105 glass"
+            className="flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-medium text-white/80 border border-white/20 hover:border-white/40 transition-all hover:scale-105 glass"
           >
             Get in Touch <Mail size={14} />
           </button>
           <button
             onClick={() => onNavigate('Experience')}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium text-white/80 border border-white/20 hover:border-white/40 transition-all hover:scale-105 glass"
+            className="flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-medium text-white/80 border border-white/20 hover:border-white/40 transition-all hover:scale-105 glass"
           >
             <Terminal size={14} /> Resume
           </button>
@@ -167,7 +167,7 @@ export default function Hero({ onNavigate }: HeroProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7 }}
-          className="mt-12 grid grid-cols-3 gap-4 max-w-sm mx-auto"
+          className="mt-8 sm:mt-12 grid grid-cols-3 gap-2 sm:gap-4 max-w-sm mx-auto"
         >
           {[
             { value: '3+', label: 'Years Experience' },
@@ -175,8 +175,8 @@ export default function Hero({ onNavigate }: HeroProps) {
             { value: '2', label: 'Publications' },
           ].map(({ value, label }) => (
             <div key={label} className="glass rounded-xl p-3 text-center">
-              <div className="text-2xl font-bold gradient-text">{value}</div>
-              <div className="text-xs text-white/40 mt-0.5">{label}</div>
+              <div className="text-xl sm:text-2xl font-bold gradient-text">{value}</div>
+              <div className="text-[10px] sm:text-xs text-white/40 mt-0.5">{label}</div>
             </div>
           ))}
         </motion.div>

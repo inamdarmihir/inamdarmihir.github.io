@@ -8,12 +8,12 @@ const fadeUp = {
 
 export default function About() {
   return (
-    <div className="max-w-4xl mx-auto px-6 py-16">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
       <motion.div initial="hidden" animate="visible">
         {/* Header */}
-        <motion.div custom={0} variants={fadeUp} className="mb-10">
+        <motion.div custom={0} variants={fadeUp} className="mb-8 sm:mb-10">
           <span className="text-xs font-mono text-blue-400 tracking-widest uppercase">About Me</span>
-          <h2 className="text-4xl font-bold text-white/90 mt-2">Who I Am</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white/90 mt-2">Who I Am</h2>
           <div className="h-1 w-16 mt-3 rounded-full" style={{ background: 'linear-gradient(90deg, #89b4fa, #cba6f7)' }} />
         </motion.div>
 
@@ -35,7 +35,7 @@ export default function About() {
           </div>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-5 sm:gap-8">
           {/* Bio */}
           <motion.div custom={2} variants={fadeUp} className="space-y-4">
             <div className="glass rounded-2xl p-6">

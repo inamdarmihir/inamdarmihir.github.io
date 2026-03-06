@@ -60,27 +60,27 @@ const PROJECTS = [
 
 export default function Projects() {
   return (
-    <div className="max-w-4xl mx-auto px-6 py-16">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="mb-10"
+        className="mb-8 sm:mb-10"
       >
         <span className="text-xs font-mono text-blue-400 tracking-widest uppercase">Portfolio</span>
-        <h2 className="text-4xl font-bold text-white/90 mt-2">Featured Projects</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold text-white/90 mt-2">Featured Projects</h2>
         <div className="h-1 w-16 mt-3 rounded-full" style={{ background: 'linear-gradient(90deg, #89b4fa, #cba6f7)' }} />
       </motion.div>
 
       {/* Grid */}
-      <div className="grid md:grid-cols-2 gap-4">
+      <div className="grid md:grid-cols-2 gap-3 sm:gap-4">
         {PROJECTS.map((project, i) => (
           <motion.div
             key={project.name}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.1 }}
-            className="project-card glass rounded-2xl p-5 flex flex-col"
+            className="project-card glass rounded-2xl p-4 sm:p-5 flex flex-col"
           >
             {/* Top row */}
             <div className="flex items-start justify-between mb-3">
