@@ -30,8 +30,8 @@ export default function SafariBrowser() {
     <div className="flex flex-col h-full">
       {/* Safari chrome */}
       <div className="flex-none bg-[#2a2a2e] select-none">
-        {/* Tab bar */}
-        <div className="flex items-end px-3 pt-2 gap-1 overflow-x-auto scrollbar-none">
+        {/* Tab bar — hidden on mobile */}
+        <div className="hidden sm:flex items-end px-3 pt-2 gap-1 overflow-x-auto scrollbar-none">
           {TABS.map((tab) => (
             <button
               key={tab}
@@ -54,26 +54,26 @@ export default function SafariBrowser() {
         </div>
 
         {/* Toolbar */}
-        <div className="flex items-center gap-2 px-3 py-2 bg-[#1c1c1e]">
-          {/* Traffic lights */}
-          <div className="flex items-center gap-1.5 mr-1">
+        <div className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 bg-[#1c1c1e]">
+          {/* Traffic lights — hidden on mobile */}
+          <div className="hidden sm:flex items-center gap-1.5 mr-1">
             <div className="w-3 h-3 rounded-full bg-[#ff5f57] hover:brightness-90 transition-all cursor-pointer shadow-sm" />
             <div className="w-3 h-3 rounded-full bg-[#febc2e] hover:brightness-90 transition-all cursor-pointer shadow-sm" />
             <div className="w-3 h-3 rounded-full bg-[#28c840] hover:brightness-90 transition-all cursor-pointer shadow-sm" />
           </div>
 
-          {/* Nav buttons */}
-          <button className="p-1 text-white/30 cursor-not-allowed">
+          {/* Nav buttons — hidden on mobile */}
+          <button className="hidden sm:block p-1 text-white/30 cursor-not-allowed">
             <ChevronLeft size={16} />
           </button>
-          <button className="p-1 text-white/30 cursor-not-allowed">
+          <button className="hidden sm:block p-1 text-white/30 cursor-not-allowed">
             <ChevronRight size={16} />
           </button>
 
           {/* URL bar */}
-          <div className="flex-1 mx-2 flex items-center gap-2 bg-[#2a2a2e] rounded-lg px-3 py-1 border border-white/10">
+          <div className="flex-1 mx-1 sm:mx-2 flex items-center gap-2 bg-[#2a2a2e] rounded-lg px-2 sm:px-3 py-1 border border-white/10">
             <Lock size={11} className="text-green-400 flex-shrink-0" />
-            <span className="text-[13px] text-white/70 truncate font-mono">{url}</span>
+            <span className="text-[11px] sm:text-[13px] text-white/70 truncate font-mono">{url}</span>
             {isLoading && (
               <div className="ml-auto w-3 h-3 border border-white/30 border-t-blue-400 rounded-full animate-spin flex-shrink-0" />
             )}
@@ -83,21 +83,21 @@ export default function SafariBrowser() {
           <button className="p-1 text-white/50 hover:text-white/80 transition-colors">
             <RotateCw size={14} />
           </button>
-          <button className="p-1 text-white/50 hover:text-white/80 transition-colors">
+          <button className="hidden sm:block p-1 text-white/50 hover:text-white/80 transition-colors">
             <Share size={14} />
           </button>
-          <button className="p-1 text-white/50 hover:text-white/80 transition-colors">
+          <button className="hidden sm:block p-1 text-white/50 hover:text-white/80 transition-colors">
             <Grid3X3 size={14} />
           </button>
         </div>
 
         {/* Favorites / nav strip */}
-        <div className="flex items-center gap-1 px-4 pb-1.5 bg-[#1c1c1e] border-b border-white/[0.06]">
+        <div className="flex items-center gap-0.5 sm:gap-1 px-2 sm:px-4 pb-1.5 bg-[#1c1c1e] border-b border-white/[0.06] overflow-x-auto scrollbar-none">
           {TABS.map((tab) => (
             <button
               key={tab}
               onClick={() => navigate(tab)}
-              className={`px-3 py-0.5 text-[11px] rounded-full transition-all ${
+              className={`flex-shrink-0 px-2 sm:px-3 py-0.5 text-[10px] sm:text-[11px] rounded-full transition-all ${
                 activeTab === tab
                   ? 'bg-blue-500/20 text-blue-400'
                   : 'text-white/40 hover:text-white/70 hover:bg-white/5'

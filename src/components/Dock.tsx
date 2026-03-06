@@ -19,59 +19,61 @@ interface DockItem {
 export default function Dock({ onTerminalToggle, terminalOpen }: DockProps) {
   const [hoveredId, setHoveredId] = useState<string | null>(null)
 
+  const iconSize = typeof window !== 'undefined' && window.innerWidth < 640 ? 18 : 24
+
   const items: DockItem[] = [
     {
       id: 'terminal',
-      icon: <TerminalIcon size={24} />,
+      icon: <TerminalIcon size={iconSize} />,
       label: terminalOpen ? 'Hide Terminal' : 'Open Terminal',
       color: '#a6e3a1',
       onClick: onTerminalToggle,
     },
     {
       id: 'github',
-      icon: <Github size={24} />,
+      icon: <Github size={iconSize} />,
       label: 'GitHub',
       color: '#cdd6f4',
       href: 'https://github.com/inamdarmihir',
     },
     {
       id: 'linkedin',
-      icon: <Linkedin size={24} />,
+      icon: <Linkedin size={iconSize} />,
       label: 'LinkedIn',
       color: '#89b4fa',
       href: 'https://linkedin.com/in/inamdarmihir',
     },
     {
       id: 'scholar',
-      icon: <GraduationCap size={24} />,
+      icon: <GraduationCap size={iconSize} />,
       label: 'Google Scholar',
       color: '#f9e2af',
       href: 'https://scholar.google.com/citations?user=aRlnkucAAAAJ',
     },
     {
       id: 'portfolio',
-      icon: <Globe size={24} />,
+      icon: <Globe size={iconSize} />,
       label: 'Portfolio',
       color: '#cba6f7',
       href: 'https://inamdarmihir.github.io',
     },
     {
       id: 'research',
-      icon: <BookOpen size={24} />,
+      icon: <BookOpen size={iconSize} />,
       label: 'Publications',
       color: '#f38ba8',
       href: 'https://arxiv.org/search/?searchtype=author&query=inamdar+mihir',
     },
     {
       id: 'code',
-      icon: <Code2 size={24} />,
+      icon: <Code2 size={iconSize} />,
       label: 'Projects',
       color: '#94e2d5',
       href: 'https://github.com/inamdarmihir?tab=repositories',
     },
     {
       id: 'mail',
-      icon: <Mail size={24} />,
+      icon: <Mail size={iconSize} />,
       label: 'Email Mihir',
       color: '#f38ba8',
       href: 'mailto:mihirsinamdar@outlook.com',
@@ -84,9 +86,9 @@ export default function Dock({ onTerminalToggle, terminalOpen }: DockProps) {
   }
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 flex justify-center items-end pb-2 select-none pointer-events-none">
+    <div className="fixed bottom-0 left-0 right-0 z-50 flex justify-center items-end pb-1 sm:pb-2 select-none pointer-events-none">
       <div
-        className="flex items-end gap-1.5 px-3 py-2 rounded-2xl pointer-events-auto"
+        className="flex items-end gap-0.5 sm:gap-1.5 px-2 sm:px-3 py-1.5 sm:py-2 rounded-2xl pointer-events-auto max-w-[calc(100vw-1rem)] overflow-x-auto scrollbar-none"
         style={{
           background: 'rgba(255,255,255,0.12)',
           backdropFilter: 'blur(40px) saturate(180%)',
@@ -123,7 +125,7 @@ export default function Dock({ onTerminalToggle, terminalOpen }: DockProps) {
                 onClick={() => handleClick(item)}
                 onHoverStart={() => setHoveredId(item.id)}
                 onHoverEnd={() => setHoveredId(null)}
-                className="w-12 h-12 rounded-xl flex items-center justify-center transition-colors relative"
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center transition-colors relative"
                 style={{
                   background: isActive
                     ? `${item.color}25`

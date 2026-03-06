@@ -51,22 +51,22 @@ const JOBS = [
 
 export default function Experience() {
   return (
-    <div className="max-w-4xl mx-auto px-6 py-16">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="mb-10"
+        className="mb-8 sm:mb-10"
       >
         <span className="text-xs font-mono text-blue-400 tracking-widest uppercase">Career</span>
-        <h2 className="text-4xl font-bold text-white/90 mt-2">Work Experience</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold text-white/90 mt-2">Work Experience</h2>
         <div className="h-1 w-16 mt-3 rounded-full" style={{ background: 'linear-gradient(90deg, #89b4fa, #cba6f7)' }} />
       </motion.div>
 
       {/* Timeline */}
-      <div className="relative space-y-6">
+      <div className="relative space-y-5 sm:space-y-6">
         {/* Vertical line */}
-        <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-blue-500/50 via-purple-500/30 to-transparent" />
+        <div className="absolute left-3 sm:left-6 top-0 bottom-0 w-px bg-gradient-to-b from-blue-500/50 via-purple-500/30 to-transparent" />
 
         {JOBS.map((job, i) => (
           <motion.div
@@ -74,45 +74,45 @@ export default function Experience() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: i * 0.15 }}
-            className="relative pl-16"
+            className="relative pl-8 sm:pl-16"
           >
             {/* Timeline dot */}
             <div
-              className="absolute left-4 top-6 w-4 h-4 rounded-full border-2 border-[#0f0f14] -translate-x-1/2"
+              className="absolute left-1 sm:left-4 top-6 w-3 h-3 sm:w-4 sm:h-4 rounded-full border-2 border-[#0f0f14] -translate-x-1/2"
               style={{ background: job.color, boxShadow: `0 0 12px ${job.color}80` }}
             />
 
-            <div className="glass rounded-2xl p-6 group hover:border-white/20 transition-all">
+            <div className="glass rounded-2xl p-4 sm:p-6 group hover:border-white/20 transition-all">
               {/* Job header */}
-              <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
+              <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-start sm:justify-between gap-2 sm:gap-3 mb-3 sm:mb-4">
                 <div>
                   <div className="flex items-center gap-2 mb-1">
                     <span
-                      className="text-xs px-2 py-0.5 rounded-full font-mono"
+                      className="text-[10px] sm:text-xs px-2 py-0.5 rounded-full font-mono"
                       style={{ background: `${job.color}20`, color: job.color }}
                     >
                       {job.type}
                     </span>
                   </div>
-                  <h3 className="text-lg font-bold text-white/90">{job.title}</h3>
-                  <div className="flex items-center gap-2 mt-1">
+                  <h3 className="text-base sm:text-lg font-bold text-white/90">{job.title}</h3>
+                  <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mt-1">
                     <Briefcase size={12} className="text-white/40" />
-                    <span className="text-white/70 text-sm font-medium">{job.company}</span>
+                    <span className="text-white/70 text-xs sm:text-sm font-medium">{job.company}</span>
                     <span className="text-white/20">·</span>
                     <MapPin size={12} className="text-white/40" />
-                    <span className="text-white/50 text-sm">{job.location}</span>
+                    <span className="text-white/50 text-xs sm:text-sm">{job.location}</span>
                   </div>
                 </div>
-                <div className="flex items-center gap-1.5 text-white/40 text-xs">
+                <div className="flex items-center gap-1.5 text-white/40 text-[10px] sm:text-xs">
                   <Calendar size={11} />
                   <span className="font-mono">{job.period}</span>
                 </div>
               </div>
 
               {/* Highlights */}
-              <ul className="space-y-2 mb-4">
+              <ul className="space-y-1.5 sm:space-y-2 mb-3 sm:mb-4">
                 {job.highlights.map((h) => (
-                  <li key={h} className="flex items-start gap-2 text-sm text-white/60">
+                  <li key={h} className="flex items-start gap-2 text-xs sm:text-sm text-white/60">
                     <ChevronRight size={14} className="text-blue-400/60 mt-0.5 flex-shrink-0" />
                     {h}
                   </li>
@@ -120,11 +120,11 @@ export default function Experience() {
               </ul>
 
               {/* Stack */}
-              <div className="flex flex-wrap gap-1.5">
+              <div className="flex flex-wrap gap-1 sm:gap-1.5">
                 {job.stack.map((tech) => (
                   <span
                     key={tech}
-                    className="text-xs px-2 py-0.5 rounded-md font-mono"
+                    className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5 rounded-md font-mono"
                     style={{ background: `${job.color}12`, color: `${job.color}cc` }}
                   >
                     {tech}

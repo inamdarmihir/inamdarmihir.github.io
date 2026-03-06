@@ -127,8 +127,8 @@ export default function Terminal({ onClose }: TerminalProps) {
       animate={{ opacity: 1, scale: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.9, y: 20 }}
       transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-      className="absolute z-40 w-[580px] rounded-xl overflow-hidden window-shadow"
-      style={{ transform: `translate(${position.x}px, ${position.y}px)`, bottom: '80px', right: '24px' }}
+      className="absolute z-40 w-[min(580px,90vw)] lg:w-[580px] rounded-xl overflow-hidden window-shadow"
+      style={{ transform: `translate(${position.x}px, ${position.y}px)`, bottom: '80px', right: '16px' }}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}
@@ -155,7 +155,7 @@ export default function Terminal({ onClose }: TerminalProps) {
       </div>
 
       {/* Terminal body */}
-      <div className="bg-[#12121a] p-4 h-72 overflow-y-auto font-mono text-[12px] leading-relaxed">
+      <div className="bg-[#12121a] p-3 sm:p-4 h-56 sm:h-72 overflow-y-auto font-mono text-[11px] sm:text-[12px] leading-relaxed">
         {visibleLines.map((line, i) => (
           <div key={i}>
             {line.type === 'cmd' && (

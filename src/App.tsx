@@ -1,18 +1,36 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import Menubar from './components/Menubar'
 import SafariBrowser from './components/SafariBrowser'
 import Dock from './components/Dock'
 import Terminal from './components/Terminal'
 
+function useBreakpoint() {
+  const [bp, setBp] = useState<'mobile' | 'tablet' | 'desktop'>('desktop')
+  useEffect(() => {
+    const check = () => {
+      const w = window.innerWidth
+      setBp(w < 640 ? 'mobile' : w < 1024 ? 'tablet' : 'desktop')
+    }
+    check()
+    window.addEventListener('resize', check)
+    return () => window.removeEventListener('resize', check)
+  }, [])
+  return bp
+}
+
 export default function App() {
-  const [terminalOpen, setTerminalOpen] = useState(true)
+  const bp = useBreakpoint()
+  const [terminalOpen, setTerminalOpen] = useState(bp === 'desktop')
+
+  useEffect(() => {
+    if (bp === 'mobile') setTerminalOpen(false)
+  }, [bp])
 
   return (
     <div className="w-full h-screen overflow-hidden relative select-none" style={{ background: '#0a0a12' }}>
       {/* ───── Desktop background ───── */}
       <div className="absolute inset-0">
-        {/* Animated gradient background */}
         <div
           className="absolute inset-0"
           style={{
@@ -24,8 +42,6 @@ export default function App() {
             `,
           }}
         />
-
-        {/* Subtle dot grid */}
         <div
           className="absolute inset-0 opacity-30"
           style={{
@@ -35,15 +51,13 @@ export default function App() {
         />
       </div>
 
-      {/* ───── macOS Notch ───── */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 z-[100] pointer-events-none">
+      {/* ───── macOS Notch (hidden on mobile) ───── */}
+      <div className="hidden sm:block absolute top-0 left-1/2 -translate-x-1/2 z-[100] pointer-events-none">
         <div
           className="w-36 h-7 bg-black rounded-b-2xl flex items-center justify-center gap-2"
           style={{ boxShadow: '0 2px 20px rgba(0,0,0,0.8)' }}
         >
-          {/* Camera dot */}
           <div className="w-1.5 h-1.5 rounded-full bg-[#1a1a1a] border border-[#2a2a2a]" />
-          {/* Sensor bar */}
           <div className="w-8 h-0.5 rounded-full bg-[#1a1a1a]" />
         </div>
       </div>
@@ -51,25 +65,23 @@ export default function App() {
       {/* ───── Menu bar ───── */}
       <Menubar />
 
-      {/* ───── Main content area (below menubar, above dock) ───── */}
-      <div className="absolute inset-0 flex items-center justify-center pt-7 pb-16 px-4">
-        {/* Safari browser window */}
+      {/* ───── Main content area ───── */}
+      <div className="absolute inset-0 flex items-center justify-center pt-7 pb-14 sm:pb-16 px-0 sm:px-4">
         <motion.div
           initial={{ opacity: 0, scale: 0.97, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ type: 'spring', stiffness: 200, damping: 25, delay: 0.2 }}
-          className="w-full max-w-5xl h-full rounded-xl overflow-hidden window-shadow relative"
+          className="w-full sm:max-w-5xl h-full sm:rounded-xl overflow-hidden sm:window-shadow relative"
           style={{
             background: '#1c1c1e',
-            border: '1px solid rgba(255,255,255,0.08)',
+            border: bp !== 'mobile' ? '1px solid rgba(255,255,255,0.08)' : 'none',
           }}
         >
           <SafariBrowser />
         </motion.div>
 
-        {/* ───── Terminal window ───── */}
         <AnimatePresence>
-          {terminalOpen && (
+          {terminalOpen && bp !== 'mobile' && (
             <Terminal onClose={() => setTerminalOpen(false)} />
           )}
         </AnimatePresence>

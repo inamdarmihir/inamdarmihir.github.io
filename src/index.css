@@ -127,3 +127,25 @@ body {
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
 }
+
+/* Hide scrollbar for horizontal scroll areas */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Mobile touch improvements */
+@media (max-width: 639px) {
+  .project-card:hover {
+    transform: none;
+  }
+  .skill-badge:hover {
+    transform: none;
+  }
+  .dock-icon:hover {
+    transform: none;
+  }
+}
