@@ -103,9 +103,10 @@ export default function Hero({ onNavigate }: HeroProps) {
           transition={{ delay: 0.4 }}
           className="text-white/50 text-xs sm:text-sm max-w-xl mx-auto mb-6 sm:mb-8 leading-relaxed"
         >
-          Building intelligent systems at the intersection of NLP, Computer Vision &amp; LLMs.
-          Currently an ML Engineer at <span className="text-blue-400">Quoppo Ventures</span> &amp; Former Research Fellow at{' '}
-          <span className="text-purple-400">CVIT, IIIT Hyderabad</span>.
+          Building intelligent systems at the intersection of NLP, LLMs &amp; RLHF.
+          Currently an Associate Software Developer – Data Scientist at{' '}
+          <span className="text-blue-400">Sutherland Global Services</span> &amp; Former ML Engineer at{' '}
+          <span className="text-purple-400">Quoppo Ventures</span>.
         </motion.p>
 
         {/* CTA buttons */}
@@ -128,12 +129,13 @@ export default function Hero({ onNavigate }: HeroProps) {
           >
             Get in Touch <Mail size={14} />
           </button>
-          <button
-            onClick={() => onNavigate('Experience')}
+          <a
+            href="/Inamdar_Mihir_CV.pdf"
+            download
             className="flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-medium text-white/80 border border-white/20 hover:border-white/40 transition-all hover:scale-105 glass"
           >
-            <Terminal size={14} /> Resume
-          </button>
+            <Terminal size={14} /> Download CV
+          </a>
         </motion.div>
 
         {/* Social links */}

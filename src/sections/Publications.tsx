@@ -14,15 +14,15 @@ const PUBLICATIONS = [
     badge: 'IEEE',
   },
   {
-    title: 'On Importance of Code-Mixed Embeddings for Hate Speech Identification',
-    venue: 'arXiv Preprint',
-    type: 'Preprint',
+    title: 'Code-Mixed NLP and Multilingual Named Entity Recognition for Indian Languages',
+    venue: 'Springer ICCCN 2024',
+    type: 'Conference Paper',
     year: '2024',
     color: '#cba6f7',
-    abstract: 'An investigation into the effectiveness of code-mixed language embeddings for hate speech detection in social media content, demonstrating improved performance on multilingual datasets.',
-    tags: ['NLP', 'Hate Speech', 'Code-Mixed', 'Embeddings', 'Social Media'],
-    link: 'https://arxiv.org/search/?searchtype=author&query=inamdar+mihir',
-    badge: 'arXiv',
+    abstract: 'Research on multilingual named entity recognition and code-mixed NLP techniques for Indian language pairs, with experiments on Hinglish and other code-switched corpora.',
+    tags: ['NLP', 'NER', 'Multilingual', 'Code-Mixed', 'Indian Languages'],
+    link: 'https://scholar.google.com/citations?user=aRlnkucAAAAJ',
+    badge: 'Springer',
   },
 ]
 

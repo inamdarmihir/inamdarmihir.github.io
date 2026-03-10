@@ -56,7 +56,7 @@ export default function About() {
             <div className="glass rounded-2xl p-5 space-y-3">
               {[
                 { icon: MapPin, label: 'Location', value: 'Pune, India' },
-                { icon: Briefcase, label: 'Current Role', value: 'ML Engineer @ Quoppo Ventures' },
+                { icon: Briefcase, label: 'Current Role', value: 'Data Scientist @ Sutherland Global Services' },
                 { icon: GraduationCap, label: 'Education', value: 'B.E. IT — PICT, Pune (2020–2024)' },
                 { icon: Award, label: 'Research', value: 'CVIT, IIIT Hyderabad (2024)' },
               ].map(({ icon: Icon, label, value }) => (
@@ -79,9 +79,11 @@ export default function About() {
               <h3 className="text-sm font-semibold text-white/70 mb-4 uppercase tracking-wider">Certifications</h3>
               <div className="space-y-3">
                 {[
-                  { title: 'Deep Learning Specialization', org: 'Coursera / DeepLearning.AI', color: '#89b4fa' },
-                  { title: 'Machine Learning Operations (MLOps)', org: 'Coursera', color: '#cba6f7' },
-                  { title: 'NLP with Transformers', org: 'Hugging Face', color: '#f9e2af' },
+                  { title: 'Neo4j Certified Professional', org: 'Neo4j (Mar 2025)', color: '#89b4fa' },
+                  { title: 'Evaluating & Debugging Generative AI Models', org: 'Weights & Biases (Feb 2024)', color: '#cba6f7' },
+                  { title: 'Automated Testing for LLMOps', org: 'CircleCI (Jan 2024)', color: '#f9e2af' },
+                  { title: 'Model Deployment – Kubernetes & Docker', org: 'AI Planet (May 2023)', color: '#a6e3a1' },
+                  { title: 'Microsoft Azure AI Fundamentals', org: 'Microsoft (Dec 2022)', color: '#94e2d5' },
                 ].map(({ title, org, color }) => (
                   <div key={title} className="flex items-start gap-3 p-3 rounded-xl" style={{ background: `${color}08` }}>
                     <div className="w-2 h-2 rounded-full mt-1.5 flex-shrink-0" style={{ background: color }} />

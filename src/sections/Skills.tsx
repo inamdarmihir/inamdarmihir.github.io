@@ -16,11 +16,11 @@ const SKILL_GROUPS = [
     category: 'NLP & LLMs',
     color: '#cba6f7',
     skills: [
-      { name: 'BERT / mBERT', level: 93 },
-      { name: 'Transformers', level: 91 },
-      { name: 'LangChain', level: 90 },
-      { name: 'LangGraph', level: 85 },
-      { name: 'RAG Systems', level: 88 },
+      { name: 'Transformers / BERT', level: 93 },
+      { name: 'RLHF / Preference Learning', level: 88 },
+      { name: 'RAG Systems', level: 90 },
+      { name: 'LoRA / Fine-tuning', level: 88 },
+      { name: 'KV-cache / Quantization', level: 85 },
     ],
   },
   {
@@ -50,10 +50,10 @@ const SKILL_GROUPS = [
     color: '#94e2d5',
     skills: [
       { name: 'PostgreSQL', level: 80 },
-      { name: 'MongoDB', level: 78 },
-      { name: 'Elasticsearch', level: 75 },
+      { name: 'Neo4j', level: 82 },
+      { name: 'Qdrant / Pinecone', level: 85 },
       { name: 'Redis', level: 80 },
-      { name: 'Qdrant / AstraDB', level: 78 },
+      { name: 'MongoDB', level: 75 },
     ],
   },
   {
@@ -131,9 +131,9 @@ export default function Skills() {
         <div className="flex flex-wrap gap-2">
           {[
             'Python', 'PyTorch', 'TensorFlow', 'HuggingFace', 'LangChain', 'LangGraph', 'BERT',
-            'Transformers', 'OpenCV', 'RAG', 'Docker', 'Kubernetes', 'AWS', 'MLflow', 'WandB',
-            'FastAPI', 'Django', 'PostgreSQL', 'MongoDB', 'Redis', 'Elasticsearch', 'Qdrant',
-            'PySpark', 'NumPy', 'Pandas', 'Matplotlib', 'Streamlit', 'Git', 'Linux',
+            'Transformers', 'RLHF', 'LoRA', 'RAG', 'Docker', 'Kubernetes', 'AWS', 'MLflow', 'WandB',
+            'FastAPI', 'PostgreSQL', 'Neo4j', 'Redis', 'Qdrant', 'Pinecone',
+            'NumPy', 'Pandas', 'Streamlit', 'Git', 'Linux', 'SQL',
           ].map((tech) => (
             <span
               key={tech}
