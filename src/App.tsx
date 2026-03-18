@@ -9,7 +9,7 @@ export default function App() {
   const [terminalOpen, setTerminalOpen] = useState(true)
 
   return (
-    <div className="w-full h-screen overflow-hidden relative select-none" style={{ background: '#0a0a12' }}>
+    <div className="w-full h-screen overflow-hidden relative select-none" style={{ background: '#060d14' }}>
       {/* ───── Desktop background ───── */}
       <div className="absolute inset-0">
         {/* Animated gradient background */}
@@ -17,10 +17,10 @@ export default function App() {
           className="absolute inset-0"
           style={{
             background: `
-              radial-gradient(ellipse 80% 60% at 20% 20%, rgba(137,180,250,0.06) 0%, transparent 60%),
-              radial-gradient(ellipse 60% 80% at 80% 80%, rgba(203,166,247,0.06) 0%, transparent 60%),
-              radial-gradient(ellipse 40% 40% at 50% 50%, rgba(243,139,168,0.03) 0%, transparent 70%),
-              linear-gradient(135deg, #0a0a14 0%, #0d0d1a 50%, #0a0a12 100%)
+              radial-gradient(ellipse 80% 60% at 20% 20%, rgba(137,180,250,0.07) 0%, transparent 60%),
+              radial-gradient(ellipse 60% 80% at 80% 80%, rgba(148,226,213,0.06) 0%, transparent 60%),
+              radial-gradient(ellipse 40% 40% at 50% 50%, rgba(166,227,161,0.04) 0%, transparent 70%),
+              linear-gradient(135deg, #060d14 0%, #091018 50%, #060e10 100%)
             `,
           }}
         />
@@ -60,7 +60,7 @@ export default function App() {
           transition={{ type: 'spring', stiffness: 200, damping: 25, delay: 0.2 }}
           className="w-full max-w-5xl h-full rounded-xl overflow-hidden window-shadow relative"
           style={{
-            background: '#1c1c1e',
+            background: '#0b111a',
             border: '1px solid rgba(255,255,255,0.08)',
           }}
         >

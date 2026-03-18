@@ -50,7 +50,7 @@ export default function Hero({ onNavigate }: HeroProps) {
       <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-10 blur-3xl"
         style={{ background: 'radial-gradient(circle, #89b4fa, transparent)' }} />
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full opacity-10 blur-3xl"
-        style={{ background: 'radial-gradient(circle, #cba6f7, transparent)' }} />
+        style={{ background: 'radial-gradient(circle, #a6e3a1, transparent)' }} />
 
       <div className="relative z-10 max-w-3xl w-full text-center">
         {/* Avatar */}
@@ -61,7 +61,7 @@ export default function Hero({ onNavigate }: HeroProps) {
           className="mx-auto mb-6 w-32 h-32 rounded-full relative"
           style={{
             padding: '3px',
-            background: 'linear-gradient(135deg, #89b4fa 0%, #cba6f7 50%, #f38ba8 100%)',
+            background: 'linear-gradient(135deg, #89b4fa 0%, #94e2d5 50%, #a6e3a1 100%)',
             boxShadow: '0 0 60px rgba(137,180,250,0.4)',
           }}
         >
@@ -105,7 +105,7 @@ export default function Hero({ onNavigate }: HeroProps) {
         >
           Building intelligent systems at the intersection of NLP, Computer Vision &amp; LLMs.
           Currently an ML Engineer at <span className="text-blue-400">Quoppo Ventures</span> &amp; Former Research Fellow at{' '}
-          <span className="text-purple-400">CVIT, IIIT Hyderabad</span>.
+          <span className="text-teal-400">CVIT, IIIT Hyderabad</span>.
         </motion.p>
 
         {/* CTA buttons */}
@@ -118,7 +118,7 @@ export default function Hero({ onNavigate }: HeroProps) {
           <button
             onClick={() => onNavigate('Projects')}
             className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium text-white transition-all hover:scale-105"
-            style={{ background: 'linear-gradient(135deg, #89b4fa, #cba6f7)' }}
+            style={{ background: 'linear-gradient(135deg, #89b4fa, #a6e3a1)' }}
           >
             View Projects <ArrowRight size={14} />
           </button>

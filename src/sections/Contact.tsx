@@ -8,7 +8,7 @@ const CONTACTS = [
     label: 'Email',
     value: 'mihirsinamdar@outlook.com',
     href: 'mailto:mihirsinamdar@outlook.com',
-    color: '#f38ba8',
+    color: '#a6e3a1',
     copy: true,
   },
   {
@@ -56,7 +56,7 @@ export default function Contact() {
       >
         <span className="text-xs font-mono text-blue-400 tracking-widest uppercase">Get In Touch</span>
         <h2 className="text-4xl font-bold text-white/90 mt-2">Contact</h2>
-        <div className="h-1 w-16 mt-3 rounded-full" style={{ background: 'linear-gradient(90deg, #89b4fa, #cba6f7)' }} />
+        <div className="h-1 w-16 mt-3 rounded-full" style={{ background: 'linear-gradient(90deg, #89b4fa, #a6e3a1)' }} />
       </motion.div>
 
       <div className="grid md:grid-cols-2 gap-8">

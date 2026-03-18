@@ -14,7 +14,7 @@ export default function About() {
         <motion.div custom={0} variants={fadeUp} className="mb-10">
           <span className="text-xs font-mono text-blue-400 tracking-widest uppercase">About Me</span>
           <h2 className="text-4xl font-bold text-white/90 mt-2">Who I Am</h2>
-          <div className="h-1 w-16 mt-3 rounded-full" style={{ background: 'linear-gradient(90deg, #89b4fa, #cba6f7)' }} />
+          <div className="h-1 w-16 mt-3 rounded-full" style={{ background: 'linear-gradient(90deg, #89b4fa, #a6e3a1)' }} />
         </motion.div>
 
         {/* Photo */}
@@ -23,7 +23,7 @@ export default function About() {
             className="w-24 h-24 rounded-2xl overflow-hidden"
             style={{
               padding: '2px',
-              background: 'linear-gradient(135deg, #89b4fa, #cba6f7)',
+              background: 'linear-gradient(135deg, #89b4fa, #a6e3a1)',
               boxShadow: '0 8px 32px rgba(137,180,250,0.25)',
             }}
           >
@@ -41,11 +41,11 @@ export default function About() {
             <div className="glass rounded-2xl p-6">
               <p className="text-white/70 leading-relaxed text-sm">
                 I'm an ML Engineer and AI Researcher specializing in <span className="text-blue-400">Natural Language Processing</span> and{' '}
-                <span className="text-purple-400">Computer Vision</span>, with a focus on multilingual contexts and document understanding.
+                <span className="text-teal-400">Computer Vision</span>, with a focus on multilingual contexts and document understanding.
               </p>
               <p className="text-white/70 leading-relaxed text-sm mt-4">
                 My research explores <span className="text-teal-400">multimodal learning</span>, transfer learning for low-resource scenarios,
-                and <span className="text-pink-400">LLM optimization</span> — with published work in IEEE and arXiv.
+                and <span className="text-green-400">LLM optimization</span> — with published work in IEEE and arXiv.
               </p>
               <p className="text-white/70 leading-relaxed text-sm mt-4">
                 When I'm not building models, I'm contributing to open-source, writing about AI, or exploring new frontiers in generative AI.
@@ -80,7 +80,7 @@ export default function About() {
               <div className="space-y-3">
                 {[
                   { title: 'Deep Learning Specialization', org: 'Coursera / DeepLearning.AI', color: '#89b4fa' },
-                  { title: 'Machine Learning Operations (MLOps)', org: 'Coursera', color: '#cba6f7' },
+                  { title: 'Machine Learning Operations (MLOps)', org: 'Coursera', color: '#94e2d5' },
                   { title: 'NLP with Transformers', org: 'Hugging Face', color: '#f9e2af' },
                 ].map(({ title, org, color }) => (
                   <div key={title} className="flex items-start gap-3 p-3 rounded-xl" style={{ background: `${color}08` }}>

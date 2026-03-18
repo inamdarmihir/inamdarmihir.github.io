@@ -18,7 +18,7 @@ const PUBLICATIONS = [
     venue: 'arXiv Preprint',
     type: 'Preprint',
     year: '2024',
-    color: '#cba6f7',
+    color: '#94e2d5',
     abstract: 'An investigation into the effectiveness of code-mixed language embeddings for hate speech detection in social media content, demonstrating improved performance on multilingual datasets.',
     tags: ['NLP', 'Hate Speech', 'Code-Mixed', 'Embeddings', 'Social Media'],
     link: 'https://arxiv.org/search/?searchtype=author&query=inamdar+mihir',
@@ -37,7 +37,7 @@ export default function Publications() {
       >
         <span className="text-xs font-mono text-blue-400 tracking-widest uppercase">Research</span>
         <h2 className="text-4xl font-bold text-white/90 mt-2">Publications</h2>
-        <div className="h-1 w-16 mt-3 rounded-full" style={{ background: 'linear-gradient(90deg, #89b4fa, #cba6f7)' }} />
+        <div className="h-1 w-16 mt-3 rounded-full" style={{ background: 'linear-gradient(90deg, #89b4fa, #a6e3a1)' }} />
       </motion.div>
 
       {/* Publications */}

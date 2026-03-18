@@ -14,7 +14,7 @@ html, body, #root {
 }
 
 body {
-  background: #0d0d14;
+  background: #060d14;
   font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -68,7 +68,7 @@ body {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #89b4fa, #cba6f7, #f38ba8);
+  background: linear-gradient(135deg, #89b4fa, #94e2d5, #a6e3a1);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

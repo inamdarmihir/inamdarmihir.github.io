@@ -16,11 +16,11 @@ const SEQUENCE: Line[] = [
   { type: 'out', text: 'ML Engineer & AI Researcher | NLP • CV • LLMs', color: '#89b4fa' },
   { type: 'blank', text: '' },
   { type: 'cmd', text: 'gh repo list inamdarmihir --limit 5 --json name,description' },
-  { type: 'out', text: '▸ ResearchGeniusAI       — AI research assistant (OpenAI Agents + Firecrawl)', color: '#cba6f7' },
-  { type: 'out', text: '▸ Math-Prof-AI           — RAG-based math tutor (100% trig accuracy)', color: '#cba6f7' },
-  { type: 'out', text: '▸ Florence-2-DocVQA      — Multimodal document VQA system', color: '#cba6f7' },
-  { type: 'out', text: '▸ CustomLanggraphAgent   — LangGraph research automation', color: '#cba6f7' },
-  { type: 'out', text: '▸ Multilingual-NER       — Code-switched NER (87% F1-score)', color: '#cba6f7' },
+  { type: 'out', text: '▸ ResearchGeniusAI       — AI research assistant (OpenAI Agents + Firecrawl)', color: '#94e2d5' },
+  { type: 'out', text: '▸ Math-Prof-AI           — RAG-based math tutor (100% trig accuracy)', color: '#94e2d5' },
+  { type: 'out', text: '▸ Florence-2-DocVQA      — Multimodal document VQA system', color: '#94e2d5' },
+  { type: 'out', text: '▸ CustomLanggraphAgent   — LangGraph research automation', color: '#94e2d5' },
+  { type: 'out', text: '▸ Multilingual-NER       — Code-switched NER (87% F1-score)', color: '#94e2d5' },
   { type: 'blank', text: '' },
   { type: 'cmd', text: 'docker pull inamdarmihir/ml-portfolio:latest' },
   { type: 'out', text: 'latest: Pulling from inamdarmihir/ml-portfolio', color: '#f9e2af' },
@@ -162,7 +162,7 @@ export default function Terminal({ onClose }: TerminalProps) {
               <div className="flex items-start gap-1">
                 <span className="text-[#89b4fa] select-none flex-shrink-0">mihir@macbook</span>
                 <span className="text-white/40 select-none flex-shrink-0">:</span>
-                <span className="text-[#cba6f7] select-none flex-shrink-0">~</span>
+                <span className="text-[#94e2d5] select-none flex-shrink-0">~</span>
                 <span className="text-white/40 select-none flex-shrink-0">$</span>
                 <span className="text-[#a6e3a1] ml-1 break-all">{line.text}</span>
               </div>
@@ -182,7 +182,7 @@ export default function Terminal({ onClose }: TerminalProps) {
           <div className="flex items-start gap-1">
             <span className="text-[#89b4fa] select-none flex-shrink-0">mihir@macbook</span>
             <span className="text-white/40 select-none flex-shrink-0">:</span>
-            <span className="text-[#cba6f7] select-none flex-shrink-0">~</span>
+            <span className="text-[#94e2d5] select-none flex-shrink-0">~</span>
             <span className="text-white/40 select-none flex-shrink-0">$</span>
             <span className="text-[#a6e3a1] ml-1">{currentText}</span>
             <span className="animate-blink text-[#a6e3a1]">▋</span>
@@ -194,7 +194,7 @@ export default function Terminal({ onClose }: TerminalProps) {
           <div className="flex items-start gap-1 mt-1">
             <span className="text-[#89b4fa] select-none">mihir@macbook</span>
             <span className="text-white/40 select-none">:</span>
-            <span className="text-[#cba6f7] select-none">~</span>
+            <span className="text-[#94e2d5] select-none">~</span>
             <span className="text-white/40 select-none">$</span>
             <span className="ml-1 animate-blink text-[#a6e3a1]">▋</span>
           </div>

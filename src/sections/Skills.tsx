@@ -14,7 +14,7 @@ const SKILL_GROUPS = [
   },
   {
     category: 'NLP & LLMs',
-    color: '#cba6f7',
+    color: '#94e2d5',
     skills: [
       { name: 'BERT / mBERT', level: 93 },
       { name: 'Transformers', level: 91 },
@@ -58,7 +58,7 @@ const SKILL_GROUPS = [
   },
   {
     category: 'Research Methods',
-    color: '#f38ba8',
+    color: '#a6e3a1',
     skills: [
       { name: 'Experimental Design', level: 90 },
       { name: 'Ablation Studies', level: 88 },
@@ -80,7 +80,7 @@ export default function Skills() {
       >
         <span className="text-xs font-mono text-blue-400 tracking-widest uppercase">Expertise</span>
         <h2 className="text-4xl font-bold text-white/90 mt-2">Skills & Stack</h2>
-        <div className="h-1 w-16 mt-3 rounded-full" style={{ background: 'linear-gradient(90deg, #89b4fa, #cba6f7)' }} />
+        <div className="h-1 w-16 mt-3 rounded-full" style={{ background: 'linear-gradient(90deg, #89b4fa, #a6e3a1)' }} />
       </motion.div>
 
       <div className="grid md:grid-cols-2 gap-5">

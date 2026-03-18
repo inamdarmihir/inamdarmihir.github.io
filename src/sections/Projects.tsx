@@ -15,7 +15,7 @@ const PROJECTS = [
     name: 'Math-Prof-AI',
     description: 'RAG-based mathematics tutoring system achieving 100% accuracy on trigonometry problems. Uses retrieval-augmented generation for step-by-step problem solving.',
     tech: ['RAG', 'LangChain', 'FAISS', 'OpenAI', 'Python'],
-    color: '#cba6f7',
+    color: '#94e2d5',
     github: 'https://github.com/inamdarmihir/Math-Prof-AI',
     stars: '⭐ Featured',
     category: 'Education AI',
@@ -42,7 +42,7 @@ const PROJECTS = [
     name: 'Multilingual NER System',
     description: 'Code-switched Named Entity Recognition for Indian languages achieving 87% F1-score. Handles Hinglish, Tanglish, and other code-mixed language pairs.',
     tech: ['BERT', 'mBERT', 'Python', 'HuggingFace', 'NLP'],
-    color: '#f38ba8',
+    color: '#a6e3a1',
     github: 'https://github.com/inamdarmihir',
     stars: '📄 Published',
     category: 'NLP Research',
@@ -69,7 +69,7 @@ export default function Projects() {
       >
         <span className="text-xs font-mono text-blue-400 tracking-widest uppercase">Portfolio</span>
         <h2 className="text-4xl font-bold text-white/90 mt-2">Featured Projects</h2>
-        <div className="h-1 w-16 mt-3 rounded-full" style={{ background: 'linear-gradient(90deg, #89b4fa, #cba6f7)' }} />
+        <div className="h-1 w-16 mt-3 rounded-full" style={{ background: 'linear-gradient(90deg, #89b4fa, #a6e3a1)' }} />
       </motion.div>
 
       {/* Grid */}

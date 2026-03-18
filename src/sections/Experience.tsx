@@ -23,7 +23,7 @@ const JOBS = [
     location: 'Hyderabad, India',
     period: 'Mar 2024 — Aug 2024',
     type: 'Research Fellowship',
-    color: '#cba6f7',
+    color: '#94e2d5',
     highlights: [
       'Processed 50,000+ scanned documents; reduced OCR errors by 20%',
       'Post-OCR error correction via transformer models — 15% accuracy gain',
@@ -60,13 +60,13 @@ export default function Experience() {
       >
         <span className="text-xs font-mono text-blue-400 tracking-widest uppercase">Career</span>
         <h2 className="text-4xl font-bold text-white/90 mt-2">Work Experience</h2>
-        <div className="h-1 w-16 mt-3 rounded-full" style={{ background: 'linear-gradient(90deg, #89b4fa, #cba6f7)' }} />
+        <div className="h-1 w-16 mt-3 rounded-full" style={{ background: 'linear-gradient(90deg, #89b4fa, #a6e3a1)' }} />
       </motion.div>
 
       {/* Timeline */}
       <div className="relative space-y-6">
         {/* Vertical line */}
-        <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-blue-500/50 via-purple-500/30 to-transparent" />
+        <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-blue-500/50 via-teal-500/30 to-transparent" />
 
         {JOBS.map((job, i) => (
           <motion.div

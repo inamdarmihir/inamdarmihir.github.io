@@ -52,14 +52,14 @@ export default function Dock({ onTerminalToggle, terminalOpen }: DockProps) {
       id: 'portfolio',
       icon: <Globe size={24} />,
       label: 'Portfolio',
-      color: '#cba6f7',
+      color: '#94e2d5',
       href: 'https://inamdarmihir.github.io',
     },
     {
       id: 'research',
       icon: <BookOpen size={24} />,
       label: 'Publications',
-      color: '#f38ba8',
+      color: '#a6e3a1',
       href: 'https://arxiv.org/search/?searchtype=author&query=inamdar+mihir',
     },
     {
@@ -73,7 +73,7 @@ export default function Dock({ onTerminalToggle, terminalOpen }: DockProps) {
       id: 'mail',
       icon: <Mail size={24} />,
       label: 'Email Mihir',
-      color: '#f38ba8',
+      color: '#a6e3a1',
       href: 'mailto:mihirsinamdar@outlook.com',
     },
   ]
