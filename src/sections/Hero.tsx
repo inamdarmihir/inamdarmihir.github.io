@@ -1,148 +1,165 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, RefObject } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Github, Linkedin, Mail, BookOpen, ArrowRight, Terminal } from 'lucide-react'
+import { Github, Linkedin, Mail, BookOpen, ArrowDown, FileText } from 'lucide-react'
 
 const ROLES = ['ML Engineer', 'AI Researcher', 'NLP Specialist', 'LLM Engineer']
 
-function AnimatedRoles({ roles }: { roles: string[] }) {
-  const [index, setIndex] = useState(0)
-
+function AnimatedRole({ roles }: { roles: string[] }) {
+  const [i, setI] = useState(0)
   useEffect(() => {
-    const id = setInterval(() => setIndex(i => (i + 1) % roles.length), 2500)
-    return () => clearInterval(id)
+    const t = setInterval(() => setI(x => (x + 1) % roles.length), 2800)
+    return () => clearInterval(t)
   }, [roles.length])
-
   return (
     <AnimatePresence mode="wait">
       <motion.span
-        key={index}
-        initial={{ opacity: 0, y: 10 }}
+        key={i}
+        initial={{ opacity: 0, y: 14 }}
         animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -10 }}
-        transition={{ duration: 0.3 }}
-        className="text-blue-400 font-semibold"
+        exit={{ opacity: 0, y: -14 }}
+        transition={{ duration: 0.38, ease: [0.25, 0.46, 0.45, 0.94] }}
+        className="text-white"
       >
-        {roles[index]}
+        {roles[i]}
       </motion.span>
     </AnimatePresence>
   )
 }
 
+const f = (delay = 0) => ({
+  initial: { opacity: 0, y: 28 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.7, delay, ease: [0.25, 0.46, 0.45, 0.94] },
+})
+
 interface HeroProps {
-  onNavigate: (tab: string) => void
+  onNavigate: (id: string) => void
+  scrollRef: RefObject<HTMLDivElement>
 }
 
 export default function Hero({ onNavigate }: HeroProps) {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-6 py-16">
-      {/* Animated background grid */}
-      <div className="absolute inset-0 opacity-20">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, rgba(137,180,250,0.3) 1px, transparent 0)`,
-            backgroundSize: '40px 40px',
-          }}
-        />
-      </div>
+    <div className="min-h-screen flex flex-col justify-center relative overflow-hidden px-8 md:px-14 py-24">
+      {/* Very subtle grid */}
+      <div
+        className="absolute inset-0 opacity-[0.028]"
+        style={{
+          backgroundImage: `linear-gradient(rgba(255,255,255,1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)`,
+          backgroundSize: '72px 72px',
+        }}
+      />
 
-      {/* Glow blobs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-10 blur-3xl"
-        style={{ background: 'radial-gradient(circle, #89b4fa, transparent)' }} />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full opacity-10 blur-3xl"
-        style={{ background: 'radial-gradient(circle, #a6e3a1, transparent)' }} />
+      {/* Glow */}
+      <div
+        className="absolute top-0 left-0 w-[600px] h-[600px] opacity-[0.04]"
+        style={{ background: 'radial-gradient(circle, #fff, transparent 70%)' }}
+      />
 
-      <div className="relative z-10 max-w-3xl w-full text-center">
-        {/* Avatar */}
-        <motion.div
-          initial={{ scale: 0, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ type: 'spring', stiffness: 200, delay: 0.1 }}
-          className="mx-auto mb-6 w-32 h-32 rounded-full relative"
-          style={{
-            padding: '3px',
-            background: 'linear-gradient(135deg, #89b4fa 0%, #94e2d5 50%, #a6e3a1 100%)',
-            boxShadow: '0 0 60px rgba(137,180,250,0.4)',
-          }}
-        >
-          <img
-            src="/avatar.jpg"
-            alt="Mihir Inamdar"
-            className="w-full h-full rounded-full object-cover object-top"
-            style={{ border: '2px solid #0f0f14' }}
-          />
-          <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-[#a6e3a1] rounded-full border-2 border-[#0f0f14] flex items-center justify-center shadow-lg">
-            <span className="text-[8px] font-bold text-green-900">●</span>
+      <div className="relative z-10 max-w-4xl w-full">
+        {/* Section tag */}
+        <motion.div {...f(0)} className="flex items-center gap-3 mb-14">
+          <span className="text-[10px] font-mono text-white/20 tracking-[0.4em] uppercase">01 — Introduction</span>
+          <div className="h-px w-12 bg-white/10" />
+        </motion.div>
+
+        {/* Avatar + online badge */}
+        <motion.div {...f(0.1)} className="flex items-center gap-4 mb-10">
+          <div
+            className="w-16 h-16 rounded-2xl overflow-hidden flex-shrink-0"
+            style={{ border: '1px solid rgba(255,255,255,0.12)' }}
+          >
+            <img src="/avatar.jpg" alt="Mihir Inamdar" className="w-full h-full object-cover object-top" />
+          </div>
+          <div>
+            <div className="flex items-center gap-2 mb-1">
+              <span className="w-1.5 h-1.5 rounded-full bg-white/70 animate-pulse" />
+              <span className="text-[11px] font-mono text-white/35">Open to work · Available immediately</span>
+            </div>
+            <span className="text-[11px] font-mono text-white/20">Pune, India · Remote / Hybrid</span>
           </div>
         </motion.div>
 
         {/* Name */}
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="text-5xl font-bold mb-3"
-        >
-          <span className="gradient-text">Mihir Inamdar</span>
-        </motion.h1>
+        <div className="mb-6">
+          <motion.h1
+            {...f(0.18)}
+            className="font-black leading-[0.9] tracking-tight"
+            style={{ fontSize: 'clamp(3.5rem, 8vw, 6.5rem)', color: '#fff' }}
+          >
+            Mihir
+          </motion.h1>
+          <motion.h1
+            {...f(0.24)}
+            className="font-black leading-[0.9] tracking-tight"
+            style={{ fontSize: 'clamp(3.5rem, 8vw, 6.5rem)', color: 'rgba(255,255,255,0.18)' }}
+          >
+            Inamdar.
+          </motion.h1>
+        </div>
 
-        {/* Animated role */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="text-xl text-white/60 mb-6 h-8"
-        >
-          <AnimatedRoles roles={ROLES} />
+        {/* Role ticker */}
+        <motion.div {...f(0.32)} className="text-xl text-white/35 mb-6 h-8 font-medium">
+          <AnimatedRole roles={ROLES} />
         </motion.div>
 
         {/* Tagline */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          className="text-white/50 text-sm max-w-xl mx-auto mb-8 leading-relaxed"
-        >
-          Building intelligent systems at the intersection of NLP, Computer Vision &amp; LLMs.
-          Currently an ML Engineer at <span className="text-blue-400">Quoppo Ventures</span> &amp; Former Research Fellow at{' '}
-          <span className="text-teal-400">CVIT, IIIT Hyderabad</span>.
+        <motion.p {...f(0.4)} className="text-base text-white/45 max-w-xl mb-12 leading-[1.75]">
+          Building intelligent systems at the intersection of{' '}
+          <span className="text-white/80 font-medium">Natural Language Processing</span>,{' '}
+          <span className="text-white/80 font-medium">Computer Vision</span> &{' '}
+          <span className="text-white/80 font-medium">LLMs</span>. Currently ML Engineer at Quoppo Ventures,
+          former Research Fellow at CVIT, IIIT Hyderabad.
         </motion.p>
 
-        {/* CTA buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="flex flex-wrap items-center justify-center gap-3 mb-10"
-        >
+        {/* Stats */}
+        <motion.div {...f(0.48)} className="flex gap-10 mb-12">
+          {[
+            { value: '3+', label: 'Years of Experience' },
+            { value: '6+', label: 'Projects Shipped' },
+            { value: '2', label: 'Publications' },
+          ].map(({ value, label }) => (
+            <div key={label}>
+              <div className="text-4xl font-black text-white leading-none">{value}</div>
+              <div className="text-[11px] text-white/25 uppercase tracking-widest mt-2 font-mono">{label}</div>
+            </div>
+          ))}
+        </motion.div>
+
+        {/* CTAs */}
+        <motion.div {...f(0.56)} className="flex flex-wrap gap-3 mb-12">
           <button
-            onClick={() => onNavigate('Projects')}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium text-white transition-all hover:scale-105"
-            style={{ background: 'linear-gradient(135deg, #89b4fa, #a6e3a1)' }}
+            onClick={() => onNavigate('projects')}
+            className="px-6 py-3 text-sm font-semibold rounded-xl text-black transition-all hover:scale-[1.03] active:scale-95"
+            style={{ background: '#fff' }}
           >
-            View Projects <ArrowRight size={14} />
+            View Projects
           </button>
           <button
-            onClick={() => onNavigate('Contact')}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium text-white/80 border border-white/20 hover:border-white/40 transition-all hover:scale-105 glass"
+            onClick={() => onNavigate('contact')}
+            className="px-6 py-3 text-sm font-medium rounded-xl text-white/70 transition-all hover:text-white"
+            style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}
+            onMouseEnter={e => (e.currentTarget.style.borderColor = 'rgba(255,255,255,0.22)')}
+            onMouseLeave={e => (e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)')}
           >
-            Get in Touch <Mail size={14} />
+            Get in Touch
           </button>
-          <button
-            onClick={() => onNavigate('Experience')}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium text-white/80 border border-white/20 hover:border-white/40 transition-all hover:scale-105 glass"
+          <a
+            href="/Inamdar_Mihir_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-xl text-white/70 transition-all hover:text-white"
+            style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}
+            onMouseEnter={e => (e.currentTarget.style.borderColor = 'rgba(255,255,255,0.22)')}
+            onMouseLeave={e => (e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)')}
           >
-            <Terminal size={14} /> Resume
-          </button>
+            <FileText size={14} />
+            Download CV
+          </a>
         </motion.div>
 
         {/* Social links */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
-          className="flex items-center justify-center gap-4"
-        >
+        <motion.div {...f(0.64)} className="flex gap-3">
           {[
             { icon: Github, href: 'https://github.com/inamdarmihir', label: 'GitHub' },
             { icon: Linkedin, href: 'https://linkedin.com/in/inamdarmihir', label: 'LinkedIn' },
@@ -152,35 +169,31 @@ export default function Hero({ onNavigate }: HeroProps) {
             <a
               key={label}
               href={href}
-              target="_blank"
+              target={href.startsWith('mailto') ? undefined : '_blank'}
               rel="noopener noreferrer"
-              className="p-2.5 rounded-xl glass text-white/50 hover:text-white/90 transition-all hover:scale-110"
               title={label}
+              className="p-2.5 rounded-xl text-white/30 transition-all hover:text-white hover:scale-110"
+              style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)' }}
             >
-              <Icon size={18} />
+              <Icon size={16} />
             </a>
           ))}
         </motion.div>
-
-        {/* Stats row */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7 }}
-          className="mt-12 grid grid-cols-3 gap-4 max-w-sm mx-auto"
-        >
-          {[
-            { value: '3+', label: 'Years Experience' },
-            { value: '6+', label: 'Projects Built' },
-            { value: '2', label: 'Publications' },
-          ].map(({ value, label }) => (
-            <div key={label} className="glass rounded-xl p-3 text-center">
-              <div className="text-2xl font-bold gradient-text">{value}</div>
-              <div className="text-xs text-white/40 mt-0.5">{label}</div>
-            </div>
-          ))}
-        </motion.div>
       </div>
+
+      {/* Scroll indicator */}
+      <motion.button
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.3 }}
+        onClick={() => onNavigate('about')}
+        className="absolute bottom-8 left-8 md:left-14 flex items-center gap-2.5 text-white/20 hover:text-white/40 transition-colors"
+      >
+        <motion.div animate={{ y: [0, 5, 0] }} transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}>
+          <ArrowDown size={13} />
+        </motion.div>
+        <span className="text-[11px] font-mono tracking-wider">Scroll to explore</span>
+      </motion.button>
     </div>
   )
 }
