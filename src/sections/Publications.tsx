@@ -5,7 +5,7 @@ import { FileText, ExternalLink, BookOpen, ArrowUpRight } from 'lucide-react'
 const PUBLICATIONS = [
   {
     num: '01',
-    title: 'Enhancing code-mixing in named entity recognition: A comprehensive survey of deep learning models',
+    title: 'Enhancing Code-Mixing in Named Entity Recognition: A Comprehensive Survey of Deep Learning Models',
     venue: 'IEEE ICETITE 2024',
     type: 'Conference Paper',
     year: '2024',
@@ -16,14 +16,14 @@ const PUBLICATIONS = [
   },
   {
     num: '02',
-    title: 'On Importance of Code-Mixed Embeddings for Hate Speech Identification',
-    venue: 'arXiv Preprint',
-    type: 'Preprint',
+    title: 'Research Paper',
+    venue: 'Springer ICCCN 2024',
+    type: 'Conference Paper',
     year: '2024',
-    abstract: 'An investigation into the effectiveness of code-mixed language embeddings for hate speech detection in social media content, demonstrating improved performance on multilingual datasets.',
-    tags: ['NLP', 'Hate Speech', 'Code-Mixed', 'Embeddings', 'Social Media'],
-    link: 'https://arxiv.org/search/?searchtype=author&query=inamdar+mihir',
-    badge: 'arXiv',
+    abstract: 'Published at the International Conference on Computer Communication and Networks (ICCCN 2024), Springer proceedings. Research in the domain of machine learning and intelligent systems.',
+    tags: ['Machine Learning', 'NLP', 'Deep Learning', 'Research'],
+    link: 'https://scholar.google.com/citations?user=aRlnkucAAAAJ',
+    badge: 'Springer',
   },
 ]
 

@@ -46,25 +46,26 @@ export default function About({ scrollRef }: Props) {
           <motion.p variants={reveal} className="text-white/55 leading-[1.85] text-[15px]">
             My journey into AI started with a simple question:{' '}
             <span className="text-white/85 font-medium">how do machines understand human language?</span> That curiosity
-            led me deep into the world of NLP and machine learning, culminating in a research fellowship at{' '}
+            led me deep into NLP, machine learning, and ultimately a research fellowship at{' '}
             <span className="text-white/85 font-medium">CVIT, IIIT Hyderabad</span> — one of India's premier
-            computer vision labs.
+            computer vision labs — where I co-invented a patent-pending document layout analysis system.
           </motion.p>
           <motion.p variants={reveal} className="text-white/55 leading-[1.85] text-[15px]">
-            There, I worked on processing over{' '}
-            <span className="text-white/85 font-medium">50,000 scanned documents</span>, reducing OCR errors by 20%,
-            and contributed to a patent-pending document layout analysis method. My research on code-mixed NER
-            for Indian languages was published at{' '}
-            <span className="text-white/85 font-medium">IEEE ICETITE 2024</span>.
+            At <span className="text-white/85 font-medium">Quoppo Ventures</span>, I designed hybrid LSTM-MeshNet
+            architectures for 3D positioning and rebuilt GAN training pipelines, achieving a{' '}
+            <span className="text-white/85 font-medium">30% accuracy improvement</span> over SOTA while establishing
+            a reproducible MLOps foundation across a 3-engineer team.
           </motion.p>
           <motion.p variants={reveal} className="text-white/55 leading-[1.85] text-[15px]">
-            Today, as an ML Engineer at <span className="text-white/85 font-medium">Quoppo Ventures</span>, I lead
-            a team building real-time AI systems — from LSTM-based location intelligence to face fusion for XR,
-            pushing the boundaries of what's possible at the edge of AI and product.
+            Currently at <span className="text-white/85 font-medium">Sutherland Global Services</span>, I architect
+            end-to-end <span className="text-white/85 font-medium">RLHF pipelines</span> for Text-to-SQL and
+            multi-stage agentic inference systems with quantized LLM serving — cutting latency 60% at F1 &gt; 0.95
+            and serving 10K+ daily transactions on AWS.
           </motion.p>
           <motion.p variants={reveal} className="text-white/55 leading-[1.85] text-[15px]">
-            When I'm not training models, I'm contributing to open-source, writing about AI, or exploring the
-            frontiers of generative models and multi-agent systems.
+            Beyond work, I'm a <span className="text-white/85 font-medium">Qdrant Star</span> open-source developer
+            advocate, have published at IEEE and Springer, and continuously push the frontiers of agentic AI and
+            retrieval systems.
           </motion.p>
         </div>
 
@@ -89,8 +90,8 @@ export default function About({ scrollRef }: Props) {
             className="space-y-3"
           >
             {[
-              { icon: MapPin, label: 'Location', value: 'Pune, India' },
-              { icon: Briefcase, label: 'Current Role', value: 'ML Engineer @ Quoppo Ventures' },
+              { icon: MapPin, label: 'Location', value: 'Chennai, India' },
+              { icon: Briefcase, label: 'Current Role', value: 'Data Scientist @ Sutherland Global Services' },
               { icon: GraduationCap, label: 'Education', value: 'B.E. IT — PICT, Pune (2020–2024)' },
               { icon: Award, label: 'Research', value: 'CVIT, IIIT Hyderabad (2024)' },
             ].map(({ icon: Icon, label, value }) => (
@@ -130,9 +131,12 @@ export default function About({ scrollRef }: Props) {
           <h3 className="text-[11px] font-mono text-white/30 uppercase tracking-widest mb-5">Certifications</h3>
           <div className="space-y-4">
             {[
-              { title: 'Deep Learning Specialization', org: 'Coursera / DeepLearning.AI' },
-              { title: 'Machine Learning Operations (MLOps)', org: 'Coursera' },
-              { title: 'NLP with Transformers', org: 'Hugging Face' },
+              { title: 'Neo4j Certified Professional', org: '2025' },
+              { title: 'Evaluating & Debugging GenAI', org: 'Weights & Biases · 2024' },
+              { title: 'LLMOps', org: 'CircleCI · 2024' },
+              { title: 'Kubernetes & Docker', org: '2023' },
+              { title: 'Azure AI Fundamentals', org: 'Microsoft · 2022' },
+              { title: 'NVIDIA DLI C-FX-01', org: 'NVIDIA · 2021' },
             ].map(({ title, org }) => (
               <div key={title} className="flex items-start gap-3">
                 <div className="w-1 h-1 rounded-full bg-white/30 mt-2 flex-shrink-0" />
@@ -153,10 +157,12 @@ export default function About({ scrollRef }: Props) {
           <h3 className="text-[11px] font-mono text-white/30 uppercase tracking-widest mb-5">Research Highlights</h3>
           <div className="space-y-4">
             {[
-              '87% F1-score on multilingual NER for code-switched Indian languages',
-              '99.8% F1-score on BERT-based ticket categorization',
-              '50,000+ scanned documents processed at IIIT Hyderabad',
-              'Patent-pending document layout analysis method',
+              'Patent-pending document layout analysis system — Vision Transformers + geometric constraints',
+              '15% CER reduction via transformer post-OCR correction pipeline at CVIT, IIIT Hyderabad',
+              '60% latency reduction with quantized LLM serving (4-bit/8-bit) at F1 > 0.95',
+              '30% accuracy improvement over SOTA with hybrid LSTM-MeshNet architecture',
+              'Qdrant Star — Open Source Developer Advocate, Vector DB & RAG Systems',
+              '90.8% accuracy at IndoML 2022, IIT Gandhinagar',
             ].map((highlight) => (
               <div key={highlight} className="flex items-start gap-3">
                 <span className="text-white/40 mt-0.5 flex-shrink-0 text-xs">✓</span>

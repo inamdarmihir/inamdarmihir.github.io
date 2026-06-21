@@ -48,19 +48,21 @@ export default function Contact({ scrollRef }: Props) {
             className="p-7 rounded-2xl"
             style={{ background: '#0f0f0f', border: '1px solid rgba(255,255,255,0.07)' }}
           >
-            <h3 className="text-lg font-bold text-white/90 mb-4">Open to Opportunities</h3>
+            <h3 className="text-lg font-bold text-white/90 mb-4">Let's Connect</h3>
             <p className="text-white/50 text-sm leading-[1.8] mb-4">
-              I'm actively looking for <span className="text-white/80">ML Engineer</span> and{' '}
-              <span className="text-white/80">AI Researcher</span> roles, as well as research collaborations
-              and interesting open-source projects. Currently based in Pune, India — open to remote opportunities globally.
+              I'm open to discussions around <span className="text-white/80">RLHF</span>,{' '}
+              <span className="text-white/80">agentic AI systems</span>, and{' '}
+              <span className="text-white/80">LLM infrastructure</span> — research collaborations,
+              open-source projects, or just a good conversation about what's next in AI.
             </p>
             <p className="text-white/50 text-sm leading-[1.8]">
-              Whether you want to discuss research, build something together, or just say hi — my inbox is always open.
+              Currently at Sutherland Global Services, Chennai. Whether you want to discuss research,
+              build something together, or just say hi — my inbox is always open.
             </p>
 
             <div className="mt-6 flex items-center gap-2 text-white/25 text-sm">
               <MapPin size={12} />
-              <span className="font-mono text-xs">Pune, India · Remote / Hybrid</span>
+              <span className="font-mono text-xs">Chennai, India · Open to Remote</span>
             </div>
 
             {/* Status */}
@@ -69,7 +71,7 @@ export default function Contact({ scrollRef }: Props) {
               style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}
             >
               <span className="w-1.5 h-1.5 rounded-full bg-white/60 animate-pulse" />
-              <span className="text-white/45 text-xs font-mono">Available immediately</span>
+              <span className="text-white/45 text-xs font-mono">Open to collaborations</span>
             </div>
           </motion.div>
 
@@ -138,7 +140,7 @@ export default function Contact({ scrollRef }: Props) {
         <span className="text-[11px] font-mono text-white/18">
           © {new Date().getFullYear()} Mihir Inamdar. Built with React + Framer Motion.
         </span>
-        <span className="text-[11px] font-mono text-white/18">Pune, India</span>
+        <span className="text-[11px] font-mono text-white/18">Chennai, India</span>
       </motion.div>
     </div>
   )

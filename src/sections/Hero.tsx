@@ -2,7 +2,7 @@ import { useState, useEffect, RefObject } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Github, Linkedin, Mail, BookOpen, ArrowDown, FileText } from 'lucide-react'
 
-const ROLES = ['ML Engineer', 'AI Researcher', 'NLP Specialist', 'LLM Engineer']
+const ROLES = ['ML Engineer', 'Data Scientist', 'LLM Engineer', 'AI Researcher']
 
 function AnimatedRole({ roles }: { roles: string[] }) {
   const [i, setI] = useState(0)
@@ -74,9 +74,9 @@ export default function Hero({ onNavigate }: HeroProps) {
           <div>
             <div className="flex items-center gap-2 mb-1">
               <span className="w-1.5 h-1.5 rounded-full bg-white/70 animate-pulse" />
-              <span className="text-[11px] font-mono text-white/35">Open to work · Available immediately</span>
+              <span className="text-[11px] font-mono text-white/35">Data Scientist · Sutherland Global Services</span>
             </div>
-            <span className="text-[11px] font-mono text-white/20">Pune, India · Remote / Hybrid</span>
+            <span className="text-[11px] font-mono text-white/20">Chennai, India · Open to Remote</span>
           </div>
         </motion.div>
 
@@ -106,17 +106,17 @@ export default function Hero({ onNavigate }: HeroProps) {
         {/* Tagline */}
         <motion.p {...f(0.4)} className="text-base text-white/45 max-w-xl mb-12 leading-[1.75]">
           Building intelligent systems at the intersection of{' '}
-          <span className="text-white/80 font-medium">Natural Language Processing</span>,{' '}
-          <span className="text-white/80 font-medium">Computer Vision</span> &{' '}
-          <span className="text-white/80 font-medium">LLMs</span>. Currently ML Engineer at Quoppo Ventures,
+          <span className="text-white/80 font-medium">RLHF</span>,{' '}
+          <span className="text-white/80 font-medium">Agentic AI</span> &{' '}
+          <span className="text-white/80 font-medium">LLMs</span>. Currently Data Scientist at Sutherland Global Services,
           former Research Fellow at CVIT, IIIT Hyderabad.
         </motion.p>
 
         {/* Stats */}
         <motion.div {...f(0.48)} className="flex gap-10 mb-12">
           {[
-            { value: '3+', label: 'Years of Experience' },
-            { value: '6+', label: 'Projects Shipped' },
+            { value: '2+', label: 'Years of Experience' },
+            { value: '3+', label: 'Projects Shipped' },
             { value: '2', label: 'Publications' },
           ].map(({ value, label }) => (
             <div key={label}>

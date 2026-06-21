@@ -4,18 +4,28 @@ import { Briefcase, Calendar, MapPin, ChevronRight } from 'lucide-react'
 
 const JOBS = [
   {
+    title: 'Associate Software Developer – Data Scientist',
+    company: 'Sutherland Global Services',
+    location: 'Chennai, India',
+    period: 'Aug 2025 — Present',
+    type: 'Full-time',
+    highlights: [
+      'Architected end-to-end RLHF pipeline for Text-to-SQL from first principles: preference data collection, custom reward model on human feedback, and PPO policy optimisation — serving 10K+ daily transactions on AWS',
+      'Engineered multi-stage agentic inference system with quantized LLM serving (4-bit/8-bit) cutting latency 60% at F1 > 0.95; RAG layer over Pinecone for sub-200ms retrieval with tool-calling, schema grounding, and safety validation',
+    ],
+    stack: ['PyTorch', 'HuggingFace', 'PPO', 'RLHF', 'Pinecone', 'AWS', 'SQL'],
+  },
+  {
     title: 'ML Engineer',
     company: 'Quoppo Ventures',
     location: 'Pune, India',
-    period: 'Oct 2024 — Present',
+    period: 'Oct 2024 — Mar 2025',
     type: 'Full-time',
     highlights: [
-      'Built real-time location system using LSTM/MesNet — 30% accuracy improvement',
-      'Developed face fusion for XR applications via GAN/autoencoder fine-tuning — 40% time reduction',
-      'Led AI automation for venture funding research platform',
-      'Managed 3-engineer team implementing MLOps practices',
+      'Designed hybrid LSTM-MeshNet architecture for 3D positioning from scratch; resolved vanishing gradient failure modes via custom multi-term loss scheduling and adaptive LR warmup — 30% accuracy improvement over SOTA baseline',
+      'Rebuilt GAN training loop with redesigned discriminator and curriculum-based fine-tuning strategy; reduced post-production editing time by 40%; established reproducible MLOps foundation (W&B + DVC + CI/CD) across a 3-engineer team',
     ],
-    stack: ['LSTM', 'GANs', 'PyTorch', 'MLOps', 'Docker', 'Kubernetes'],
+    stack: ['PyTorch', 'GANs', 'LSTM', 'Weights & Biases', 'DVC', 'GitHub Actions'],
   },
   {
     title: 'Graduate ML Research Fellow',
@@ -24,26 +34,10 @@ const JOBS = [
     period: 'Mar 2024 — Aug 2024',
     type: 'Research Fellowship',
     highlights: [
-      'Processed 50,000+ scanned documents; reduced OCR errors by 20%',
-      'Post-OCR error correction via transformer models — 15% accuracy gain',
-      'Contributed to patent-pending document layout analysis method',
-      'Published research on code-mixed NER at IEEE ICETITE 2024',
+      'Designed transformer post-OCR correction pipeline over multi-layout corpora; diagnosed model failures by analysing cross-attention maps, identifying layout-induced error patterns — 15% CER reduction',
+      'Co-invented patent-pending document layout analysis system built from geometric constraints and Vision Transformers — designed to generalise across languages and mixed-layout documents without layout-specific fine-tuning',
     ],
-    stack: ['Transformers', 'OCR', 'Document AI', 'Python', 'BERT', 'TensorFlow'],
-  },
-  {
-    title: 'NLP & Backend Intern',
-    company: 'Textify AI',
-    location: 'Indore, India',
-    period: 'Oct 2023 — Feb 2024',
-    type: 'Internship',
-    highlights: [
-      'Built BERT-based ticket categorization system — 99.8% F1-score',
-      'Redis caching optimization — 60% API response improvement',
-      'Stock recommendation engine with sentiment analysis',
-      'Designed scalable NLP microservices architecture',
-    ],
-    stack: ['BERT', 'Redis', 'Django', 'PostgreSQL', 'NLP', 'Sentiment Analysis'],
+    stack: ['Vision Transformers', 'OCR', 'PyTorch', 'Attention Analysis'],
   },
 ]
 
