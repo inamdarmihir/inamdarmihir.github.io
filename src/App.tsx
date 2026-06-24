@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
+import { AnimatePresence, motion, MotionConfig } from 'framer-motion'
 import Menubar from './components/Menubar'
 import SafariBrowser from './components/SafariBrowser'
 import Dock from './components/Dock'
@@ -7,26 +7,42 @@ import Terminal from './components/Terminal'
 
 export default function App() {
   const [terminalOpen, setTerminalOpen] = useState(false)
+  const [mouse, setMouse] = useState({ x: 0, y: 0 })
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      setMouse({
+        x: e.clientX / window.innerWidth - 0.5,
+        y: e.clientY / window.innerHeight - 0.5,
+      })
+    }
+    window.addEventListener('mousemove', handler, { passive: true })
+    return () => window.removeEventListener('mousemove', handler)
+  }, [])
 
   return (
+    <MotionConfig reducedMotion="user">
     <div className="w-full h-screen overflow-hidden relative select-none" style={{ background: '#000' }}>
+
       {/* Desktop background */}
       <div className="absolute inset-0">
         <div
           className="absolute inset-0"
           style={{
             background: `
-              radial-gradient(ellipse 70% 50% at 15% 15%, rgba(255,255,255,0.025) 0%, transparent 60%),
-              radial-gradient(ellipse 50% 60% at 85% 85%, rgba(255,255,255,0.015) 0%, transparent 60%),
+              radial-gradient(ellipse 80% 60% at 10% 10%, rgba(255,255,255,0.032) 0%, transparent 60%),
+              radial-gradient(ellipse 60% 70% at 90% 90%, rgba(255,255,255,0.022) 0%, transparent 60%),
+              radial-gradient(ellipse 40% 40% at 50% 50%, rgba(255,255,255,0.01) 0%, transparent 70%),
               #000
             `,
           }}
         />
-        {/* Subtle dot grid */}
+        {/* Dot grid */}
         <div
-          className="absolute inset-0 opacity-20"
+          className="absolute inset-0"
           style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.035) 1px, transparent 0)`,
+            opacity: 0.12,
+            backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.045) 1px, transparent 0)`,
             backgroundSize: '32px 32px',
           }}
         />
@@ -48,17 +64,28 @@ export default function App() {
 
       {/* Main content */}
       <div className="absolute inset-0 flex items-center justify-center pt-7 pb-16 px-4">
+        {/* Outer wrapper sets perspective origin */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.97, y: 12 }}
+          initial={{ opacity: 0, scale: 0.95, y: 24 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ type: 'spring', stiffness: 200, damping: 25, delay: 0.15 }}
-          className="w-full max-w-5xl h-full rounded-xl overflow-hidden window-shadow relative"
-          style={{
-            background: '#0a0a0a',
-            border: '1px solid rgba(255,255,255,0.08)',
-          }}
+          style={{ transformPerspective: 2200, width: '100%', maxWidth: '80rem', height: '100%' }}
         >
-          <SafariBrowser />
+          {/* Mouse-driven 3D tilt */}
+          <motion.div
+            animate={{
+              rotateX: mouse.y * -3.5,
+              rotateY: mouse.x * 3.5,
+            }}
+            transition={{ type: 'spring', stiffness: 55, damping: 20 }}
+            className="w-full h-full rounded-xl overflow-hidden window-shadow"
+            style={{
+              background: '#0a0a0a',
+              border: '1px solid rgba(255,255,255,0.08)',
+            }}
+          >
+            <SafariBrowser />
+          </motion.div>
         </motion.div>
 
         <AnimatePresence>
@@ -74,5 +101,6 @@ export default function App() {
         terminalOpen={terminalOpen}
       />
     </div>
+    </MotionConfig>
   )
 }

@@ -75,8 +75,8 @@ const ALL_TECH = [
 ]
 
 const reveal = {
-  hidden: { opacity: 0, y: 32 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] } },
+  hidden: { opacity: 0, y: 28, rotateX: 10, transformPerspective: 1200 },
+  visible: { opacity: 1, y: 0, rotateX: 0, transformPerspective: 1200, transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] } },
 }
 
 interface Props { scrollRef: RefObject<HTMLDivElement> }
@@ -126,7 +126,7 @@ export default function Skills({ scrollRef }: Props) {
             initial="hidden"
             whileInView="visible"
             viewport={{ ...vp, margin: '-40px' }}
-            variants={{ hidden: { opacity: 0, y: 28 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: (gi % 2) * 0.06 } } }}
+            variants={{ hidden: { opacity: 0, y: 24, rotateX: 9, transformPerspective: 1200 }, visible: { opacity: 1, y: 0, rotateX: 0, transformPerspective: 1200, transition: { duration: 0.65, delay: (gi % 2) * 0.08 } } }}
             className="p-5 rounded-2xl"
             style={{ background: '#0f0f0f', border: '1px solid rgba(255,255,255,0.07)' }}
           >

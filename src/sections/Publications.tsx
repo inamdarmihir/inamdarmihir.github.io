@@ -28,8 +28,8 @@ const PUBLICATIONS = [
 ]
 
 const reveal = {
-  hidden: { opacity: 0, y: 36 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94] } },
+  hidden: { opacity: 0, y: 32, rotateX: 10, transformPerspective: 1200 },
+  visible: { opacity: 1, y: 0, rotateX: 0, transformPerspective: 1200, transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] } },
 }
 
 interface Props { scrollRef: RefObject<HTMLDivElement> }
@@ -58,7 +58,7 @@ export default function Publications({ scrollRef }: Props) {
             initial="hidden"
             whileInView="visible"
             viewport={{ ...vp, margin: '-40px' }}
-            variants={{ hidden: { opacity: 0, y: 32 }, visible: { opacity: 1, y: 0, transition: { duration: 0.65, delay: i * 0.1 } } }}
+            variants={{ hidden: { opacity: 0, y: 28, rotateX: 9, transformPerspective: 1200 }, visible: { opacity: 1, y: 0, rotateX: 0, transformPerspective: 1200, transition: { duration: 0.65, delay: i * 0.1 } } }}
             className="group rounded-2xl p-6"
             style={{ background: '#0f0f0f', border: '1px solid rgba(255,255,255,0.07)', transition: 'border-color 0.25s' }}
             whileHover={{ borderColor: 'rgba(255,255,255,0.16)' } as never}

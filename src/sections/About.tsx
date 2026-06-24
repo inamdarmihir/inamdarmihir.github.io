@@ -3,8 +3,8 @@ import { motion } from 'framer-motion'
 import { MapPin, GraduationCap, Briefcase, Award } from 'lucide-react'
 
 const reveal = {
-  hidden: { opacity: 0, y: 36 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94] } },
+  hidden: { opacity: 0, y: 32, rotateX: 10, transformPerspective: 1200 },
+  visible: { opacity: 1, y: 0, rotateX: 0, transformPerspective: 1200, transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] } },
 }
 
 const stagger = {

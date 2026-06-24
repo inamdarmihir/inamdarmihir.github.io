@@ -42,12 +42,12 @@ const JOBS = [
 ]
 
 const reveal = {
-  hidden: { opacity: 0, y: 36 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94] } },
+  hidden: { opacity: 0, y: 32, rotateX: 10, transformPerspective: 1200 },
+  visible: { opacity: 1, y: 0, rotateX: 0, transformPerspective: 1200, transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] } },
 }
 const slideLeft = {
-  hidden: { opacity: 0, x: -28 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94] } },
+  hidden: { opacity: 0, x: -24, rotateY: -8, transformPerspective: 1200 },
+  visible: { opacity: 1, x: 0, rotateY: 0, transformPerspective: 1200, transition: { duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94] } },
 }
 
 interface Props { scrollRef: RefObject<HTMLDivElement> }

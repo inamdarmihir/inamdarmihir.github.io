@@ -1,5 +1,5 @@
-import { RefObject } from 'react'
-import { motion } from 'framer-motion'
+import { RefObject, useRef, ReactNode } from 'react'
+import { motion, useMotionValue, useSpring } from 'framer-motion'
 import { ExternalLink, Github } from 'lucide-react'
 
 const PROJECTS = [
@@ -33,8 +33,43 @@ const PROJECTS = [
 ]
 
 const reveal = {
-  hidden: { opacity: 0, y: 36 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94] } },
+  hidden: { opacity: 0, y: 32, rotateX: 10, transformPerspective: 1200 },
+  visible: { opacity: 1, y: 0, rotateX: 0, transformPerspective: 1200, transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] } },
+}
+
+function TiltCard({ children, className, style, motionProps }: {
+  children: ReactNode
+  className?: string
+  style?: React.CSSProperties
+  motionProps?: Record<string, unknown>
+}) {
+  const ref = useRef<HTMLDivElement>(null)
+  const rx = useMotionValue(0)
+  const ry = useMotionValue(0)
+  const springRx = useSpring(rx, { stiffness: 260, damping: 22, mass: 0.5 })
+  const springRy = useSpring(ry, { stiffness: 260, damping: 22, mass: 0.5 })
+
+  return (
+    <div style={{ perspective: '900px' }}>
+      <motion.div
+        ref={ref}
+        className={className}
+        style={{ rotateX: springRx, rotateY: springRy, ...style }}
+        onMouseMove={(e) => {
+          if (!ref.current) return
+          const rect = ref.current.getBoundingClientRect()
+          const dx = ((e.clientX - rect.left) / rect.width - 0.5) * 2
+          const dy = ((e.clientY - rect.top) / rect.height - 0.5) * 2
+          ry.set(dx * 9)
+          rx.set(-dy * 6)
+        }}
+        onMouseLeave={() => { rx.set(0); ry.set(0) }}
+        {...motionProps}
+      >
+        {children}
+      </motion.div>
+    </div>
+  )
 }
 
 interface Props { scrollRef: RefObject<HTMLDivElement> }
@@ -58,17 +93,17 @@ export default function Projects({ scrollRef }: Props) {
       {/* Grid */}
       <div className="grid md:grid-cols-2 gap-4">
         {PROJECTS.map((project, i) => (
-          <motion.div
+          <TiltCard
             key={project.name}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ ...vp, margin: '-40px' }}
-            variants={{ hidden: { opacity: 0, y: 32 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: (i % 2) * 0.06, ease: [0.25, 0.46, 0.45, 0.94] } } }}
-            className="group flex flex-col rounded-2xl p-5"
-            style={{ background: '#0f0f0f', border: '1px solid rgba(255,255,255,0.07)', transition: 'border-color 0.25s, transform 0.25s' }}
-            whileHover={{ y: -4, transition: { duration: 0.2 } }}
-            onHoverStart={e => (e.target as HTMLElement).closest('.group')?.setAttribute('style', 'background:#0f0f0f;border:1px solid rgba(255,255,255,0.17);transform:translateY(-4px);')}
-            onHoverEnd={e => (e.target as HTMLElement).closest('.group')?.setAttribute('style', 'background:#0f0f0f;border:1px solid rgba(255,255,255,0.07);transform:translateY(0);')}
+            className="group flex flex-col rounded-2xl p-5 cursor-default"
+            style={{ background: '#0f0f0f', border: '1px solid rgba(255,255,255,0.07)' }}
+            motionProps={{
+              initial: { opacity: 0, y: 32, rotateX: 8, transformPerspective: 900 },
+              whileInView: { opacity: 1, y: 0, rotateX: 0 },
+              viewport: { ...vp, margin: '-40px' },
+              transition: { duration: 0.6, delay: (i % 2) * 0.08, ease: [0.25, 0.46, 0.45, 0.94] },
+              whileHover: { borderColor: 'rgba(255,255,255,0.18)' },
+            }}
           >
             {/* Top row */}
             <div className="flex items-start justify-between mb-4">
@@ -134,7 +169,7 @@ export default function Projects({ scrollRef }: Props) {
                 </span>
               )}
             </div>
-          </motion.div>
+          </TiltCard>
         ))}
       </div>
 
