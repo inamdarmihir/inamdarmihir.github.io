@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, ReactNode } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Terminal as TerminalIcon, Github, Linkedin, Mail, BookOpen, Code2, Globe, GraduationCap } from 'lucide-react'
 
@@ -9,7 +9,7 @@ interface DockProps {
 
 interface DockItem {
   id: string
-  icon: React.ReactNode
+  icon: ReactNode
   label: string
   color: string
   onClick?: () => void

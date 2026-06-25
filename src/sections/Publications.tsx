@@ -61,7 +61,7 @@ export default function Publications({ scrollRef }: Props) {
             variants={{ hidden: { opacity: 0, y: 28, rotateX: 9, transformPerspective: 1200 }, visible: { opacity: 1, y: 0, rotateX: 0, transformPerspective: 1200, transition: { duration: 0.65, delay: i * 0.1 } } }}
             className="group rounded-2xl p-6"
             style={{ background: '#0f0f0f', border: '1px solid rgba(255,255,255,0.07)', transition: 'border-color 0.25s' }}
-            whileHover={{ borderColor: 'rgba(255,255,255,0.16)' } as never}
+            whileHover={{ borderColor: 'rgba(255,255,255,0.16)' } as object}
           >
             <div className="flex items-start gap-5">
               {/* Icon */}

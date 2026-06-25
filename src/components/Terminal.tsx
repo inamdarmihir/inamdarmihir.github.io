@@ -89,23 +89,31 @@ export default function Terminal({ onClose }: TerminalProps) {
       setIsTyping(true)
       setCurrentText('')
       let i = 0
+      let cancelled = false
+      let timerId: ReturnType<typeof setTimeout>
+
       const typeChar = () => {
+        if (cancelled) return
         if (i <= line.text.length) {
           setCurrentText(line.text.slice(0, i))
           i++
           const delay = 25 + Math.random() * 30
-          setTimeout(typeChar, delay)
+          timerId = setTimeout(typeChar, delay)
         } else {
           setIsTyping(false)
-          setTimeout(() => {
+          timerId = setTimeout(() => {
+            if (cancelled) return
             setVisibleLines(prev => [...prev, line])
             setCurrentText('')
             setCurrentLineIndex(idx => idx + 1)
           }, 200)
         }
       }
-      const t = setTimeout(typeChar, 500)
-      return () => clearTimeout(t)
+      timerId = setTimeout(typeChar, 500)
+      return () => {
+        cancelled = true
+        clearTimeout(timerId)
+      }
     }
   }, [currentLineIndex])
 

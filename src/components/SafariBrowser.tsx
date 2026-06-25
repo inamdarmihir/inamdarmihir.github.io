@@ -74,7 +74,10 @@ export default function SafariBrowser() {
     const container = contentRef.current
     if (!container) return
     const el = container.querySelector(`#${id}`) as HTMLElement
-    if (el) container.scrollTo({ top: el.offsetTop, behavior: 'smooth' })
+    if (el) {
+      const top = el.getBoundingClientRect().top - container.getBoundingClientRect().top + container.scrollTop
+      container.scrollTo({ top, behavior: 'smooth' })
+    }
   }
 
   const url = `inamdarmihir.github.io/${activeSection === 'home' ? '' : activeSection}`

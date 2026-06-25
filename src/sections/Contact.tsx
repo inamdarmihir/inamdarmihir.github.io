@@ -111,7 +111,7 @@ export default function Contact({ scrollRef }: Props) {
               rel="noopener noreferrer"
               className="group flex items-center gap-4 p-4 rounded-xl transition-all"
               style={{ background: '#0f0f0f', border: '1px solid rgba(255,255,255,0.07)' }}
-              whileHover={{ borderColor: 'rgba(255,255,255,0.18)' } as never}
+              whileHover={{ borderColor: 'rgba(255,255,255,0.18)' } as object}
             >
               <div
                 className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-all group-hover:scale-110"

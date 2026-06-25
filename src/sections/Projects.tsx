@@ -9,6 +9,7 @@ const PROJECTS = [
     description: 'Agentic Text-to-SQL system with modular agent architecture: discrete nodes for intent classification, schema retrieval, SQL generation, safety validation, execution, and result summarisation. Layered semantic query caching over Qdrant to short-circuit redundant LLM calls at scale.',
     tech: ['FastAPI', 'Azure OpenAI', 'Qdrant', 'SQL Server', 'Agent Pipeline', 'LLM'],
     github: 'https://github.com/inamdarmihir',
+    demo: undefined as string | undefined,
     category: 'Agentic AI',
     featured: true,
   },
@@ -18,6 +19,7 @@ const PROJECTS = [
     description: 'Voice-first agentic RAG system for document risk analysis. Full-stack pipeline from ingestion to response: PDF chunking and clause-level embedding, hybrid retrieval with pre-tagged risk signals, and a real-time conversational interface over FastAPI + React + WebSocket.',
     tech: ['RAG', 'Qdrant', 'FastAPI', 'React', 'Docker', 'Embeddings', 'LLM', 'NLP'],
     github: 'https://github.com/inamdarmihir',
+    demo: undefined as string | undefined,
     category: 'RAG System',
     featured: true,
   },
@@ -27,6 +29,7 @@ const PROJECTS = [
     description: 'Secure execution runtime for AI agents built from OS primitives. Implemented isolation using Docker and Linux namespaces with independently configurable CPU, memory, process, network, timeout, and filesystem controls — the safe execution layer under any agentic framework.',
     tech: ['Docker', 'Linux Namespaces', 'Agent Infrastructure', 'Python'],
     github: 'https://github.com/inamdarmihir',
+    demo: undefined as string | undefined,
     category: 'Infrastructure',
     featured: true,
   },
@@ -137,15 +140,17 @@ export default function Projects({ scrollRef }: Props) {
                 >
                   <Github size={13} />
                 </a>
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-1.5 rounded-lg text-white/25 hover:text-white/70 transition-colors"
-                  style={{ background: 'rgba(255,255,255,0.04)' }}
-                >
-                  <ExternalLink size={13} />
-                </a>
+                {project.demo && (
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-1.5 rounded-lg text-white/25 hover:text-white/70 transition-colors"
+                    style={{ background: 'rgba(255,255,255,0.04)' }}
+                  >
+                    <ExternalLink size={13} />
+                  </a>
+                )}
               </div>
             </div>
 
