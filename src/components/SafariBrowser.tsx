@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, useCallback, ReactNode, RefObject } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { ChevronLeft, ChevronRight, RotateCw, Share, Plus, Lock, Grid3X3 } from 'lucide-react'
 import Hero from '../sections/Hero'
 import About from '../sections/About'
@@ -21,22 +21,16 @@ const SECTIONS = [
 
 // Each non-hero section rotates in from depth as it enters the viewport
 function Section3D({ children, scrollRef }: { children: ReactNode; scrollRef: RefObject<HTMLDivElement> }) {
-  const ref = useRef<HTMLDivElement>(null)
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    container: scrollRef,
-    offset: ['start end', 'end start'],
-  })
-  const rotateX = useTransform(scrollYProgress, [0, 0.22, 0.78, 1], [24, 0, 0, -10])
-  const opacity  = useTransform(scrollYProgress, [0, 0.18, 0.82, 1], [0,  1,  1,  0.35])
-  const scale    = useTransform(scrollYProgress, [0, 0.22, 0.78, 1], [0.88, 1, 1, 0.96])
-
   return (
-    <div ref={ref} style={{ perspective: '1100px' }}>
-      <motion.div style={{ rotateX, opacity, scale }}>
-        {children}
-      </motion.div>
-    </div>
+    <motion.div
+      initial={{ opacity: 0, rotateX: 24, scale: 0.88 }}
+      whileInView={{ opacity: 1, rotateX: 0, scale: 1 }}
+      viewport={{ root: scrollRef, once: true, margin: '-5%' }}
+      transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+      style={{ perspective: '1100px' }}
+    >
+      {children}
+    </motion.div>
   )
 }
 
