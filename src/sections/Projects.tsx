@@ -84,10 +84,10 @@ export default function Projects({ scrollRef }: Props) {
     <div className="max-w-4xl mx-auto px-8 md:px-14 py-24">
       {/* Header */}
       <motion.div initial="hidden" whileInView="visible" viewport={vp} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }} className="mb-16">
-        <motion.span variants={reveal} className="text-[10px] font-mono text-white/20 tracking-[0.4em] uppercase">
+        <motion.span variants={reveal} className="text-[10px] font-mono text-macos-subtext0 tracking-[0.4em] uppercase">
           04 — Portfolio
         </motion.span>
-        <motion.h2 variants={reveal} className="font-black text-white mt-3 leading-none" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>
+        <motion.h2 variants={reveal} className="font-black text-macos-text mt-3 leading-none" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>
           Featured Projects.
         </motion.h2>
         <motion.div variants={reveal} className="section-line mt-5 max-w-xs" />
@@ -98,45 +98,40 @@ export default function Projects({ scrollRef }: Props) {
         {PROJECTS.map((project, i) => (
           <TiltCard
             key={project.name}
-            className="group flex flex-col rounded-2xl p-5 cursor-default"
-            style={{ background: '#0f0f0f', border: '1px solid rgba(255,255,255,0.07)' }}
+            className="group flex flex-col rounded-2xl p-5 cursor-default bg-macos-surface border border-macos-borderLight/30 hover:border-macos-borderLight/80 transition-colors"
             motionProps={{
               initial: { opacity: 0, y: 32, rotateX: 8, transformPerspective: 900 },
               whileInView: { opacity: 1, y: 0, rotateX: 0 },
               viewport: { ...vp, margin: '-40px' },
               transition: { duration: 0.6, delay: (i % 2) * 0.08, ease: [0.25, 0.46, 0.45, 0.94] },
-              whileHover: { borderColor: 'rgba(255,255,255,0.18)' },
             }}
           >
             {/* Top row */}
             <div className="flex items-start justify-between mb-4">
               <div>
                 <div className="flex items-center gap-3 mb-2">
-                  <span className="text-[10px] font-mono text-white/15">{project.num}</span>
+                  <span className="text-[10px] font-mono text-macos-subtext0">{project.num}</span>
                   <span
-                    className="text-[10px] px-2 py-0.5 rounded-full font-mono text-white/35"
-                    style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}
+                    className="text-[10px] px-2 py-0.5 rounded-full font-mono text-macos-subtext bg-macos-overlay/50 border border-macos-borderLight/30"
                   >
                     {project.category}
                   </span>
                   {project.featured && (
                     <span
-                      className="text-[10px] px-2 py-0.5 rounded-full font-mono text-white/50"
-                      style={{ background: 'rgba(255,255,255,0.08)' }}
+                      className="text-[10px] px-2 py-0.5 rounded-full font-mono text-macos-text bg-macos-overlay"
                     >
                       Featured
                     </span>
                   )}
                 </div>
-                <h3 className="text-base font-bold text-white/90">{project.name}</h3>
+                <h3 className="text-base font-bold text-macos-text">{project.name}</h3>
               </div>
               <div className="flex items-center gap-1.5 flex-shrink-0 ml-3">
                 <a
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-1.5 rounded-lg text-white/25 hover:text-white/70 transition-colors"
-                  style={{ background: 'rgba(255,255,255,0.04)' }}
+                  className="p-1.5 rounded-lg text-macos-subtext0 hover:text-macos-text transition-colors bg-macos-overlay/30"
                 >
                   <Github size={13} />
                 </a>
@@ -145,8 +140,7 @@ export default function Projects({ scrollRef }: Props) {
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-1.5 rounded-lg text-white/25 hover:text-white/70 transition-colors"
-                    style={{ background: 'rgba(255,255,255,0.04)' }}
+                    className="p-1.5 rounded-lg text-macos-subtext0 hover:text-macos-text transition-colors bg-macos-overlay/30"
                   >
                     <ExternalLink size={13} />
                   </a>
@@ -155,21 +149,20 @@ export default function Projects({ scrollRef }: Props) {
             </div>
 
             {/* Description */}
-            <p className="text-white/45 text-xs leading-relaxed flex-1 mb-4">{project.description}</p>
+            <p className="text-macos-subtext text-xs leading-relaxed flex-1 mb-4">{project.description}</p>
 
             {/* Tech tags */}
             <div className="flex flex-wrap gap-1.5">
               {project.tech.slice(0, 4).map((t) => (
                 <span
                   key={t}
-                  className="text-[10px] px-1.5 py-0.5 rounded font-mono text-white/30"
-                  style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)' }}
+                  className="text-[10px] px-1.5 py-0.5 rounded font-mono text-macos-subtext0 bg-macos-overlay/30 border border-macos-borderLight/20"
                 >
                   {t}
                 </span>
               ))}
               {project.tech.length > 4 && (
-                <span className="text-[10px] px-1.5 py-0.5 rounded font-mono text-white/20">
+                <span className="text-[10px] px-1.5 py-0.5 rounded font-mono text-macos-subtext0/50">
                   +{project.tech.length - 4}
                 </span>
               )}
@@ -187,8 +180,7 @@ export default function Projects({ scrollRef }: Props) {
           href="https://github.com/inamdarmihir"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm text-white/50 hover:text-white/80 transition-all hover:scale-[1.03]"
-          style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm text-macos-subtext hover:text-macos-text transition-all hover:scale-[1.03] bg-macos-surface border border-macos-borderLight/40"
         >
           <Github size={14} />
           View all on GitHub

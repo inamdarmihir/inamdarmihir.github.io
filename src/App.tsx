@@ -22,7 +22,7 @@ export default function App() {
 
   return (
     <MotionConfig reducedMotion="user">
-    <div className="w-full h-screen overflow-hidden relative select-none" style={{ background: '#000' }}>
+    <div className="w-full h-screen overflow-hidden relative select-none bg-macos-crust text-macos-text">
 
       {/* Desktop background */}
       <div className="absolute inset-0">
@@ -30,19 +30,17 @@ export default function App() {
           className="absolute inset-0"
           style={{
             background: `
-              radial-gradient(ellipse 80% 60% at 10% 10%, rgba(255,255,255,0.032) 0%, transparent 60%),
-              radial-gradient(ellipse 60% 70% at 90% 90%, rgba(255,255,255,0.022) 0%, transparent 60%),
-              radial-gradient(ellipse 40% 40% at 50% 50%, rgba(255,255,255,0.01) 0%, transparent 70%),
-              #000
+              radial-gradient(ellipse 80% 60% at 10% 10%, rgba(137, 180, 250, 0.05) 0%, transparent 60%),
+              radial-gradient(ellipse 60% 70% at 90% 90%, rgba(203, 166, 247, 0.04) 0%, transparent 60%),
+              radial-gradient(ellipse 40% 40% at 50% 50%, rgba(148, 226, 213, 0.02) 0%, transparent 70%)
             `,
           }}
         />
         {/* Dot grid */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 opacity-10"
           style={{
-            opacity: 0.12,
-            backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.045) 1px, transparent 0)`,
+            backgroundImage: `radial-gradient(circle at 1px 1px, rgba(205, 214, 244, 0.08) 1px, transparent 0)`,
             backgroundSize: '32px 32px',
           }}
         />
@@ -51,11 +49,10 @@ export default function App() {
       {/* macOS Notch */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 z-[100] pointer-events-none">
         <div
-          className="w-36 h-7 bg-black rounded-b-2xl flex items-center justify-center gap-2"
-          style={{ boxShadow: '0 2px 20px rgba(0,0,0,0.9)' }}
+          className="w-36 h-7 bg-macos-crust rounded-b-2xl flex items-center justify-center gap-2 shadow-[0_2px_20px_rgba(0,0,0,0.9)]"
         >
-          <div className="w-1.5 h-1.5 rounded-full bg-[#1a1a1a] border border-[#2a2a2a]" />
-          <div className="w-8 h-0.5 rounded-full bg-[#1a1a1a]" />
+          <div className="w-1.5 h-1.5 rounded-full bg-macos-overlay border border-macos-border" />
+          <div className="w-8 h-0.5 rounded-full bg-macos-overlay" />
         </div>
       </div>
 
@@ -78,11 +75,7 @@ export default function App() {
               rotateY: mouse.x * 3.5,
             }}
             transition={{ type: 'spring', stiffness: 55, damping: 20 }}
-            className="w-full h-full rounded-xl overflow-hidden window-shadow"
-            style={{
-              background: '#0a0a0a',
-              border: '1px solid rgba(255,255,255,0.08)',
-            }}
+            className="w-full h-full rounded-xl overflow-hidden window-shadow bg-macos-bg border border-macos-border"
           >
             <SafariBrowser />
           </motion.div>

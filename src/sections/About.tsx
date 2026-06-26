@@ -25,11 +25,11 @@ export default function About({ scrollRef }: Props) {
         variants={stagger}
         className="mb-16"
       >
-        <motion.span variants={reveal} className="text-[10px] font-mono text-white/20 tracking-[0.4em] uppercase">
+        <motion.span variants={reveal} className="text-[10px] font-mono text-macos-subtext0 tracking-[0.4em] uppercase">
           02 — About
         </motion.span>
         <motion.div variants={reveal} className="flex items-end gap-4 mt-3">
-          <h2 className="font-black text-white leading-none" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>
+          <h2 className="font-black text-macos-text leading-none" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>
             Who I Am.
           </h2>
         </motion.div>
@@ -43,27 +43,27 @@ export default function About({ scrollRef }: Props) {
         className="grid md:grid-cols-5 gap-10 mb-16"
       >
         <div className="md:col-span-3 space-y-5">
-          <motion.p variants={reveal} className="text-white/55 leading-[1.85] text-[15px]">
+          <motion.p variants={reveal} className="text-macos-subtext leading-[1.85] text-[15px]">
             My journey into AI started with a simple question:{' '}
-            <span className="text-white/85 font-medium">how do machines understand human language?</span> That curiosity
+            <span className="text-macos-text font-medium">how do machines understand human language?</span> That curiosity
             led me deep into NLP, machine learning, and ultimately a research fellowship at{' '}
-            <span className="text-white/85 font-medium">CVIT, IIIT Hyderabad</span> — one of India's premier
+            <span className="text-macos-text font-medium">CVIT, IIIT Hyderabad</span> — one of India's premier
             computer vision labs — where I co-invented a patent-pending document layout analysis system.
           </motion.p>
-          <motion.p variants={reveal} className="text-white/55 leading-[1.85] text-[15px]">
-            At <span className="text-white/85 font-medium">Quoppo Ventures</span>, I designed hybrid LSTM-MeshNet
+          <motion.p variants={reveal} className="text-macos-subtext leading-[1.85] text-[15px]">
+            At <span className="text-macos-text font-medium">Quoppo Ventures</span>, I designed hybrid LSTM-MeshNet
             architectures for 3D positioning and rebuilt GAN training pipelines, achieving a{' '}
-            <span className="text-white/85 font-medium">30% accuracy improvement</span> over SOTA while establishing
+            <span className="text-macos-text font-medium">30% accuracy improvement</span> over SOTA while establishing
             a reproducible MLOps foundation across a 3-engineer team.
           </motion.p>
-          <motion.p variants={reveal} className="text-white/55 leading-[1.85] text-[15px]">
-            Currently at <span className="text-white/85 font-medium">Sutherland Global Services</span>, I architect
-            end-to-end <span className="text-white/85 font-medium">RLHF pipelines</span> for Text-to-SQL and
+          <motion.p variants={reveal} className="text-macos-subtext leading-[1.85] text-[15px]">
+            Currently at <span className="text-macos-text font-medium">Sutherland Global Services</span>, I architect
+            end-to-end <span className="text-macos-text font-medium">RLHF pipelines</span> for Text-to-SQL and
             multi-stage agentic inference systems with quantized LLM serving — cutting latency 60% at F1 &gt; 0.95
             and serving 10K+ daily transactions on AWS.
           </motion.p>
-          <motion.p variants={reveal} className="text-white/55 leading-[1.85] text-[15px]">
-            Beyond work, I'm a <span className="text-white/85 font-medium">Qdrant Star</span> open-source developer
+          <motion.p variants={reveal} className="text-macos-subtext leading-[1.85] text-[15px]">
+            Beyond work, I'm a <span className="text-macos-text font-medium">Qdrant Star</span> open-source developer
             advocate, have published at IEEE and Springer, and continuously push the frontiers of agentic AI and
             retrieval systems.
           </motion.p>
@@ -73,8 +73,7 @@ export default function About({ scrollRef }: Props) {
         <div className="md:col-span-2 space-y-4">
           <motion.div variants={reveal}>
             <div
-              className="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-5"
-              style={{ border: '1px solid rgba(255,255,255,0.08)' }}
+              className="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-5 border border-macos-borderLight/30"
             >
               <img
                 src="/avatar.jpg"
@@ -98,18 +97,16 @@ export default function About({ scrollRef }: Props) {
               <motion.div
                 key={label}
                 variants={reveal}
-                className="flex items-center gap-3 p-3 rounded-xl"
-                style={{ background: '#111', border: '1px solid rgba(255,255,255,0.06)' }}
+                className="flex items-center gap-3 p-3 rounded-xl bg-macos-surface border border-macos-borderLight/30"
               >
                 <div
-                  className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
-                  style={{ background: 'rgba(255,255,255,0.05)' }}
+                  className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 bg-macos-overlay/50"
                 >
-                  <Icon size={13} className="text-white/50" />
+                  <Icon size={13} className="text-macos-subtext" />
                 </div>
                 <div>
-                  <div className="text-[10px] text-white/25 uppercase tracking-wider font-mono">{label}</div>
-                  <div className="text-white/75 text-sm mt-0.5">{value}</div>
+                  <div className="text-[10px] text-macos-subtext0 uppercase tracking-wider font-mono">{label}</div>
+                  <div className="text-macos-text text-sm mt-0.5">{value}</div>
                 </div>
               </motion.div>
             ))}
@@ -125,10 +122,9 @@ export default function About({ scrollRef }: Props) {
       >
         <motion.div
           variants={reveal}
-          className="p-6 rounded-2xl"
-          style={{ background: '#111', border: '1px solid rgba(255,255,255,0.07)' }}
+          className="p-6 rounded-2xl bg-macos-surface border border-macos-borderLight/30 hover:border-macos-borderLight/80 transition-colors"
         >
-          <h3 className="text-[11px] font-mono text-white/30 uppercase tracking-widest mb-5">Certifications</h3>
+          <h3 className="text-[11px] font-mono text-macos-subtext0 uppercase tracking-widest mb-5">Certifications</h3>
           <div className="space-y-4">
             {[
               { title: 'Neo4j Certified Professional', org: '2025' },
@@ -139,10 +135,10 @@ export default function About({ scrollRef }: Props) {
               { title: 'NVIDIA DLI C-FX-01', org: 'NVIDIA · 2021' },
             ].map(({ title, org }) => (
               <div key={title} className="flex items-start gap-3">
-                <div className="w-1 h-1 rounded-full bg-white/30 mt-2 flex-shrink-0" />
+                <div className="w-1 h-1 rounded-full bg-macos-subtext0 mt-2 flex-shrink-0" />
                 <div>
-                  <div className="text-white/75 text-sm font-medium">{title}</div>
-                  <div className="text-white/30 text-xs mt-0.5 font-mono">{org}</div>
+                  <div className="text-macos-text text-sm font-medium">{title}</div>
+                  <div className="text-macos-subtext0 text-xs mt-0.5 font-mono">{org}</div>
                 </div>
               </div>
             ))}
@@ -151,10 +147,9 @@ export default function About({ scrollRef }: Props) {
 
         <motion.div
           variants={reveal}
-          className="p-6 rounded-2xl"
-          style={{ background: '#111', border: '1px solid rgba(255,255,255,0.07)' }}
+          className="p-6 rounded-2xl bg-macos-surface border border-macos-borderLight/30 hover:border-macos-borderLight/80 transition-colors"
         >
-          <h3 className="text-[11px] font-mono text-white/30 uppercase tracking-widest mb-5">Research Highlights</h3>
+          <h3 className="text-[11px] font-mono text-macos-subtext0 uppercase tracking-widest mb-5">Research Highlights</h3>
           <div className="space-y-4">
             {[
               'Patent-pending document layout analysis system — Vision Transformers + geometric constraints',
@@ -165,8 +160,8 @@ export default function About({ scrollRef }: Props) {
               '90.8% accuracy at IndoML 2022, IIT Gandhinagar',
             ].map((highlight) => (
               <div key={highlight} className="flex items-start gap-3">
-                <span className="text-white/40 mt-0.5 flex-shrink-0 text-xs">✓</span>
-                <span className="text-white/60 text-sm leading-snug">{highlight}</span>
+                <span className="text-macos-green mt-0.5 flex-shrink-0 text-xs">✓</span>
+                <span className="text-macos-subtext text-sm leading-snug">{highlight}</span>
               </div>
             ))}
           </div>

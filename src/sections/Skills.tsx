@@ -85,13 +85,13 @@ function SkillBar({ name, level, scrollRef, delay }: { name: string; level: numb
   return (
     <div>
       <div className="flex items-center justify-between mb-1.5">
-        <span className="text-xs text-white/55 font-mono">{name}</span>
-        <span className="text-xs text-white/20 font-mono">{level}%</span>
+        <span className="text-xs text-macos-subtext font-mono">{name}</span>
+        <span className="text-xs text-macos-subtext0/50 font-mono">{level}%</span>
       </div>
-      <div className="h-[3px] rounded-full overflow-hidden" style={{ background: 'rgba(255,255,255,0.05)' }}>
+      <div className="h-[3px] rounded-full overflow-hidden bg-macos-overlay/30">
         <motion.div
           className="h-full rounded-full"
-          style={{ background: `linear-gradient(90deg, rgba(255,255,255,0.2), rgba(255,255,255,0.75))` }}
+          style={{ background: `linear-gradient(90deg, rgba(137,180,250,0.5), rgba(166,227,161,0.8))` }}
           initial={{ width: 0 }}
           whileInView={{ width: `${level}%` }}
           transition={{ duration: 1.1, delay, ease: [0.25, 0.46, 0.45, 0.94] }}
@@ -109,10 +109,10 @@ export default function Skills({ scrollRef }: Props) {
     <div className="max-w-4xl mx-auto px-8 md:px-14 py-24">
       {/* Header */}
       <motion.div initial="hidden" whileInView="visible" viewport={vp} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }} className="mb-16">
-        <motion.span variants={reveal} className="text-[10px] font-mono text-white/20 tracking-[0.4em] uppercase">
+        <motion.span variants={reveal} className="text-[10px] font-mono text-macos-subtext0 tracking-[0.4em] uppercase">
           05 — Expertise
         </motion.span>
-        <motion.h2 variants={reveal} className="font-black text-white mt-3 leading-none" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>
+        <motion.h2 variants={reveal} className="font-black text-macos-text mt-3 leading-none" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>
           Skills & Stack.
         </motion.h2>
         <motion.div variants={reveal} className="section-line mt-5 max-w-xs" />
@@ -127,12 +127,11 @@ export default function Skills({ scrollRef }: Props) {
             whileInView="visible"
             viewport={{ ...vp, margin: '-40px' }}
             variants={{ hidden: { opacity: 0, y: 24, rotateX: 9, transformPerspective: 1200 }, visible: { opacity: 1, y: 0, rotateX: 0, transformPerspective: 1200, transition: { duration: 0.65, delay: (gi % 2) * 0.08 } } }}
-            className="p-5 rounded-2xl"
-            style={{ background: '#0f0f0f', border: '1px solid rgba(255,255,255,0.07)' }}
+            className="p-5 rounded-2xl bg-macos-surface border border-macos-borderLight/30"
           >
             <div className="flex items-center gap-2.5 mb-5">
-              <div className="w-0.5 h-4 rounded-full bg-white/25" />
-              <h3 className="text-[11px] font-mono text-white/45 uppercase tracking-widest">{group.category}</h3>
+              <div className="w-0.5 h-4 rounded-full bg-macos-subtext0" />
+              <h3 className="text-[11px] font-mono text-macos-subtext uppercase tracking-widest">{group.category}</h3>
             </div>
             <div className="space-y-3.5">
               {group.skills.map((skill, si) => (
@@ -155,10 +154,9 @@ export default function Skills({ scrollRef }: Props) {
         whileInView="visible"
         viewport={vp}
         variants={reveal}
-        className="p-6 rounded-2xl"
-        style={{ background: '#0f0f0f', border: '1px solid rgba(255,255,255,0.07)' }}
+        className="p-6 rounded-2xl bg-macos-surface border border-macos-borderLight/30"
       >
-        <h3 className="text-[11px] font-mono text-white/25 uppercase tracking-widest mb-5">All Technologies</h3>
+        <h3 className="text-[11px] font-mono text-macos-subtext0 uppercase tracking-widest mb-5">All Technologies</h3>
         <div className="flex flex-wrap gap-2">
           {ALL_TECH.map((tech, i) => (
             <motion.span
@@ -167,9 +165,7 @@ export default function Skills({ scrollRef }: Props) {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: i * 0.025, duration: 0.35 }}
               viewport={{ root: scrollRef, once: true, margin: '-40px' }}
-              className="text-xs px-2.5 py-1 rounded-lg font-mono text-white/40 cursor-default transition-all"
-              style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)' }}
-              whileHover={{ color: 'rgba(255,255,255,0.85)', borderColor: 'rgba(255,255,255,0.18)', background: 'rgba(255,255,255,0.07)' }}
+              className="text-xs px-2.5 py-1 rounded-lg font-mono text-macos-subtext0 cursor-default transition-all bg-macos-overlay/30 border border-macos-borderLight/20 hover:text-macos-text hover:border-macos-borderLight/80 hover:bg-macos-overlay/50"
             >
               {tech}
             </motion.span>

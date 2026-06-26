@@ -172,7 +172,7 @@ export default function Hero({ onNavigate, scrollRef }: HeroProps) {
             position: 'absolute',
             width: 260, height: 260,
             right: '18%', bottom: '12%',
-            background: 'radial-gradient(circle, rgba(200,220,255,0.05) 0%, transparent 65%)',
+            background: 'radial-gradient(circle, rgba(137,180,250,0.05) 0%, transparent 65%)',
             filter: 'blur(2px)',
           }}
           animate={{ scale: [1, 1.2, 1], opacity: [0.4, 0.7, 0.4] }}
@@ -187,7 +187,7 @@ export default function Hero({ onNavigate, scrollRef }: HeroProps) {
         {PARTICLES.map((p, i) => (
           <motion.div
             key={i}
-            className="absolute rounded-full bg-white"
+            className="absolute rounded-full bg-macos-blue"
             style={{ left: `${p.x}%`, top: `${p.y}%`, width: p.s, height: p.s }}
             animate={{ y: [0, -22, 0], opacity: [0.07, 0.32, 0.07] }}
             transition={{ duration: p.d, delay: p.dl, repeat: Infinity, ease: 'easeInOut' }}
@@ -202,7 +202,7 @@ export default function Hero({ onNavigate, scrollRef }: HeroProps) {
         className="absolute left-0 right-0 pointer-events-none"
         style={{
           height: 1,
-          background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.13) 30%, rgba(255,255,255,0.13) 70%, transparent 100%)',
+          background: 'linear-gradient(90deg, transparent 0%, rgba(137,180,250,0.13) 30%, rgba(137,180,250,0.13) 70%, transparent 100%)',
         }}
         animate={{ top: ['0%', '100%'], opacity: [0, 0.85, 0.85, 0] }}
         transition={{
@@ -231,15 +231,14 @@ export default function Hero({ onNavigate, scrollRef }: HeroProps) {
       >
         {/* Section tag */}
         <motion.div {...e3d(0)} className="flex items-center gap-3 mb-14">
-          <span className="text-[10px] font-mono text-white/20 tracking-[0.4em] uppercase">01 — Introduction</span>
-          <div className="h-px w-12 bg-white/10" />
+          <span className="text-[10px] font-mono text-macos-subtext0 tracking-[0.4em] uppercase">01 — Introduction</span>
+          <div className="h-px w-12 bg-macos-borderLight/40" />
         </motion.div>
 
         {/* Avatar + status */}
         <motion.div {...e3d(0.1)} className="flex items-center gap-4 mb-10">
           <motion.div
-            className="w-16 h-16 rounded-2xl overflow-hidden flex-shrink-0"
-            style={{ border: '1px solid rgba(255,255,255,0.12)' }}
+            className="w-16 h-16 rounded-2xl overflow-hidden flex-shrink-0 border border-macos-borderLight/30"
             whileHover={{ scale: 1.06, rotate: 2 }}
             transition={{ type: 'spring', stiffness: 280 }}
           >
@@ -248,13 +247,13 @@ export default function Hero({ onNavigate, scrollRef }: HeroProps) {
           <div>
             <div className="flex items-center gap-2 mb-1">
               <motion.span
-                className="w-1.5 h-1.5 rounded-full bg-white/70"
+                className="w-1.5 h-1.5 rounded-full bg-macos-green"
                 animate={{ opacity: [1, 0.25, 1] }}
                 transition={{ duration: 2.4, repeat: Infinity }}
               />
-              <span className="text-[11px] font-mono text-white/35">Data Scientist · Sutherland Global Services</span>
+              <span className="text-[11px] font-mono text-macos-subtext">Data Scientist · Sutherland Global Services</span>
             </div>
-            <span className="text-[11px] font-mono text-white/20">Chennai, India · Open to Remote</span>
+            <span className="text-[11px] font-mono text-macos-subtext0">Chennai, India · Open to Remote</span>
           </div>
         </motion.div>
 
@@ -264,8 +263,8 @@ export default function Hero({ onNavigate, scrollRef }: HeroProps) {
             initial={{ opacity: 0, y: 50, rotateX: 30, filter: 'blur(8px)' }}
             animate={{ opacity: 1, y: 0,  rotateX: 0,  filter: 'blur(0px)' }}
             transition={{ duration: 1, delay: 0.18, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="font-black leading-[0.9] tracking-tight"
-            style={{ fontSize: 'clamp(3.5rem, 8vw, 6.5rem)', color: '#fff' }}
+            className="font-black leading-[0.9] tracking-tight text-macos-text"
+            style={{ fontSize: 'clamp(3.5rem, 8vw, 6.5rem)' }}
           >
             Mihir
           </motion.h1>
@@ -273,24 +272,24 @@ export default function Hero({ onNavigate, scrollRef }: HeroProps) {
             initial={{ opacity: 0, y: 50, rotateX: 30, filter: 'blur(8px)' }}
             animate={{ opacity: 1, y: 0,  rotateX: 0,  filter: 'blur(0px)' }}
             transition={{ duration: 1, delay: 0.28, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="font-black leading-[0.9] tracking-tight"
-            style={{ fontSize: 'clamp(3.5rem, 8vw, 6.5rem)', color: 'rgba(255,255,255,0.18)' }}
+            className="font-black leading-[0.9] tracking-tight text-macos-subtext/50"
+            style={{ fontSize: 'clamp(3.5rem, 8vw, 6.5rem)' }}
           >
             Inamdar.
           </motion.h1>
         </div>
 
         {/* Role ticker */}
-        <motion.div {...e3d(0.36)} className="text-xl text-white/35 mb-6 h-8 font-medium">
+        <motion.div {...e3d(0.36)} className="text-xl text-macos-subtext mb-6 h-8 font-medium">
           <AnimatedRole roles={ROLES} />
         </motion.div>
 
         {/* Tagline */}
-        <motion.p {...e3d(0.44)} className="text-base text-white/45 max-w-xl mb-12 leading-[1.75]">
+        <motion.p {...e3d(0.44)} className="text-base text-macos-subtext max-w-xl mb-12 leading-[1.75]">
           Building intelligent systems at the intersection of{' '}
-          <span className="text-white/80 font-medium">RLHF</span>,{' '}
-          <span className="text-white/80 font-medium">Agentic AI</span> &{' '}
-          <span className="text-white/80 font-medium">LLMs</span>. Currently Data Scientist at Sutherland Global Services,
+          <span className="text-macos-text font-medium">RLHF</span>,{' '}
+          <span className="text-macos-text font-medium">Agentic AI</span> &{' '}
+          <span className="text-macos-text font-medium">LLMs</span>. Currently Data Scientist at Sutherland Global Services,
           former Research Fellow at CVIT, IIIT Hyderabad.
         </motion.p>
 
@@ -305,15 +304,13 @@ export default function Hero({ onNavigate, scrollRef }: HeroProps) {
               key={label}
               whileHover={{ scale: 1.06, rotateX: -6, rotateY: 4 }}
               transition={{ type: 'spring', stiffness: 280, damping: 18 }}
-              className="px-5 py-3 rounded-xl cursor-default"
+              className="px-5 py-3 rounded-xl cursor-default bg-macos-surface border border-macos-borderLight/30"
               style={{
-                background: 'rgba(255,255,255,0.04)',
-                border: '1px solid rgba(255,255,255,0.09)',
                 transformPerspective: 500,
               }}
             >
-              <div className="text-4xl font-black text-white leading-none">{value}</div>
-              <div className="text-[11px] text-white/25 uppercase tracking-widest mt-2 font-mono">{label}</div>
+              <div className="text-4xl font-black text-macos-text leading-none">{value}</div>
+              <div className="text-[11px] text-macos-subtext0 uppercase tracking-widest mt-2 font-mono">{label}</div>
             </motion.div>
           ))}
         </motion.div>
@@ -322,18 +319,16 @@ export default function Hero({ onNavigate, scrollRef }: HeroProps) {
         <motion.div {...e3d(0.6)} className="flex flex-wrap gap-3 mb-12">
           <motion.button
             onClick={() => onNavigate('projects')}
-            className="px-6 py-3 text-sm font-semibold rounded-xl text-black"
-            style={{ background: '#fff' }}
-            whileHover={{ scale: 1.04, boxShadow: '0 0 24px rgba(255,255,255,0.3)' }}
+            className="px-6 py-3 text-sm font-semibold rounded-xl text-macos-crust bg-macos-text"
+            whileHover={{ scale: 1.04, boxShadow: '0 0 24px rgba(205,214,244,0.3)' }}
             whileTap={{ scale: 0.96 }}
           >
             View Projects
           </motion.button>
           <motion.button
             onClick={() => onNavigate('contact')}
-            className="px-6 py-3 text-sm font-medium rounded-xl text-white/70"
-            style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}
-            whileHover={{ scale: 1.04, borderColor: 'rgba(255,255,255,0.28)', color: '#fff' }}
+            className="px-6 py-3 text-sm font-medium rounded-xl text-macos-text bg-macos-surface border border-macos-borderLight/30"
+            whileHover={{ scale: 1.04, borderColor: 'rgba(205,214,244,0.28)', color: '#cdd6f4' }}
             whileTap={{ scale: 0.96 }}
           >
             Get in Touch
@@ -342,9 +337,8 @@ export default function Hero({ onNavigate, scrollRef }: HeroProps) {
             href="/Inamdar_Mihir_CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-xl text-white/70"
-            style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}
-            whileHover={{ scale: 1.04, borderColor: 'rgba(255,255,255,0.28)', color: '#fff' }}
+            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-xl text-macos-text bg-macos-surface border border-macos-borderLight/30"
+            whileHover={{ scale: 1.04, borderColor: 'rgba(205,214,244,0.28)', color: '#cdd6f4' }}
             whileTap={{ scale: 0.96 }}
           >
             <FileText size={14} />
@@ -366,9 +360,8 @@ export default function Hero({ onNavigate, scrollRef }: HeroProps) {
               target={href.startsWith('mailto') ? undefined : '_blank'}
               rel="noopener noreferrer"
               title={label}
-              className="p-2.5 rounded-xl text-white/30"
-              style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)' }}
-              whileHover={{ scale: 1.15, color: '#fff', borderColor: 'rgba(255,255,255,0.2)' }}
+              className="p-2.5 rounded-xl text-macos-subtext bg-macos-surface border border-macos-borderLight/30"
+              whileHover={{ scale: 1.15, color: '#cdd6f4', borderColor: 'rgba(205,214,244,0.2)' }}
               whileTap={{ scale: 0.9 }}
             >
               <Icon size={16} />
@@ -383,7 +376,7 @@ export default function Hero({ onNavigate, scrollRef }: HeroProps) {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.4 }}
         onClick={() => onNavigate('about')}
-        className="absolute bottom-8 left-8 md:left-14 flex items-center gap-2.5 text-white/20 hover:text-white/45 transition-colors"
+        className="absolute bottom-8 left-8 md:left-14 flex items-center gap-2.5 text-macos-subtext0 hover:text-macos-text transition-colors"
       >
         <motion.div animate={{ y: [0, 6, 0] }} transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}>
           <ArrowDown size={13} />

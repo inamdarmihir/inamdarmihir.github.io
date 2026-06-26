@@ -59,10 +59,10 @@ export default function Experience({ scrollRef }: Props) {
     <div className="max-w-4xl mx-auto px-8 md:px-14 py-24">
       {/* Header */}
       <motion.div initial="hidden" whileInView="visible" viewport={vp} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }} className="mb-16">
-        <motion.span variants={reveal} className="text-[10px] font-mono text-white/20 tracking-[0.4em] uppercase">
+        <motion.span variants={reveal} className="text-[10px] font-mono text-macos-subtext0 tracking-[0.4em] uppercase">
           03 — Experience
         </motion.span>
-        <motion.h2 variants={reveal} className="font-black text-white mt-3 leading-none" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>
+        <motion.h2 variants={reveal} className="font-black text-macos-text mt-3 leading-none" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>
           Where I've Been.
         </motion.h2>
         <motion.div variants={reveal} className="section-line mt-5 max-w-xs" />
@@ -72,8 +72,7 @@ export default function Experience({ scrollRef }: Props) {
       <div className="relative">
         {/* Vertical line */}
         <div
-          className="absolute left-[7px] top-4 bottom-4 w-px"
-          style={{ background: 'linear-gradient(to bottom, rgba(255,255,255,0.15), rgba(255,255,255,0.02))' }}
+          className="absolute left-[7px] top-4 bottom-4 w-px bg-gradient-to-b from-macos-borderLight/50 to-transparent"
         />
 
         <div className="space-y-8">
@@ -89,39 +88,34 @@ export default function Experience({ scrollRef }: Props) {
               {/* Timeline dot */}
               <motion.div
                 variants={reveal}
-                className="absolute left-0 top-7 w-[15px] h-[15px] rounded-full flex items-center justify-center"
-                style={{ background: '#000', border: '1px solid rgba(255,255,255,0.25)' }}
+                className="absolute left-0 top-7 w-[15px] h-[15px] rounded-full flex items-center justify-center bg-macos-crust border border-macos-borderLight/50"
               >
-                <div className="w-[5px] h-[5px] rounded-full bg-white/70" />
+                <div className="w-[5px] h-[5px] rounded-full bg-macos-blue" />
               </motion.div>
 
               {/* Card */}
               <motion.div
                 variants={slideLeft}
-                className="rounded-2xl p-6"
-                style={{ background: '#0f0f0f', border: '1px solid rgba(255,255,255,0.07)' }}
-                whileHover={{ borderColor: 'rgba(255,255,255,0.16)' }}
-                transition={{ duration: 0.2 }}
+                className="rounded-2xl p-6 bg-macos-surface border border-macos-borderLight/30 hover:border-macos-borderLight/80 transition-colors duration-200"
               >
                 {/* Header */}
                 <div className="flex flex-wrap items-start justify-between gap-3 mb-5">
                   <div>
                     <span
-                      className="text-[10px] px-2.5 py-1 rounded-full font-mono mb-2.5 inline-block text-white/50"
-                      style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}
+                      className="text-[10px] px-2.5 py-1 rounded-full font-mono mb-2.5 inline-block text-macos-subtext bg-macos-overlay/50 border border-macos-borderLight/30"
                     >
                       {job.type}
                     </span>
-                    <h3 className="text-lg font-bold text-white/90">{job.title}</h3>
+                    <h3 className="text-lg font-bold text-macos-text">{job.title}</h3>
                     <div className="flex items-center gap-2 mt-1.5">
-                      <Briefcase size={11} className="text-white/30" />
-                      <span className="text-white/60 text-sm font-medium">{job.company}</span>
-                      <span className="text-white/15">·</span>
-                      <MapPin size={11} className="text-white/30" />
-                      <span className="text-white/40 text-sm">{job.location}</span>
+                      <Briefcase size={11} className="text-macos-subtext0" />
+                      <span className="text-macos-subtext text-sm font-medium">{job.company}</span>
+                      <span className="text-macos-borderLight">·</span>
+                      <MapPin size={11} className="text-macos-subtext0" />
+                      <span className="text-macos-subtext0 text-sm">{job.location}</span>
                     </div>
                   </div>
-                  <div className="flex items-center gap-1.5 text-white/25 text-xs font-mono">
+                  <div className="flex items-center gap-1.5 text-macos-subtext0 text-xs font-mono">
                     <Calendar size={10} />
                     {job.period}
                   </div>
@@ -130,8 +124,8 @@ export default function Experience({ scrollRef }: Props) {
                 {/* Highlights */}
                 <ul className="space-y-2 mb-5">
                   {job.highlights.map((h) => (
-                    <li key={h} className="flex items-start gap-2.5 text-sm text-white/50">
-                      <ChevronRight size={13} className="text-white/25 mt-0.5 flex-shrink-0" />
+                    <li key={h} className="flex items-start gap-2.5 text-sm text-macos-subtext">
+                      <ChevronRight size={13} className="text-macos-subtext0 mt-0.5 flex-shrink-0" />
                       {h}
                     </li>
                   ))}
@@ -142,8 +136,7 @@ export default function Experience({ scrollRef }: Props) {
                   {job.stack.map((tech) => (
                     <span
                       key={tech}
-                      className="text-[10px] px-2 py-0.5 rounded font-mono text-white/35"
-                      style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)' }}
+                      className="text-[10px] px-2 py-0.5 rounded font-mono text-macos-subtext0 bg-macos-overlay/30 border border-macos-borderLight/20"
                     >
                       {tech}
                     </span>

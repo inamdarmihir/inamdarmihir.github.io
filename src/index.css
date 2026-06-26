@@ -10,7 +10,7 @@ html, body, #root {
 }
 
 body {
-  background: #000;
+  @apply bg-macos-crust text-macos-text;
   font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -18,13 +18,13 @@ body {
 
 ::-webkit-scrollbar { width: 4px; height: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.18); }
+::-webkit-scrollbar-thumb { @apply bg-macos-overlay rounded-sm; }
+::-webkit-scrollbar-thumb:hover { @apply bg-macos-surface; }
 
 .cursor::after {
   content: '▋';
   animation: blink 1s step-end infinite;
-  color: rgba(255,255,255,0.7);
+  @apply text-macos-subtext;
 }
 
 @keyframes blink {
@@ -33,27 +33,18 @@ body {
 }
 
 .glass {
-  background: rgba(255,255,255,0.03);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,0.07);
+  @apply bg-macos-surface/40 border border-macos-borderLight/30 backdrop-blur-[20px];
 }
 
 .glass-dark {
-  background: rgba(0,0,0,0.5);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,0.06);
+  @apply bg-macos-crust/50 border border-macos-borderLight/20 backdrop-blur-[20px];
 }
 
 .card {
-  background: #111;
-  border: 1px solid rgba(255,255,255,0.07);
-  transition: border-color 0.25s, transform 0.25s;
+  @apply bg-macos-surface border border-macos-borderLight/40 transition-all duration-300;
 }
 .card:hover {
-  border-color: rgba(255,255,255,0.18);
-  transform: translateY(-3px);
+  @apply border-macos-borderLight/80 -translate-y-1;
 }
 
 .gradient-text {
@@ -74,7 +65,7 @@ body {
 .dock-icon { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
 .dock-icon:hover { transform: translateY(-8px) scale(1.2); }
 
-::selection { background: rgba(255,255,255,0.15); color: #fff; }
+::selection { @apply bg-macos-blue/30 text-macos-text; }
 
 .menubar-blur {
   backdrop-filter: saturate(180%) blur(20px);
@@ -85,7 +76,7 @@ body {
 
 .section-line {
   height: 1px;
-  background: linear-gradient(90deg, rgba(255,255,255,0.12) 0%, transparent 100%);
+  @apply bg-gradient-to-r from-macos-borderLight/40 to-transparent;
 }
 
 /* 3D perspective grid scroll */
