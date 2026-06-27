@@ -13,10 +13,14 @@ export default {
       colors: {
         macos: {
           bg: '#1e1e2e',
+          crust: '#11111b',
           surface: '#181825',
           overlay: '#313244',
+          border: '#45475a',
+          borderLight: '#585b70',
           text: '#cdd6f4',
           subtext: '#bac2de',
+          subtext0: '#a6adc8',
           blue: '#89b4fa',
           green: '#a6e3a1',
           yellow: '#f9e2af',
@@ -24,6 +28,7 @@ export default {
           mauve: '#cba6f7',
           teal: '#94e2d5',
           sky: '#89dceb',
+          lavender: '#b4befe',
         },
       },
       backdropBlur: {

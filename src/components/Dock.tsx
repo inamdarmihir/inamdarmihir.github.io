@@ -86,13 +86,10 @@ export default function Dock({ onTerminalToggle, terminalOpen }: DockProps) {
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 flex justify-center items-end pb-2 select-none pointer-events-none">
       <div
-        className="flex items-end gap-1 sm:gap-1.5 px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl pointer-events-auto"
+        className="flex items-end gap-1 sm:gap-1.5 px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl pointer-events-auto bg-macos-surface/50 border border-macos-borderLight/30 shadow-[0_8px_32px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.05)]"
         style={{
-          background: 'rgba(255,255,255,0.12)',
           backdropFilter: 'blur(40px) saturate(180%)',
           WebkitBackdropFilter: 'blur(40px) saturate(180%)',
-          border: '1px solid rgba(255,255,255,0.18)',
-          boxShadow: '0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.15)',
         }}
       >
         {items.map((item) => {
@@ -108,7 +105,7 @@ export default function Dock({ onTerminalToggle, terminalOpen }: DockProps) {
                     initial={{ opacity: 0, y: 4 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 4 }}
-                    className="absolute bottom-full mb-2 px-2 py-1 text-[11px] font-medium text-white/90 bg-black/70 rounded-md whitespace-nowrap backdrop-blur-sm"
+                    className="absolute bottom-full mb-2 px-2 py-1 text-[11px] font-medium text-macos-text bg-macos-crust/80 rounded-md whitespace-nowrap backdrop-blur-sm border border-macos-borderLight/20"
                   >
                     {item.label}
                   </motion.div>
@@ -123,13 +120,11 @@ export default function Dock({ onTerminalToggle, terminalOpen }: DockProps) {
                 onClick={() => handleClick(item)}
                 onHoverStart={() => setHoveredId(item.id)}
                 onHoverEnd={() => setHoveredId(null)}
-                className="w-9 h-9 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl flex items-center justify-center transition-colors relative"
+                className={`w-9 h-9 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl flex items-center justify-center transition-colors relative ${isActive ? '' : 'bg-macos-overlay/50 border border-transparent'}`}
                 style={{
-                  background: isActive
-                    ? `${item.color}25`
-                    : 'rgba(255,255,255,0.08)',
+                  background: isActive ? `${item.color}25` : undefined,
                   color: item.color,
-                  border: isActive ? `1px solid ${item.color}40` : '1px solid transparent',
+                  border: isActive ? `1px solid ${item.color}40` : undefined,
                 }}
               >
                 {item.icon}

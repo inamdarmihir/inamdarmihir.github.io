@@ -1,5 +1,5 @@
 import { RefObject } from 'react'
-import { motion, type TargetAndTransition } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { FileText, ExternalLink, BookOpen, ArrowUpRight } from 'lucide-react'
 
 const PUBLICATIONS = [
@@ -41,10 +41,10 @@ export default function Publications({ scrollRef }: Props) {
     <div className="max-w-4xl mx-auto px-8 md:px-14 py-24">
       {/* Header */}
       <motion.div initial="hidden" whileInView="visible" viewport={vp} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }} className="mb-16">
-        <motion.span variants={reveal} className="text-[10px] font-mono text-white/20 tracking-[0.4em] uppercase">
+        <motion.span variants={reveal} className="text-[10px] font-mono text-macos-subtext0 tracking-[0.4em] uppercase">
           06 — Research
         </motion.span>
-        <motion.h2 variants={reveal} className="font-black text-white mt-3 leading-none" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>
+        <motion.h2 variants={reveal} className="font-black text-macos-text mt-3 leading-none" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>
           Publications.
         </motion.h2>
         <motion.div variants={reveal} className="section-line mt-5 max-w-xs" />
@@ -59,49 +59,44 @@ export default function Publications({ scrollRef }: Props) {
             whileInView="visible"
             viewport={{ ...vp, margin: '-40px' }}
             variants={{ hidden: { opacity: 0, y: 28, rotateX: 9, transformPerspective: 1200 }, visible: { opacity: 1, y: 0, rotateX: 0, transformPerspective: 1200, transition: { duration: 0.65, delay: i * 0.1 } } }}
-            className="group rounded-2xl p-6"
-            style={{ background: '#0f0f0f', border: '1px solid rgba(255,255,255,0.07)', transition: 'border-color 0.25s' }}
-            whileHover={{ borderColor: 'rgba(255,255,255,0.16)' } as TargetAndTransition}
+            className="group rounded-2xl p-6 bg-macos-surface border border-macos-borderLight/30 hover:border-macos-borderLight/80 transition-colors"
           >
             <div className="flex items-start gap-5">
               {/* Icon */}
               <div
-                className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
-                style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}
+                className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5 bg-macos-overlay/50 border border-macos-borderLight/30"
               >
-                <FileText size={16} className="text-white/40" />
+                <FileText size={16} className="text-macos-subtext" />
               </div>
 
               <div className="flex-1 min-w-0">
                 {/* Meta badges */}
                 <div className="flex flex-wrap items-center gap-2 mb-3">
-                  <span className="text-[10px] font-mono text-white/20 mr-1">{pub.num}</span>
+                  <span className="text-[10px] font-mono text-macos-subtext0 mr-1">{pub.num}</span>
                   <span
-                    className="text-[10px] px-2 py-0.5 rounded-full font-mono font-semibold text-white/60"
-                    style={{ background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.1)' }}
+                    className="text-[10px] px-2 py-0.5 rounded-full font-mono font-semibold text-macos-text bg-macos-overlay/70 border border-macos-borderLight/40"
                   >
                     {pub.badge}
                   </span>
                   <span
-                    className="text-[10px] px-2 py-0.5 rounded-full text-white/35"
-                    style={{ background: 'rgba(255,255,255,0.04)' }}
+                    className="text-[10px] px-2 py-0.5 rounded-full text-macos-subtext bg-macos-overlay/30"
                   >
                     {pub.type}
                   </span>
-                  <span className="text-[10px] text-white/20 font-mono">{pub.year}</span>
+                  <span className="text-[10px] text-macos-subtext0 font-mono">{pub.year}</span>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-[15px] font-semibold text-white/85 leading-snug mb-2">{pub.title}</h3>
+                <h3 className="text-[15px] font-semibold text-macos-text leading-snug mb-2">{pub.title}</h3>
 
                 {/* Venue */}
-                <p className="text-sm text-white/35 mb-4 flex items-center gap-1.5 font-mono">
+                <p className="text-sm text-macos-subtext0 mb-4 flex items-center gap-1.5 font-mono">
                   <BookOpen size={11} />
                   {pub.venue}
                 </p>
 
                 {/* Abstract */}
-                <p className="text-sm text-white/45 leading-relaxed mb-5">{pub.abstract}</p>
+                <p className="text-sm text-macos-subtext leading-relaxed mb-5">{pub.abstract}</p>
 
                 {/* Tags + link */}
                 <div className="flex flex-wrap items-center justify-between gap-3">
@@ -109,8 +104,7 @@ export default function Publications({ scrollRef }: Props) {
                     {pub.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="text-[10px] px-2 py-0.5 rounded font-mono text-white/30"
-                        style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)' }}
+                        className="text-[10px] px-2 py-0.5 rounded font-mono text-macos-subtext0 bg-macos-overlay/30 border border-macos-borderLight/20"
                       >
                         {tag}
                       </span>
@@ -120,7 +114,7 @@ export default function Publications({ scrollRef }: Props) {
                     href={pub.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1 text-xs text-white/30 hover:text-white/70 transition-colors"
+                    className="flex items-center gap-1 text-xs text-macos-subtext0 hover:text-macos-text transition-colors"
                   >
                     <ExternalLink size={10} />
                     View Paper
@@ -142,8 +136,7 @@ export default function Publications({ scrollRef }: Props) {
           href="https://scholar.google.com/citations?user=aRlnkucAAAAJ"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm text-white/45 hover:text-white/80 transition-all hover:scale-[1.03]"
-          style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm text-macos-subtext hover:text-macos-text transition-all hover:scale-[1.03] bg-macos-surface border border-macos-borderLight/40"
         >
           <BookOpen size={14} />
           View on Google Scholar

@@ -135,7 +135,7 @@ export default function Terminal({ onClose }: TerminalProps) {
       animate={{ opacity: 1, scale: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.9, y: 20 }}
       transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-      className="absolute z-40 w-[580px] rounded-xl overflow-hidden window-shadow"
+      className="absolute z-40 w-[580px] rounded-xl overflow-hidden window-shadow bg-macos-crust border border-macos-borderLight/30"
       style={{ transform: `translate(${position.x}px, ${position.y}px)`, bottom: '80px', right: '24px' }}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
@@ -143,43 +143,43 @@ export default function Terminal({ onClose }: TerminalProps) {
     >
       {/* Title bar */}
       <div
-        className="flex items-center gap-2 px-3 py-2.5 bg-[#0d1b3e] cursor-grab active:cursor-grabbing select-none"
+        className="flex items-center gap-2 px-3 py-2.5 bg-macos-surface border-b border-macos-borderLight/20 cursor-grab active:cursor-grabbing select-none"
         onMouseDown={handleMouseDown}
       >
         <div className="flex items-center gap-1.5">
-          <button onClick={onClose} className="w-3 h-3 rounded-full bg-[#ff5f57] hover:brightness-90 flex items-center justify-center group">
+          <button onClick={onClose} className="w-3 h-3 rounded-full bg-macos-red hover:brightness-90 flex items-center justify-center group">
             <X size={7} className="opacity-0 group-hover:opacity-100 text-red-900" />
           </button>
-          <button className="w-3 h-3 rounded-full bg-[#febc2e] hover:brightness-90 flex items-center justify-center group">
+          <button className="w-3 h-3 rounded-full bg-macos-yellow hover:brightness-90 flex items-center justify-center group">
             <Minus size={7} className="opacity-0 group-hover:opacity-100 text-yellow-900" />
           </button>
-          <button className="w-3 h-3 rounded-full bg-[#28c840] hover:brightness-90 flex items-center justify-center group">
+          <button className="w-3 h-3 rounded-full bg-macos-green hover:brightness-90 flex items-center justify-center group">
             <Maximize2 size={6} className="opacity-0 group-hover:opacity-100 text-green-900" />
           </button>
         </div>
-        <span className="flex-1 text-center text-[12px] text-white/40 font-medium">
+        <span className="flex-1 text-center text-[12px] text-macos-subtext0 font-medium">
           mihir — zsh — 580×280
         </span>
       </div>
 
       {/* Terminal body */}
-      <div className="bg-[#061428] p-4 h-72 overflow-y-auto font-mono text-[12px] leading-relaxed">
+      <div className="bg-macos-crust p-4 h-72 overflow-y-auto font-mono text-[12px] leading-relaxed text-macos-text">
         {visibleLines.map((line, i) => (
           <div key={i}>
             {line.type === 'cmd' && (
               <div className="flex items-start gap-1">
-                <span className="text-[#89b4fa] select-none flex-shrink-0">mihir@macbook</span>
-                <span className="text-white/40 select-none flex-shrink-0">:</span>
-                <span className="text-[#94e2d5] select-none flex-shrink-0">~</span>
-                <span className="text-white/40 select-none flex-shrink-0">$</span>
-                <span className="text-[#a6e3a1] ml-1 break-all">{line.text}</span>
+                <span className="text-macos-blue select-none flex-shrink-0">mihir@macbook</span>
+                <span className="text-macos-subtext0 select-none flex-shrink-0">:</span>
+                <span className="text-macos-teal select-none flex-shrink-0">~</span>
+                <span className="text-macos-subtext0 select-none flex-shrink-0">$</span>
+                <span className="text-macos-green ml-1 break-all">{line.text}</span>
               </div>
             )}
             {line.type === 'out' && (
               <div className="pl-0 break-all" style={{ color: line.color || '#a6e3a1' }}>{line.text}</div>
             )}
             {line.type === 'comment' && (
-              <div className="text-white/30 italic">{line.text}</div>
+              <div className="text-macos-subtext0 italic">{line.text}</div>
             )}
             {line.type === 'blank' && <div className="h-2" />}
           </div>
@@ -188,23 +188,23 @@ export default function Terminal({ onClose }: TerminalProps) {
         {/* Currently typing command */}
         {isTyping && (
           <div className="flex items-start gap-1">
-            <span className="text-[#89b4fa] select-none flex-shrink-0">mihir@macbook</span>
-            <span className="text-white/40 select-none flex-shrink-0">:</span>
-            <span className="text-[#94e2d5] select-none flex-shrink-0">~</span>
-            <span className="text-white/40 select-none flex-shrink-0">$</span>
-            <span className="text-[#a6e3a1] ml-1">{currentText}</span>
-            <span className="animate-blink text-[#a6e3a1]">▋</span>
+            <span className="text-macos-blue select-none flex-shrink-0">mihir@macbook</span>
+            <span className="text-macos-subtext0 select-none flex-shrink-0">:</span>
+            <span className="text-macos-teal select-none flex-shrink-0">~</span>
+            <span className="text-macos-subtext0 select-none flex-shrink-0">$</span>
+            <span className="text-macos-green ml-1">{currentText}</span>
+            <span className="animate-blink text-macos-green">▋</span>
           </div>
         )}
 
         {/* Idle cursor after done */}
         {isDone && (
           <div className="flex items-start gap-1 mt-1">
-            <span className="text-[#89b4fa] select-none">mihir@macbook</span>
-            <span className="text-white/40 select-none">:</span>
-            <span className="text-[#94e2d5] select-none">~</span>
-            <span className="text-white/40 select-none">$</span>
-            <span className="ml-1 animate-blink text-[#a6e3a1]">▋</span>
+            <span className="text-macos-blue select-none">mihir@macbook</span>
+            <span className="text-macos-subtext0 select-none">:</span>
+            <span className="text-macos-teal select-none">~</span>
+            <span className="text-macos-subtext0 select-none">$</span>
+            <span className="ml-1 animate-blink text-macos-green">▋</span>
           </div>
         )}
         <div ref={bottomRef} />
