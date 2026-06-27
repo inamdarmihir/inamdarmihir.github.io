@@ -31,9 +31,6 @@ export default function Contact({ scrollRef }: Props) {
     <div className="max-w-4xl mx-auto px-8 md:px-14 py-24 pb-32">
       {/* Header */}
       <motion.div initial="hidden" whileInView="visible" viewport={vp} variants={stagger} className="mb-16">
-        <motion.span variants={reveal} className="text-[10px] font-mono text-macos-subtext0 tracking-[0.4em] uppercase">
-          07 — Contact
-        </motion.span>
         <motion.h2 variants={reveal} className="font-black text-macos-text mt-3 leading-none" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>
           Let's Talk.
         </motion.h2>
@@ -42,19 +39,19 @@ export default function Contact({ scrollRef }: Props) {
 
       <div className="grid md:grid-cols-2 gap-10">
         {/* Left: Message */}
-        <motion.div initial="hidden" whileInView="visible" viewport={vp} variants={stagger} className="space-y-5">
+        <motion.div initial="hidden" whileInView="visible" viewport={vp} variants={stagger} className="space-y-5 max-w-prose">
           <motion.div
             variants={reveal}
             className="p-7 rounded-2xl bg-macos-surface border border-macos-borderLight/30"
           >
             <h3 className="text-lg font-bold text-macos-text mb-4">Let's Connect</h3>
-            <p className="text-macos-subtext text-sm leading-[1.8] mb-4">
+            <p className="text-macos-subtext text-pretty text-sm leading-[1.8] mb-4">
               I'm open to discussions around <span className="text-macos-text">RLHF</span>,{' '}
               <span className="text-macos-text">agentic AI systems</span>, and{' '}
               <span className="text-macos-text">LLM infrastructure</span> — research collaborations,
               open-source projects, or just a good conversation about what's next in AI.
             </p>
-            <p className="text-macos-subtext text-sm leading-[1.8]">
+            <p className="text-macos-subtext text-pretty text-sm leading-[1.8]">
               Currently at Sutherland Global Services, Chennai. Whether you want to discuss research,
               build something together, or just say hi — my inbox is always open.
             </p>
