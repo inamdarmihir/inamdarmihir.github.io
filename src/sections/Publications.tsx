@@ -4,7 +4,7 @@ import { FileText, ExternalLink, BookOpen, ArrowUpRight } from 'lucide-react'
 
 const PUBLICATIONS = [
   {
-    num: '01',
+    num: '',
     title: 'Enhancing Code-Mixing in Named Entity Recognition: A Comprehensive Survey of Deep Learning Models',
     venue: 'IEEE ICETITE 2024',
     type: 'Conference Paper',
@@ -41,9 +41,6 @@ export default function Publications({ scrollRef }: Props) {
     <div className="max-w-4xl mx-auto px-8 md:px-14 py-24">
       {/* Header */}
       <motion.div initial="hidden" whileInView="visible" viewport={vp} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }} className="mb-16">
-        <motion.span variants={reveal} className="text-[10px] font-mono text-macos-subtext0 tracking-[0.4em] uppercase">
-          06 — Research
-        </motion.span>
         <motion.h2 variants={reveal} className="font-black text-macos-text mt-3 leading-none" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>
           Publications.
         </motion.h2>
@@ -72,7 +69,6 @@ export default function Publications({ scrollRef }: Props) {
               <div className="flex-1 min-w-0">
                 {/* Meta badges */}
                 <div className="flex flex-wrap items-center gap-2 mb-3">
-                  <span className="text-[10px] font-mono text-macos-subtext0 mr-1">{pub.num}</span>
                   <span
                     className="text-[10px] px-2 py-0.5 rounded-full font-mono font-semibold text-macos-text bg-macos-overlay/70 border border-macos-borderLight/40"
                   >

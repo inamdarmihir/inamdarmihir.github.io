@@ -25,11 +25,8 @@ export default function About({ scrollRef }: Props) {
         variants={stagger}
         className="mb-16"
       >
-        <motion.span variants={reveal} className="text-[10px] font-mono text-macos-subtext0 tracking-[0.4em] uppercase">
-          02 — About
-        </motion.span>
         <motion.div variants={reveal} className="flex items-end gap-4 mt-3">
-          <h2 className="font-black text-macos-text leading-none" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>
+          <h2 className="font-black text-macos-text text-balance leading-none" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>
             Who I Am.
           </h2>
         </motion.div>
@@ -42,27 +39,27 @@ export default function About({ scrollRef }: Props) {
         variants={stagger}
         className="grid md:grid-cols-5 gap-10 mb-16"
       >
-        <div className="md:col-span-3 space-y-5">
-          <motion.p variants={reveal} className="text-macos-subtext leading-[1.85] text-[15px]">
+        <div className="md:col-span-3 space-y-5 max-w-prose">
+          <motion.p variants={reveal} className="text-macos-subtext text-pretty leading-[1.85] text-[15px]">
             My journey into AI started with a simple question:{' '}
             <span className="text-macos-text font-medium">how do machines understand human language?</span> That curiosity
             led me deep into NLP, machine learning, and ultimately a research fellowship at{' '}
             <span className="text-macos-text font-medium">CVIT, IIIT Hyderabad</span> — one of India's premier
             computer vision labs — where I co-invented a patent-pending document layout analysis system.
           </motion.p>
-          <motion.p variants={reveal} className="text-macos-subtext leading-[1.85] text-[15px]">
+          <motion.p variants={reveal} className="text-macos-subtext text-pretty leading-[1.85] text-[15px]">
             At <span className="text-macos-text font-medium">Quoppo Ventures</span>, I designed hybrid LSTM-MeshNet
             architectures for 3D positioning and rebuilt GAN training pipelines, achieving a{' '}
             <span className="text-macos-text font-medium">30% accuracy improvement</span> over SOTA while establishing
             a reproducible MLOps foundation across a 3-engineer team.
           </motion.p>
-          <motion.p variants={reveal} className="text-macos-subtext leading-[1.85] text-[15px]">
+          <motion.p variants={reveal} className="text-macos-subtext text-pretty leading-[1.85] text-[15px]">
             Currently at <span className="text-macos-text font-medium">Sutherland Global Services</span>, I architect
             end-to-end <span className="text-macos-text font-medium">RLHF pipelines</span> for Text-to-SQL and
             multi-stage agentic inference systems with quantized LLM serving — cutting latency 60% at F1 &gt; 0.95
             and serving 10K+ daily transactions on AWS.
           </motion.p>
-          <motion.p variants={reveal} className="text-macos-subtext leading-[1.85] text-[15px]">
+          <motion.p variants={reveal} className="text-macos-subtext text-pretty leading-[1.85] text-[15px]">
             Beyond work, I'm a <span className="text-macos-text font-medium">Qdrant Star</span> open-source developer
             advocate, have published at IEEE and Springer, and continuously push the frontiers of agentic AI and
             retrieval systems.

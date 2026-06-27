@@ -229,12 +229,6 @@ export default function Hero({ onNavigate, scrollRef }: HeroProps) {
           transformPerspective: 1400,
         }}
       >
-        {/* Section tag */}
-        <motion.div {...e3d(0)} className="flex items-center gap-3 mb-14">
-          <span className="text-[10px] font-mono text-macos-subtext0 tracking-[0.4em] uppercase">01 — Introduction</span>
-          <div className="h-px w-12 bg-macos-borderLight/40" />
-        </motion.div>
-
         {/* Avatar + status */}
         <motion.div {...e3d(0.1)} className="flex items-center gap-4 mb-10">
           <motion.div
@@ -263,7 +257,7 @@ export default function Hero({ onNavigate, scrollRef }: HeroProps) {
             initial={{ opacity: 0, y: 50, rotateX: 30, filter: 'blur(8px)' }}
             animate={{ opacity: 1, y: 0,  rotateX: 0,  filter: 'blur(0px)' }}
             transition={{ duration: 1, delay: 0.18, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="font-black leading-[0.9] tracking-tight text-macos-text"
+            className="font-black leading-[0.9] tracking-tight text-macos-text text-balance"
             style={{ fontSize: 'clamp(3.5rem, 8vw, 6.5rem)' }}
           >
             Mihir
@@ -272,7 +266,7 @@ export default function Hero({ onNavigate, scrollRef }: HeroProps) {
             initial={{ opacity: 0, y: 50, rotateX: 30, filter: 'blur(8px)' }}
             animate={{ opacity: 1, y: 0,  rotateX: 0,  filter: 'blur(0px)' }}
             transition={{ duration: 1, delay: 0.28, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="font-black leading-[0.9] tracking-tight text-macos-subtext/50"
+            className="font-black leading-[0.9] tracking-tight text-macos-subtext/50 text-balance"
             style={{ fontSize: 'clamp(3.5rem, 8vw, 6.5rem)' }}
           >
             Inamdar.
@@ -280,12 +274,12 @@ export default function Hero({ onNavigate, scrollRef }: HeroProps) {
         </div>
 
         {/* Role ticker */}
-        <motion.div {...e3d(0.36)} className="text-xl text-macos-subtext mb-6 h-8 font-medium">
+        <motion.div {...e3d(0.36)} className="text-xl text-macos-subtext mb-6 h-8 font-medium text-balance">
           <AnimatedRole roles={ROLES} />
         </motion.div>
 
         {/* Tagline */}
-        <motion.p {...e3d(0.44)} className="text-base text-macos-subtext max-w-xl mb-12 leading-[1.75]">
+        <motion.p {...e3d(0.44)} className="text-base text-macos-subtext max-w-prose text-pretty mb-12 leading-[1.75]">
           Building intelligent systems at the intersection of{' '}
           <span className="text-macos-text font-medium">RLHF</span>,{' '}
           <span className="text-macos-text font-medium">Agentic AI</span> &{' '}
