@@ -25,10 +25,7 @@ export default function About({ scrollRef }: Props) {
         variants={stagger}
         className="mb-16"
       >
-        <motion.span variants={reveal} className="text-[10px] font-mono text-macos-subtext0 tracking-[0.4em] uppercase">
-          02 — About
-        </motion.span>
-        <motion.div variants={reveal} className="flex items-end gap-4 mt-3">
+                <motion.div variants={reveal} className="flex items-end gap-4 mt-3">
           <h2 className="font-black text-macos-text leading-none" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>
             Who I Am.
           </h2>
@@ -73,7 +70,7 @@ export default function About({ scrollRef }: Props) {
         <div className="md:col-span-2 space-y-4">
           <motion.div variants={reveal}>
             <div
-              className="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-5 border border-macos-borderLight/30"
+              className="w-full aspect-[4/3] rounded-xl overflow-hidden mb-5 border border-macos-borderLight/30"
             >
               <img
                 src="/avatar.jpg"
@@ -105,7 +102,7 @@ export default function About({ scrollRef }: Props) {
                   <Icon size={13} className="text-macos-subtext" />
                 </div>
                 <div>
-                  <div className="text-[10px] text-macos-subtext0 uppercase tracking-wider font-mono">{label}</div>
+                  <div className="text-[10px] text-macos-subtext0 text-macos-subtext font-mono">{label}</div>
                   <div className="text-macos-text text-sm mt-0.5">{value}</div>
                 </div>
               </motion.div>
@@ -122,9 +119,9 @@ export default function About({ scrollRef }: Props) {
       >
         <motion.div
           variants={reveal}
-          className="p-6 rounded-2xl bg-macos-surface border border-macos-borderLight/30 hover:border-macos-borderLight/80 transition-colors"
+          className="p-6"
         >
-          <h3 className="text-[11px] font-mono text-macos-subtext0 uppercase tracking-widest mb-5">Certifications</h3>
+          <h3 className="text-[11px] font-mono text-macos-subtext0 text-macos-subtext mb-5">Certifications</h3>
           <div className="space-y-4">
             {[
               { title: 'Neo4j Certified Professional', org: '2025' },
@@ -147,9 +144,9 @@ export default function About({ scrollRef }: Props) {
 
         <motion.div
           variants={reveal}
-          className="p-6 rounded-2xl bg-macos-surface border border-macos-borderLight/30 hover:border-macos-borderLight/80 transition-colors"
+          className="p-6"
         >
-          <h3 className="text-[11px] font-mono text-macos-subtext0 uppercase tracking-widest mb-5">Research Highlights</h3>
+          <h3 className="text-[11px] font-mono text-macos-subtext0 text-macos-subtext mb-5">Research Highlights</h3>
           <div className="space-y-4">
             {[
               'Patent-pending document layout analysis system — Vision Transformers + geometric constraints',
