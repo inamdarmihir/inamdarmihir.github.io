@@ -7,8 +7,7 @@ const JOBS = [
     title: 'Associate Software Developer – Data Scientist',
     company: 'Sutherland Global Services',
     location: 'Chennai, India',
-    period: 'Aug 2025 — Present',
-    type: 'Full-time',
+    period: 'Aug 2024 – Present',    type: 'Full-time',
     highlights: [
       'Architected end-to-end RLHF pipeline for Text-to-SQL from first principles: preference data collection, custom reward model on human feedback, and PPO policy optimisation — serving 10K+ daily transactions on AWS',
       'Engineered multi-stage agentic inference system with quantized LLM serving (4-bit/8-bit) cutting latency 60% at F1 > 0.95; RAG layer over Pinecone for sub-200ms retrieval with tool-calling, schema grounding, and safety validation',
@@ -19,8 +18,7 @@ const JOBS = [
     title: 'ML Engineer',
     company: 'Quoppo Ventures',
     location: 'Pune, India',
-    period: 'Oct 2024 — Mar 2025',
-    type: 'Full-time',
+    period: 'Oct 2023 – Feb 2024',    type: 'Full-time',
     highlights: [
       'Designed hybrid LSTM-MeshNet architecture for 3D positioning from scratch; resolved vanishing gradient failure modes via custom multi-term loss scheduling and adaptive LR warmup — 30% accuracy improvement over SOTA baseline',
       'Rebuilt GAN training loop with redesigned discriminator and curriculum-based fine-tuning strategy; reduced post-production editing time by 40%; established reproducible MLOps foundation (W&B + DVC + CI/CD) across a 3-engineer team',
@@ -31,8 +29,7 @@ const JOBS = [
     title: 'Graduate ML Research Fellow',
     company: 'CVIT, IIIT Hyderabad',
     location: 'Hyderabad, India',
-    period: 'Mar 2024 — Aug 2024',
-    type: 'Research Fellowship',
+    period: 'Mar 2024 – Jul 2024',    type: 'Research Fellowship',
     highlights: [
       'Designed transformer post-OCR correction pipeline over multi-layout corpora; diagnosed model failures by analysing cross-attention maps, identifying layout-induced error patterns — 15% CER reduction',
       'Co-invented patent-pending document layout analysis system built from geometric constraints and Vision Transformers — designed to generalise across languages and mixed-layout documents without layout-specific fine-tuning',
@@ -59,10 +56,7 @@ export default function Experience({ scrollRef }: Props) {
     <div className="max-w-4xl mx-auto px-8 md:px-14 py-24">
       {/* Header */}
       <motion.div initial="hidden" whileInView="visible" viewport={vp} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }} className="mb-16">
-        <motion.span variants={reveal} className="text-[10px] font-mono text-macos-subtext0 tracking-[0.4em] uppercase">
-          03 — Experience
-        </motion.span>
-        <motion.h2 variants={reveal} className="font-black text-macos-text mt-3 leading-none" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>
+                <motion.h2 variants={reveal} className="font-black text-macos-text mt-3 leading-none" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>
           Where I've Been.
         </motion.h2>
         <motion.div variants={reveal} className="section-line mt-5 max-w-xs" />
@@ -96,7 +90,7 @@ export default function Experience({ scrollRef }: Props) {
               {/* Card */}
               <motion.div
                 variants={slideLeft}
-                className="rounded-2xl p-6 bg-macos-surface border border-macos-borderLight/30 hover:border-macos-borderLight/80 transition-colors duration-200"
+                className="rounded-xl p-6 bg-macos-surface border border-macos-borderLight/30 hover:border-macos-borderLight/80 transition-colors duration-200"
               >
                 {/* Header */}
                 <div className="flex flex-wrap items-start justify-between gap-3 mb-5">

@@ -86,7 +86,7 @@ export default function Dock({ onTerminalToggle, terminalOpen }: DockProps) {
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 flex justify-center items-end pb-2 select-none pointer-events-none">
       <div
-        className="flex items-end gap-1 sm:gap-1.5 px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl pointer-events-auto bg-macos-surface/50 border border-macos-borderLight/30 shadow-[0_8px_32px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.05)]"
+        className="flex items-end gap-1 sm:gap-1.5 px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl sm:rounded-xl pointer-events-auto bg-macos-surface/50 border border-macos-borderLight/30 shadow-[0_4px_8px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.05)]"
         style={{
           backdropFilter: 'blur(40px) saturate(180%)',
           WebkitBackdropFilter: 'blur(40px) saturate(180%)',

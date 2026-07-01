@@ -84,10 +84,7 @@ export default function Projects({ scrollRef }: Props) {
     <div className="max-w-4xl mx-auto px-8 md:px-14 py-24">
       {/* Header */}
       <motion.div initial="hidden" whileInView="visible" viewport={vp} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }} className="mb-16">
-        <motion.span variants={reveal} className="text-[10px] font-mono text-macos-subtext0 tracking-[0.4em] uppercase">
-          04 — Portfolio
-        </motion.span>
-        <motion.h2 variants={reveal} className="font-black text-macos-text mt-3 leading-none" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>
+                <motion.h2 variants={reveal} className="font-black text-macos-text mt-3 leading-none" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>
           Featured Projects.
         </motion.h2>
         <motion.div variants={reveal} className="section-line mt-5 max-w-xs" />
@@ -98,7 +95,7 @@ export default function Projects({ scrollRef }: Props) {
         {PROJECTS.map((project, i) => (
           <TiltCard
             key={project.name}
-            className="group flex flex-col rounded-2xl p-5 cursor-default bg-macos-surface border border-macos-borderLight/30 hover:border-macos-borderLight/80 transition-colors"
+            className="group flex flex-col rounded-xl p-5 cursor-default bg-macos-surface border border-macos-borderLight/30 hover:border-macos-borderLight/80 transition-colors"
             motionProps={{
               initial: { opacity: 0, y: 32, rotateX: 8, transformPerspective: 900 },
               whileInView: { opacity: 1, y: 0, rotateX: 0 },

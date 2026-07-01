@@ -31,10 +31,7 @@ export default function Contact({ scrollRef }: Props) {
     <div className="max-w-4xl mx-auto px-8 md:px-14 py-24 pb-32">
       {/* Header */}
       <motion.div initial="hidden" whileInView="visible" viewport={vp} variants={stagger} className="mb-16">
-        <motion.span variants={reveal} className="text-[10px] font-mono text-macos-subtext0 tracking-[0.4em] uppercase">
-          07 — Contact
-        </motion.span>
-        <motion.h2 variants={reveal} className="font-black text-macos-text mt-3 leading-none" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>
+                <motion.h2 variants={reveal} className="font-black text-macos-text mt-3 leading-none" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>
           Let's Talk.
         </motion.h2>
         <motion.div variants={reveal} className="section-line mt-5 max-w-xs" />
@@ -45,7 +42,7 @@ export default function Contact({ scrollRef }: Props) {
         <motion.div initial="hidden" whileInView="visible" viewport={vp} variants={stagger} className="space-y-5">
           <motion.div
             variants={reveal}
-            className="p-7 rounded-2xl bg-macos-surface border border-macos-borderLight/30"
+            className="p-7 rounded-xl bg-macos-surface border border-macos-borderLight/30"
           >
             <h3 className="text-lg font-bold text-macos-text mb-4">Let's Connect</h3>
             <p className="text-macos-subtext text-sm leading-[1.8] mb-4">
@@ -76,9 +73,9 @@ export default function Contact({ scrollRef }: Props) {
           {/* Quick email */}
           <motion.div
             variants={reveal}
-            className="p-5 rounded-2xl bg-macos-surface border border-macos-borderLight/30"
+            className="p-5 rounded-xl bg-macos-surface border border-macos-borderLight/30"
           >
-            <p className="text-[10px] text-macos-subtext0 uppercase tracking-widest font-mono mb-3">Quick Contact</p>
+            <p className="text-[10px] text-macos-subtext0 text-macos-subtext font-mono mb-3">Quick Contact</p>
             <div className="flex items-center justify-between gap-3">
               <span className="font-mono text-sm text-macos-subtext">mihirsinamdar@outlook.com</span>
               <button
@@ -113,7 +110,7 @@ export default function Contact({ scrollRef }: Props) {
                 <Icon size={16} className="text-macos-subtext" />
               </div>
               <div className="flex-1 min-w-0">
-                <div className="text-[10px] text-macos-subtext0 uppercase tracking-widest font-mono">{label}</div>
+                <div className="text-[10px] text-macos-subtext0 text-macos-subtext font-mono">{label}</div>
                 <div className="text-macos-subtext text-sm font-mono truncate group-hover:text-macos-text transition-colors mt-0.5">
                   {value}
                 </div>

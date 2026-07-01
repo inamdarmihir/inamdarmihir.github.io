@@ -74,7 +74,7 @@ export default function Hero({ onNavigate, scrollRef }: HeroProps) {
     <div ref={heroRef} className="min-h-screen flex flex-col justify-center relative overflow-hidden px-8 md:px-14 py-24">
 
       {/* ═══════════════════════════════════════
-          LAYER 1 — 3D PERSPECTIVE GRID FLOOR
+          LAYER
           ═══════════════════════════════════════ */}
       <motion.div
         className="absolute pointer-events-none"
@@ -142,7 +142,7 @@ export default function Hero({ onNavigate, scrollRef }: HeroProps) {
       </motion.div>
 
       {/* ═══════════════════════════════════════
-          LAYER 2 — FLOATING ORBS (BACKGROUND)
+          LAYER
           ═══════════════════════════════════════ */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <motion.div
@@ -181,7 +181,7 @@ export default function Hero({ onNavigate, scrollRef }: HeroProps) {
       </div>
 
       {/* ═══════════════════════════════════════
-          LAYER 3 — SMALL FLOATING PARTICLES
+          LAYER
           ═══════════════════════════════════════ */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         {PARTICLES.map((p, i) => (
@@ -196,7 +196,7 @@ export default function Hero({ onNavigate, scrollRef }: HeroProps) {
       </div>
 
       {/* ═══════════════════════════════════════
-          LAYER 4 — SCAN LINE SWEEP
+          LAYER
           ═══════════════════════════════════════ */}
       <motion.div
         className="absolute left-0 right-0 pointer-events-none"
@@ -231,14 +231,13 @@ export default function Hero({ onNavigate, scrollRef }: HeroProps) {
       >
         {/* Section tag */}
         <motion.div {...e3d(0)} className="flex items-center gap-3 mb-14">
-          <span className="text-[10px] font-mono text-macos-subtext0 tracking-[0.4em] uppercase">01 — Introduction</span>
           <div className="h-px w-12 bg-macos-borderLight/40" />
         </motion.div>
 
         {/* Avatar + status */}
         <motion.div {...e3d(0.1)} className="flex items-center gap-4 mb-10">
           <motion.div
-            className="w-16 h-16 rounded-2xl overflow-hidden flex-shrink-0 border border-macos-borderLight/30"
+            className="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 border border-macos-borderLight/30"
             whileHover={{ scale: 1.06, rotate: 2 }}
             transition={{ type: 'spring', stiffness: 280 }}
           >
@@ -263,8 +262,8 @@ export default function Hero({ onNavigate, scrollRef }: HeroProps) {
             initial={{ opacity: 0, y: 50, rotateX: 30, filter: 'blur(8px)' }}
             animate={{ opacity: 1, y: 0,  rotateX: 0,  filter: 'blur(0px)' }}
             transition={{ duration: 1, delay: 0.18, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="font-black leading-[0.9] tracking-tight text-macos-text"
-            style={{ fontSize: 'clamp(3.5rem, 8vw, 6.5rem)' }}
+            className="font-black leading-[0.9] tracking-[-0.04em] text-macos-text"
+            style={{ fontSize: 'clamp(3.5rem, 8vw, 6rem)' }}
           >
             Mihir
           </motion.h1>
@@ -272,8 +271,8 @@ export default function Hero({ onNavigate, scrollRef }: HeroProps) {
             initial={{ opacity: 0, y: 50, rotateX: 30, filter: 'blur(8px)' }}
             animate={{ opacity: 1, y: 0,  rotateX: 0,  filter: 'blur(0px)' }}
             transition={{ duration: 1, delay: 0.28, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="font-black leading-[0.9] tracking-tight text-macos-subtext/50"
-            style={{ fontSize: 'clamp(3.5rem, 8vw, 6.5rem)' }}
+            className="font-black leading-[0.9] tracking-[-0.04em] text-macos-subtext/50"
+            style={{ fontSize: 'clamp(3.5rem, 8vw, 6rem)' }}
           >
             Inamdar.
           </motion.h1>
@@ -285,7 +284,7 @@ export default function Hero({ onNavigate, scrollRef }: HeroProps) {
         </motion.div>
 
         {/* Tagline */}
-        <motion.p {...e3d(0.44)} className="text-base text-macos-subtext max-w-xl mb-12 leading-[1.75]">
+        <motion.p {...e3d(0.44)} className="text-base text-macos-subtext max-w-prose mb-12 leading-[1.75]">
           Building intelligent systems at the intersection of{' '}
           <span className="text-macos-text font-medium">RLHF</span>,{' '}
           <span className="text-macos-text font-medium">Agentic AI</span> &{' '}
@@ -310,7 +309,7 @@ export default function Hero({ onNavigate, scrollRef }: HeroProps) {
               }}
             >
               <div className="text-4xl font-black text-macos-text leading-none">{value}</div>
-              <div className="text-[11px] text-macos-subtext0 uppercase tracking-widest mt-2 font-mono">{label}</div>
+              <div className="text-[11px] text-macos-subtext0 text-macos-subtext mt-2 font-mono">{label}</div>
             </motion.div>
           ))}
         </motion.div>

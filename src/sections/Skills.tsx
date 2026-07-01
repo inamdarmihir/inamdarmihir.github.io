@@ -109,10 +109,7 @@ export default function Skills({ scrollRef }: Props) {
     <div className="max-w-4xl mx-auto px-8 md:px-14 py-24">
       {/* Header */}
       <motion.div initial="hidden" whileInView="visible" viewport={vp} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }} className="mb-16">
-        <motion.span variants={reveal} className="text-[10px] font-mono text-macos-subtext0 tracking-[0.4em] uppercase">
-          05 — Expertise
-        </motion.span>
-        <motion.h2 variants={reveal} className="font-black text-macos-text mt-3 leading-none" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>
+                <motion.h2 variants={reveal} className="font-black text-macos-text mt-3 leading-none" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>
           Skills & Stack.
         </motion.h2>
         <motion.div variants={reveal} className="section-line mt-5 max-w-xs" />
@@ -127,11 +124,11 @@ export default function Skills({ scrollRef }: Props) {
             whileInView="visible"
             viewport={{ ...vp, margin: '-40px' }}
             variants={{ hidden: { opacity: 0, y: 24, rotateX: 9, transformPerspective: 1200 }, visible: { opacity: 1, y: 0, rotateX: 0, transformPerspective: 1200, transition: { duration: 0.65, delay: (gi % 2) * 0.08 } } }}
-            className="p-5 rounded-2xl bg-macos-surface border border-macos-borderLight/30"
+            className="p-5"
           >
             <div className="flex items-center gap-2.5 mb-5">
               <div className="w-0.5 h-4 rounded-full bg-macos-subtext0" />
-              <h3 className="text-[11px] font-mono text-macos-subtext uppercase tracking-widest">{group.category}</h3>
+              <h3 className="text-[11px] font-mono text-macos-subtext">{group.category}</h3>
             </div>
             <div className="space-y-3.5">
               {group.skills.map((skill, si) => (
@@ -154,9 +151,9 @@ export default function Skills({ scrollRef }: Props) {
         whileInView="visible"
         viewport={vp}
         variants={reveal}
-        className="p-6 rounded-2xl bg-macos-surface border border-macos-borderLight/30"
+        className="p-6 rounded-xl bg-macos-surface border border-macos-borderLight/30"
       >
-        <h3 className="text-[11px] font-mono text-macos-subtext0 uppercase tracking-widest mb-5">All Technologies</h3>
+        <h3 className="text-[11px] font-mono text-macos-subtext0 text-macos-subtext mb-5">All Technologies</h3>
         <div className="flex flex-wrap gap-2">
           {ALL_TECH.map((tech, i) => (
             <motion.span
