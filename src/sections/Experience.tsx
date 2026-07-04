@@ -59,9 +59,6 @@ export default function Experience({ scrollRef }: Props) {
     <div className="max-w-4xl mx-auto px-8 md:px-14 py-24">
       {/* Header */}
       <motion.div initial="hidden" whileInView="visible" viewport={vp} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }} className="mb-16">
-        <motion.span variants={reveal} className="text-[10px] font-mono text-macos-subtext0 tracking-[0.4em] uppercase">
-          03 — Experience
-        </motion.span>
         <motion.h2 variants={reveal} className="font-black text-macos-text mt-3 leading-none" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>
           Where I've Been.
         </motion.h2>
@@ -72,7 +69,7 @@ export default function Experience({ scrollRef }: Props) {
       <div className="relative">
         {/* Vertical line */}
         <div
-          className="absolute left-[7px] top-4 bottom-4 w-px bg-gradient-to-b from-macos-borderLight/50 to-transparent"
+          className="absolute left-[7px] top-4 bottom-4 w-px bg-gradient-to-b from-macos-borderLight-50 to-transparent"
         />
 
         <div className="space-y-8">
@@ -88,7 +85,7 @@ export default function Experience({ scrollRef }: Props) {
               {/* Timeline dot */}
               <motion.div
                 variants={reveal}
-                className="absolute left-0 top-7 w-[15px] h-[15px] rounded-full flex items-center justify-center bg-macos-crust border border-macos-borderLight/50"
+                className="absolute left-0 top-7 w-[15px] h-[15px] rounded-full flex items-center justify-center bg-macos-crust border border-macos-borderLight-50"
               >
                 <div className="w-[5px] h-[5px] rounded-full bg-macos-blue" />
               </motion.div>
@@ -96,13 +93,13 @@ export default function Experience({ scrollRef }: Props) {
               {/* Card */}
               <motion.div
                 variants={slideLeft}
-                className="rounded-2xl p-6 bg-macos-surface border border-macos-borderLight/30 hover:border-macos-borderLight/80 transition-colors duration-200"
+                className="rounded-2xl p-6 bg-macos-surface border border-macos-borderLight-30 hover:border-macos-borderLight-80 transition-colors duration-200"
               >
                 {/* Header */}
                 <div className="flex flex-wrap items-start justify-between gap-3 mb-5">
                   <div>
                     <span
-                      className="text-[10px] px-2.5 py-1 rounded-full font-mono mb-2.5 inline-block text-macos-subtext bg-macos-overlay/50 border border-macos-borderLight/30"
+                      className="text-[10px] px-2.5 py-1 rounded-full font-mono mb-2.5 inline-block text-macos-subtext bg-macos-overlay-50 border border-macos-borderLight-30"
                     >
                       {job.type}
                     </span>
@@ -136,7 +133,7 @@ export default function Experience({ scrollRef }: Props) {
                   {job.stack.map((tech) => (
                     <span
                       key={tech}
-                      className="text-[10px] px-2 py-0.5 rounded font-mono text-macos-subtext0 bg-macos-overlay/30 border border-macos-borderLight/20"
+                      className="text-[10px] px-2 py-0.5 rounded font-mono text-macos-subtext0 bg-macos-overlay-30 border border-macos-borderLight-20"
                     >
                       {tech}
                     </span>

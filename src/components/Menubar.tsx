@@ -17,7 +17,7 @@ export default function Menubar() {
   }, [])
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 h-7 menubar-blur bg-macos-crust/80 flex items-center justify-between px-4 text-macos-text text-[13px] select-none border-b border-macos-borderLight/20">
+    <div className="fixed top-0 left-0 right-0 z-50 h-7 menubar-blur bg-macos-crust-80 flex items-center justify-between px-4 text-macos-text text-[13px] select-none border-b border-macos-borderLight-20">
       {/* Left: Apple + App menus */}
       <div className="flex items-center gap-3 sm:gap-5">
         <span className="text-base leading-none">&#63743;</span>

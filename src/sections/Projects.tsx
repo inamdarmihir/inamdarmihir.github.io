@@ -84,9 +84,6 @@ export default function Projects({ scrollRef }: Props) {
     <div className="max-w-4xl mx-auto px-8 md:px-14 py-24">
       {/* Header */}
       <motion.div initial="hidden" whileInView="visible" viewport={vp} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }} className="mb-16">
-        <motion.span variants={reveal} className="text-[10px] font-mono text-macos-subtext0 tracking-[0.4em] uppercase">
-          04 — Portfolio
-        </motion.span>
         <motion.h2 variants={reveal} className="font-black text-macos-text mt-3 leading-none" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>
           Featured Projects.
         </motion.h2>
@@ -98,7 +95,7 @@ export default function Projects({ scrollRef }: Props) {
         {PROJECTS.map((project, i) => (
           <TiltCard
             key={project.name}
-            className="group flex flex-col rounded-2xl p-5 cursor-default bg-macos-surface border border-macos-borderLight/30 hover:border-macos-borderLight/80 transition-colors"
+            className="group flex flex-col rounded-2xl p-5 cursor-default bg-macos-surface border border-macos-borderLight-30 hover:border-macos-borderLight-80 transition-colors"
             motionProps={{
               initial: { opacity: 0, y: 32, rotateX: 8, transformPerspective: 900 },
               whileInView: { opacity: 1, y: 0, rotateX: 0 },
@@ -112,7 +109,7 @@ export default function Projects({ scrollRef }: Props) {
                 <div className="flex items-center gap-3 mb-2">
                   <span className="text-[10px] font-mono text-macos-subtext0">{project.num}</span>
                   <span
-                    className="text-[10px] px-2 py-0.5 rounded-full font-mono text-macos-subtext bg-macos-overlay/50 border border-macos-borderLight/30"
+                    className="text-[10px] px-2 py-0.5 rounded-full font-mono text-macos-subtext bg-macos-overlay-50 border border-macos-borderLight-30"
                   >
                     {project.category}
                   </span>
@@ -131,7 +128,7 @@ export default function Projects({ scrollRef }: Props) {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-1.5 rounded-lg text-macos-subtext0 hover:text-macos-text transition-colors bg-macos-overlay/30"
+                  className="p-1.5 rounded-lg text-macos-subtext0 hover:text-macos-text transition-colors bg-macos-overlay-30"
                 >
                   <Github size={13} />
                 </a>
@@ -140,7 +137,7 @@ export default function Projects({ scrollRef }: Props) {
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-1.5 rounded-lg text-macos-subtext0 hover:text-macos-text transition-colors bg-macos-overlay/30"
+                    className="p-1.5 rounded-lg text-macos-subtext0 hover:text-macos-text transition-colors bg-macos-overlay-30"
                   >
                     <ExternalLink size={13} />
                   </a>
@@ -156,13 +153,13 @@ export default function Projects({ scrollRef }: Props) {
               {project.tech.slice(0, 4).map((t) => (
                 <span
                   key={t}
-                  className="text-[10px] px-1.5 py-0.5 rounded font-mono text-macos-subtext0 bg-macos-overlay/30 border border-macos-borderLight/20"
+                  className="text-[10px] px-1.5 py-0.5 rounded font-mono text-macos-subtext0 bg-macos-overlay-30 border border-macos-borderLight-20"
                 >
                   {t}
                 </span>
               ))}
               {project.tech.length > 4 && (
-                <span className="text-[10px] px-1.5 py-0.5 rounded font-mono text-macos-subtext0/50">
+                <span className="text-[10px] px-1.5 py-0.5 rounded font-mono text-macos-subtext0-50">
                   +{project.tech.length - 4}
                 </span>
               )}
@@ -180,7 +177,7 @@ export default function Projects({ scrollRef }: Props) {
           href="https://github.com/inamdarmihir"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm text-macos-subtext hover:text-macos-text transition-all hover:scale-[1.03] bg-macos-surface border border-macos-borderLight/40"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm text-macos-subtext hover:text-macos-text transition-all hover:scale-[1.03] bg-macos-surface border border-macos-borderLight-40"
         >
           <Github size={14} />
           View all on GitHub

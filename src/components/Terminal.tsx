@@ -135,7 +135,7 @@ export default function Terminal({ onClose }: TerminalProps) {
       animate={{ opacity: 1, scale: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.9, y: 20 }}
       transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-      className="absolute z-40 w-[580px] rounded-xl overflow-hidden window-shadow bg-macos-crust border border-macos-borderLight/30"
+      className="absolute z-40 w-[580px] rounded-xl overflow-hidden window-shadow bg-macos-crust border border-macos-borderLight-30"
       style={{ transform: `translate(${position.x}px, ${position.y}px)`, bottom: '80px', right: '24px' }}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
@@ -143,7 +143,7 @@ export default function Terminal({ onClose }: TerminalProps) {
     >
       {/* Title bar */}
       <div
-        className="flex items-center gap-2 px-3 py-2.5 bg-macos-surface border-b border-macos-borderLight/20 cursor-grab active:cursor-grabbing select-none"
+        className="flex items-center gap-2 px-3 py-2.5 bg-macos-surface border-b border-macos-borderLight-20 cursor-grab active:cursor-grabbing select-none"
         onMouseDown={handleMouseDown}
       >
         <div className="flex items-center gap-1.5">

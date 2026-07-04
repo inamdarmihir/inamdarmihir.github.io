@@ -25,9 +25,6 @@ export default function About({ scrollRef }: Props) {
         variants={stagger}
         className="mb-16"
       >
-        <motion.span variants={reveal} className="text-[10px] font-mono text-macos-subtext0 tracking-[0.4em] uppercase">
-          02 — About
-        </motion.span>
         <motion.div variants={reveal} className="flex items-end gap-4 mt-3">
           <h2 className="font-black text-macos-text leading-none" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>
             Who I Am.
@@ -73,7 +70,7 @@ export default function About({ scrollRef }: Props) {
         <div className="md:col-span-2 space-y-4">
           <motion.div variants={reveal}>
             <div
-              className="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-5 border border-macos-borderLight/30"
+              className="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-5 border border-macos-borderLight-30"
             >
               <img
                 src="/avatar.jpg"
@@ -97,10 +94,10 @@ export default function About({ scrollRef }: Props) {
               <motion.div
                 key={label}
                 variants={reveal}
-                className="flex items-center gap-3 p-3 rounded-xl bg-macos-surface border border-macos-borderLight/30"
+                className="flex items-center gap-3 p-3 rounded-xl bg-macos-surface border border-macos-borderLight-30"
               >
                 <div
-                  className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 bg-macos-overlay/50"
+                  className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 bg-macos-overlay-50"
                 >
                   <Icon size={13} className="text-macos-subtext" />
                 </div>
@@ -122,7 +119,7 @@ export default function About({ scrollRef }: Props) {
       >
         <motion.div
           variants={reveal}
-          className="p-6 rounded-2xl bg-macos-surface border border-macos-borderLight/30 hover:border-macos-borderLight/80 transition-colors"
+          className="p-6 rounded-2xl bg-macos-surface border border-macos-borderLight-30 hover:border-macos-borderLight-80 transition-colors"
         >
           <h3 className="text-[11px] font-mono text-macos-subtext0 uppercase tracking-widest mb-5">Certifications</h3>
           <div className="space-y-4">
@@ -147,7 +144,7 @@ export default function About({ scrollRef }: Props) {
 
         <motion.div
           variants={reveal}
-          className="p-6 rounded-2xl bg-macos-surface border border-macos-borderLight/30 hover:border-macos-borderLight/80 transition-colors"
+          className="p-6 rounded-2xl bg-macos-surface border border-macos-borderLight-30 hover:border-macos-borderLight-80 transition-colors"
         >
           <h3 className="text-[11px] font-mono text-macos-subtext0 uppercase tracking-widest mb-5">Research Highlights</h3>
           <div className="space-y-4">
