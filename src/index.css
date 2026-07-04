@@ -16,6 +16,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1, h2, h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+  @apply max-w-prose;
+}
+
 ::-webkit-scrollbar { width: 4px; height: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { @apply bg-macos-overlay rounded-sm; }
@@ -33,39 +42,31 @@ body {
 }
 
 .glass {
-  @apply bg-macos-surface/40 border border-macos-borderLight/30 backdrop-blur-[20px];
+  @apply bg-macos-surface-40 border border-macos-borderLight-30 backdrop-blur-[20px];
 }
 
 .glass-dark {
-  @apply bg-macos-crust/50 border border-macos-borderLight/20 backdrop-blur-[20px];
+  @apply bg-macos-crust-50 border border-macos-borderLight-20 backdrop-blur-[20px];
 }
 
 .card {
-  @apply bg-macos-surface border border-macos-borderLight/40 transition-all duration-300;
+  @apply bg-macos-surface border border-macos-borderLight-40 transition-all duration-300;
 }
 .card:hover {
-  @apply border-macos-borderLight/80 -translate-y-1;
-}
-
-.gradient-text {
-  background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.55) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  @apply border-macos-borderLight-80 -translate-y-1;
 }
 
 .window-shadow {
   box-shadow:
     0 0 0 1px rgba(0,0,0,0.8),
-    0 50px 150px rgba(0,0,0,0.99),
-    0 20px 60px rgba(0,0,0,0.8),
+    0 4px 8px rgba(0,0,0,0.5),
     0 0 80px rgba(255,255,255,0.018);
 }
 
 .dock-icon { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
 .dock-icon:hover { transform: translateY(-8px) scale(1.2); }
 
-::selection { @apply bg-macos-blue/30 text-macos-text; }
+::selection { @apply bg-macos-blue-30 text-macos-text; }
 
 .menubar-blur {
   backdrop-filter: saturate(180%) blur(20px);
@@ -76,7 +77,7 @@ body {
 
 .section-line {
   height: 1px;
-  @apply bg-gradient-to-r from-macos-borderLight/40 to-transparent;
+  @apply bg-gradient-to-r from-macos-borderLight-40 to-transparent;
 }
 
 /* 3D perspective grid scroll */

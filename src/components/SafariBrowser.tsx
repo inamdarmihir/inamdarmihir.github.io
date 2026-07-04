@@ -118,7 +118,7 @@ export default function SafariBrowser() {
 
         {/* Nav strip — always visible, touch-friendly */}
         <div
-          className="flex items-center gap-0.5 px-2 sm:px-4 py-1 sm:pb-1.5 overflow-x-auto bg-macos-bg border-b border-macos-borderLight/30"
+          className="flex items-center gap-0.5 px-2 sm:px-4 py-1 sm:pb-1.5 overflow-x-auto bg-macos-bg border-b border-macos-borderLight-30"
           style={{ scrollbarWidth: 'none' }}
         >
           {SECTIONS.map(({ id, label }) => {
@@ -143,11 +143,11 @@ export default function SafariBrowser() {
 
         {/* Scroll progress bar (right edge) */}
         <div
-          className="absolute right-0 top-0 bottom-0 w-[2px] z-20 pointer-events-none bg-macos-crust/50"
+          className="absolute right-0 top-0 bottom-0 w-[2px] z-20 pointer-events-none bg-macos-crust-50"
         >
           <div
             ref={progressBarRef}
-            className="w-full rounded-full bg-macos-blue/50 transition-[height] duration-75"
+            className="w-full rounded-full bg-macos-blue-50 transition-[height] duration-75"
             style={{ height: '0%' }}
           />
         </div>
