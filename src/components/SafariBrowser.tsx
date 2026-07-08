@@ -91,7 +91,7 @@ export default function SafariBrowser() {
               Mihir Inamdar — Portfolio
             </span>
           </div>
-          <button className="flex-shrink-0 p-1.5 text-macos-subtext0 hover:text-macos-text transition-colors">
+          <button className="flex-shrink-0 p-1.5 text-macos-subtext hover:text-macos-text transition-colors">
             <Plus size={14} />
           </button>
         </div>
@@ -108,17 +108,17 @@ export default function SafariBrowser() {
           <div
             className="flex-1 mx-2 flex items-center gap-2 rounded-lg px-3 py-1 bg-macos-crust border border-macos-borderLight"
           >
-            <Lock size={11} className="text-macos-subtext0 flex-shrink-0" />
+            <Lock size={11} className="text-macos-subtext flex-shrink-0" />
             <span className="text-[13px] text-macos-subtext truncate font-mono">{url}</span>
           </div>
-          <button className="p-1 text-macos-subtext0 hover:text-macos-text transition-colors"><RotateCw size={14} /></button>
-          <button className="p-1 text-macos-subtext0 hover:text-macos-text transition-colors"><Share    size={14} /></button>
-          <button className="p-1 text-macos-subtext0 hover:text-macos-text transition-colors"><Grid3X3  size={14} /></button>
+          <button className="p-1 text-macos-subtext hover:text-macos-text transition-colors"><RotateCw size={14} /></button>
+          <button className="p-1 text-macos-subtext hover:text-macos-text transition-colors"><Share    size={14} /></button>
+          <button className="p-1 text-macos-subtext hover:text-macos-text transition-colors"><Grid3X3  size={14} /></button>
         </div>
 
         {/* Nav strip — always visible, touch-friendly */}
         <div
-          className="flex items-center gap-0.5 px-2 sm:px-4 py-1 sm:pb-1.5 overflow-x-auto bg-macos-bg border-b border-macos-borderLight/30"
+          className="flex items-center gap-0.5 px-2 sm:px-4 py-1 sm:pb-1.5 overflow-x-auto bg-macos-bg border-b border-macos-borderLight-30"
           style={{ scrollbarWidth: 'none' }}
         >
           {SECTIONS.map(({ id, label }) => {
@@ -143,11 +143,11 @@ export default function SafariBrowser() {
 
         {/* Scroll progress bar (right edge) */}
         <div
-          className="absolute right-0 top-0 bottom-0 w-[2px] z-20 pointer-events-none bg-macos-crust/50"
+          className="absolute right-0 top-0 bottom-0 w-[2px] z-20 pointer-events-none bg-macos-crust-50"
         >
           <div
             ref={progressBarRef}
-            className="w-full rounded-full bg-macos-blue/50 transition-[height] duration-75"
+            className="w-full rounded-full bg-macos-blue-50 transition-[height] duration-75"
             style={{ height: '0%' }}
           />
         </div>
