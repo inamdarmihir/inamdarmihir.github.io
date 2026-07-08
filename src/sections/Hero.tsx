@@ -231,14 +231,14 @@ export default function Hero({ onNavigate, scrollRef }: HeroProps) {
       >
         {/* Section tag */}
         <motion.div {...e3d(0)} className="flex items-center gap-3 mb-14">
-          <span className="text-[10px] font-mono text-macos-subtext0 tracking-[0.4em] uppercase">01 — Introduction</span>
-          <div className="h-px w-12 bg-macos-borderLight/40" />
+          <span className="text-sm text-macos-subtext font-medium ">Introduction</span>
+          <div className="h-px w-12 bg-macos-borderLight-40" />
         </motion.div>
 
         {/* Avatar + status */}
         <motion.div {...e3d(0.1)} className="flex items-center gap-4 mb-10">
           <motion.div
-            className="w-16 h-16 rounded-2xl overflow-hidden flex-shrink-0 border border-macos-borderLight/30"
+            className="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 border border-macos-borderLight-30"
             whileHover={{ scale: 1.06, rotate: 2 }}
             transition={{ type: 'spring', stiffness: 280 }}
           >
@@ -251,9 +251,9 @@ export default function Hero({ onNavigate, scrollRef }: HeroProps) {
                 animate={{ opacity: [1, 0.25, 1] }}
                 transition={{ duration: 2.4, repeat: Infinity }}
               />
-              <span className="text-[11px] font-mono text-macos-subtext">Data Scientist · Sutherland Global Services</span>
+              <span className="text-sm text-macos-subtext">Data Scientist · Sutherland Global Services</span>
             </div>
-            <span className="text-[11px] font-mono text-macos-subtext0">Chennai, India · Open to Remote</span>
+            <span className="text-sm text-macos-subtext">Chennai, India · Open to Remote</span>
           </div>
         </motion.div>
 
@@ -264,7 +264,7 @@ export default function Hero({ onNavigate, scrollRef }: HeroProps) {
             animate={{ opacity: 1, y: 0,  rotateX: 0,  filter: 'blur(0px)' }}
             transition={{ duration: 1, delay: 0.18, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="font-black leading-[0.9] tracking-tight text-macos-text"
-            style={{ fontSize: 'clamp(3.5rem, 8vw, 6.5rem)' }}
+            style={{ fontSize: 'clamp(3.5rem, 8vw, 6rem)' }}
           >
             Mihir
           </motion.h1>
@@ -272,8 +272,8 @@ export default function Hero({ onNavigate, scrollRef }: HeroProps) {
             initial={{ opacity: 0, y: 50, rotateX: 30, filter: 'blur(8px)' }}
             animate={{ opacity: 1, y: 0,  rotateX: 0,  filter: 'blur(0px)' }}
             transition={{ duration: 1, delay: 0.28, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="font-black leading-[0.9] tracking-tight text-macos-subtext/50"
-            style={{ fontSize: 'clamp(3.5rem, 8vw, 6.5rem)' }}
+            className="font-black leading-[0.9] tracking-tight text-macos-subtext-50"
+            style={{ fontSize: 'clamp(3.5rem, 8vw, 6rem)' }}
           >
             Inamdar.
           </motion.h1>
@@ -304,13 +304,13 @@ export default function Hero({ onNavigate, scrollRef }: HeroProps) {
               key={label}
               whileHover={{ scale: 1.06, rotateX: -6, rotateY: 4 }}
               transition={{ type: 'spring', stiffness: 280, damping: 18 }}
-              className="px-5 py-3 rounded-xl cursor-default bg-macos-surface border border-macos-borderLight/30"
+              className="px-5 py-3 rounded-xl cursor-default bg-macos-surface border border-macos-borderLight-30"
               style={{
                 transformPerspective: 500,
               }}
             >
               <div className="text-4xl font-black text-macos-text leading-none">{value}</div>
-              <div className="text-[11px] text-macos-subtext0 uppercase tracking-widest mt-2 font-mono">{label}</div>
+              <div className="text-[11px] text-macos-subtext font-medium mt-2 font-mono">{label}</div>
             </motion.div>
           ))}
         </motion.div>
@@ -327,7 +327,7 @@ export default function Hero({ onNavigate, scrollRef }: HeroProps) {
           </motion.button>
           <motion.button
             onClick={() => onNavigate('contact')}
-            className="px-6 py-3 text-sm font-medium rounded-xl text-macos-text bg-macos-surface border border-macos-borderLight/30"
+            className="px-6 py-3 text-sm font-medium rounded-xl text-macos-text bg-macos-surface border border-macos-borderLight-30"
             whileHover={{ scale: 1.04, borderColor: 'rgba(205,214,244,0.28)', color: '#cdd6f4' }}
             whileTap={{ scale: 0.96 }}
           >
@@ -337,7 +337,7 @@ export default function Hero({ onNavigate, scrollRef }: HeroProps) {
             href="/Inamdar_Mihir_CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-xl text-macos-text bg-macos-surface border border-macos-borderLight/30"
+            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-xl text-macos-text bg-macos-surface border border-macos-borderLight-30"
             whileHover={{ scale: 1.04, borderColor: 'rgba(205,214,244,0.28)', color: '#cdd6f4' }}
             whileTap={{ scale: 0.96 }}
           >
@@ -360,7 +360,7 @@ export default function Hero({ onNavigate, scrollRef }: HeroProps) {
               target={href.startsWith('mailto') ? undefined : '_blank'}
               rel="noopener noreferrer"
               title={label}
-              className="p-2.5 rounded-xl text-macos-subtext bg-macos-surface border border-macos-borderLight/30"
+              className="p-2.5 rounded-xl text-macos-subtext bg-macos-surface border border-macos-borderLight-30"
               whileHover={{ scale: 1.15, color: '#cdd6f4', borderColor: 'rgba(205,214,244,0.2)' }}
               whileTap={{ scale: 0.9 }}
             >
@@ -376,7 +376,7 @@ export default function Hero({ onNavigate, scrollRef }: HeroProps) {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.4 }}
         onClick={() => onNavigate('about')}
-        className="absolute bottom-8 left-8 md:left-14 flex items-center gap-2.5 text-macos-subtext0 hover:text-macos-text transition-colors"
+        className="absolute bottom-8 left-8 md:left-14 flex items-center gap-2.5 text-macos-subtext hover:text-macos-text transition-colors"
       >
         <motion.div animate={{ y: [0, 6, 0] }} transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}>
           <ArrowDown size={13} />
