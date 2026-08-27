@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, RefObject } from 'react'
 import { motion, AnimatePresence, useScroll, useTransform, useMotionTemplate } from 'framer-motion'
 import { Github, Linkedin, Mail, BookOpen, ArrowDown, FileText } from 'lucide-react'
 
-const ROLES = ['ML Engineer', 'Data Scientist', 'LLM Engineer', 'AI Researcher']
+const ROLES = ['AI/ML Engineer', 'Backend SDE', 'LLM Engineer', 'Data Scientist']
 
 function AnimatedRole({ roles }: { roles: string[] }) {
   const [i, setI] = useState(0)
@@ -253,7 +253,7 @@ export default function Hero({ onNavigate, scrollRef }: HeroProps) {
               />
               <span className="text-[11px] font-mono text-macos-subtext">Data Scientist · Sutherland Global Services</span>
             </div>
-            <span className="text-[11px] font-mono text-macos-subtext0">Chennai, India · Open to Remote</span>
+            <span className="text-[11px] font-mono text-macos-subtext0">Chennai, India · Open to Bengaluru</span>
           </div>
         </motion.div>
 
@@ -289,8 +289,8 @@ export default function Hero({ onNavigate, scrollRef }: HeroProps) {
           Building intelligent systems at the intersection of{' '}
           <span className="text-macos-text font-medium">RLHF</span>,{' '}
           <span className="text-macos-text font-medium">Agentic AI</span> &{' '}
-          <span className="text-macos-text font-medium">LLMs</span>. Currently Data Scientist at Sutherland Global Services,
-          former Research Fellow at CVIT, IIIT Hyderabad.
+          <span className="text-macos-text font-medium">LLMs</span> — plus backend systems in Python & LangGraph. Currently Data Scientist at Sutherland Global Services,
+          former Research Fellow at CVIT, IIIT Hyderabad. Open to Backend / AI Engineer roles in Bengaluru.
         </motion.p>
 
         {/* Stats — 3D hover cards */}
