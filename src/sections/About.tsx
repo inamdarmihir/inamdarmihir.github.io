@@ -58,12 +58,12 @@ export default function About({ scrollRef }: Props) {
           </motion.p>
           <motion.p variants={reveal} className="text-macos-subtext leading-[1.85] text-[15px]">
             Currently at <span className="text-macos-text font-medium">Sutherland Global Services</span>, I architect
-            end-to-end <span className="text-macos-text font-medium">RLHF pipelines</span> for Text-to-SQL and
+            backend infrastructure for end-to-end <span className="text-macos-text font-medium">RLHF pipelines</span> for Text-to-SQL and
             multi-stage agentic inference systems with quantized LLM serving — cutting latency 60% at F1 &gt; 0.95
             and serving 10K+ daily transactions on AWS.
           </motion.p>
           <motion.p variants={reveal} className="text-macos-subtext leading-[1.85] text-[15px]">
-            Beyond work, I'm a <span className="text-macos-text font-medium">Qdrant Star</span> open-source developer
+            Beyond work, I build open-source safety tooling for autonomous coding agents — including warden and bastion — using LangGraph and Qdrant-backed RAG. I'm also a <span className="text-macos-text font-medium">Qdrant Star</span> open-source developer
             advocate, have published at IEEE and Springer, and continuously push the frontiers of agentic AI and
             retrieval systems.
           </motion.p>
