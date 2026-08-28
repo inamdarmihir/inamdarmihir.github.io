@@ -16,13 +16,15 @@ const PUBLICATIONS = [
   },
   {
     num: '02',
-    title: 'Research Paper',
-    venue: 'Springer ICCCN 2024',
+    title: 'On Importance of Code-Mixed Embeddings for Hate Speech Identification',
+    venue: 'Springer ICCCN 2024 · pp. 269–277',
     type: 'Conference Paper',
     year: '2024',
-    abstract: 'Published at the International Conference on Computer Communication and Networks (ICCCN 2024), Springer proceedings. Research in the domain of machine learning and intelligent systems.',
-    tags: ['Machine Learning', 'NLP', 'Deep Learning', 'Research'],
-    link: 'https://scholar.google.com/citations?user=aRlnkucAAAAJ',
+    authors: 'Shruti Jagdale, Mihir Inamdar, Gauri Takalikar, Omkar Khade, Raviraj Joshi',
+    abstract: 'Analyzes the significance of code-mixed embeddings for hate speech detection in multilingual settings. Evaluates BERT and HingBERT models trained on the Hindi-English corpus L3Cube-HingCorpus, demonstrating that HingBERT outperforms standard BERT on code-mixed hate speech datasets.',
+    tags: ['Hate Speech', 'Code-Mixing', 'HingBERT', 'NLP', 'Hindi-English'],
+    link: 'https://link.springer.com/chapter/10.1007/978-981-96-3244-2_21',
+    pdfLink: 'https://arxiv.org/pdf/2411.18577',
     badge: 'Springer',
   },
 ]
@@ -90,15 +92,20 @@ export default function Publications({ scrollRef }: Props) {
                 <h3 className="text-[15px] font-semibold text-macos-text leading-snug mb-2">{pub.title}</h3>
 
                 {/* Venue */}
-                <p className="text-sm text-macos-subtext0 mb-4 flex items-center gap-1.5 font-mono">
+                <p className="text-sm text-macos-subtext0 mb-2 flex items-center gap-1.5 font-mono">
                   <BookOpen size={11} />
                   {pub.venue}
                 </p>
 
+                {/* Authors */}
+                {'authors' in pub && (
+                  <p className="text-xs text-macos-subtext0 mb-4 italic">{pub.authors}</p>
+                )}
+
                 {/* Abstract */}
                 <p className="text-sm text-macos-subtext leading-relaxed mb-5">{pub.abstract}</p>
 
-                {/* Tags + link */}
+                {/* Tags + links */}
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <div className="flex flex-wrap gap-1.5">
                     {pub.tags.map((tag) => (
@@ -110,16 +117,29 @@ export default function Publications({ scrollRef }: Props) {
                       </span>
                     ))}
                   </div>
-                  <a
-                    href={pub.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1 text-xs text-macos-subtext0 hover:text-macos-text transition-colors"
-                  >
-                    <ExternalLink size={10} />
-                    View Paper
-                    <ArrowUpRight size={10} />
-                  </a>
+                  <div className="flex items-center gap-3">
+                    {'pdfLink' in pub && (
+                      <a
+                        href={pub.pdfLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1 text-xs text-macos-subtext0 hover:text-macos-text transition-colors"
+                      >
+                        <FileText size={10} />
+                        PDF
+                      </a>
+                    )}
+                    <a
+                      href={pub.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1 text-xs text-macos-subtext0 hover:text-macos-text transition-colors"
+                    >
+                      <ExternalLink size={10} />
+                      View Paper
+                      <ArrowUpRight size={10} />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
