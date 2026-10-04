@@ -5,8 +5,8 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 html, body, #root {
-  height: 100%;
-  overflow: hidden;
+  min-height: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -94,3 +94,21 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+section { scroll-margin-top: 110px; }
+
+.retrieval-demo {
+  background: radial-gradient(ellipse at top right, rgba(137,180,250,.14), transparent 70%), #181825;
+}
+.pipeline-track::before {
+  content: ''; position: absolute; left: 8%; right: 8%; top: 50%; height: 1px;
+  background: linear-gradient(90deg, #45475a, #89b4fa, #45475a);
+}
+.pipeline-node { transition: background .4s, border-color .4s; }
+.pipeline-track::after {
+  content: ''; position: absolute; top: calc(50% - 3px); width: 6px; height: 6px;
+  background: #89b4fa; border-radius: 50%; box-shadow: 0 0 14px #89b4fa;
+  animation: retrieval-flow 8.8s linear infinite;
+}
+@keyframes retrieval-flow { from { left: 5%; } to { left: 95%; } }
+@media (prefers-reduced-motion: reduce) { .pipeline-track::after { animation: none; left: 50%; } }
