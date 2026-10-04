@@ -4,40 +4,31 @@ import { ExternalLink, Github } from 'lucide-react'
 
 const PROJECTS = [
   {
-    num: '01',
-    name: 'SQLRouter',
-    description: 'Agentic Text-to-SQL system with modular agent architecture: discrete nodes for intent classification, schema retrieval, SQL generation, safety validation, execution, and result summarisation. Layered semantic query caching over Qdrant to short-circuit redundant LLM calls at scale.',
-    tech: ['FastAPI', 'Azure OpenAI', 'Qdrant', 'SQL Server', 'Agent Pipeline', 'LLM'],
-    github: 'https://github.com/inamdarmihir',
-    demo: undefined as string | undefined,
-    category: 'Agentic AI',
-    featured: true,
+    num: '01', name: 'Ask My Tabs',
+    description: 'I built a Chrome extension for searching pages with source-linked answers. The Qdrant retrieval path combines dense vectors and BM25 through reciprocal rank fusion. The committed SciFact evaluation compares embedding models and fusion weights; it is not evidence of browser performance or real-user adoption.',
+    tech: ['Qdrant', 'TypeScript', 'BM25', 'RRF', 'Retrieval evaluation'],
+    github: 'https://github.com/inamdarmihir/ask-my-tabs',
+    demo: undefined as string | undefined, category: 'Retrieval + product', featured: true,
   },
   {
-    num: '02',
-    name: 'Contract Voice Agent',
-    description: 'Voice-first agentic RAG system for document risk analysis. Full-stack pipeline from ingestion to response: PDF chunking and clause-level embedding, hybrid retrieval with pre-tagged risk signals, and a real-time conversational interface over FastAPI + React + WebSocket.',
-    tech: ['RAG', 'Qdrant', 'FastAPI', 'React', 'Docker', 'Embeddings', 'LLM', 'NLP'],
-    github: 'https://github.com/inamdarmihir',
-    demo: undefined as string | undefined,
-    category: 'RAG System',
-    featured: true,
+    num: '02', name: 'Payload Audit',
+    description: 'I built a read-only CLI that samples Qdrant payloads and checks them against the indexed schema. In the committed 1,000-repository experiment, indexing 3,685 topics separately used about 98 times the disk of a fixed schema. This isolates index cost, not a universal Qdrant performance claim.',
+    tech: ['Qdrant', 'Python', 'Schema audit', 'Reproducible benchmark'],
+    github: 'https://github.com/inamdarmihir/payload-audit',
+    demo: undefined as string | undefined, category: 'Vector database tooling', featured: true,
   },
   {
-    num: '03',
-    name: 'deepagents-local-sandbox',
-    description: 'Secure execution runtime for AI agents built from OS primitives. Implemented isolation using Docker and Linux namespaces with independently configurable CPU, memory, process, network, timeout, and filesystem controls — the safe execution layer under any agentic framework.',
-    tech: ['Docker', 'Linux Namespaces', 'Agent Infrastructure', 'Python'],
-    github: 'https://github.com/inamdarmihir',
-    demo: undefined as string | undefined,
-    category: 'Infrastructure',
-    featured: true,
+    num: '03', name: 'SQLRouter',
+    description: 'I built a Text-to-SQL service around a modular agent pipeline, SQL validation and a Qdrant semantic cache. The repository documents the architecture and setup. I keep this separate from the measured retrieval and payload-index experiments above.',
+    tech: ['Qdrant', 'FastAPI', 'LangGraph', 'SQL Server'],
+    github: 'https://github.com/inamdarmihir/sqlrouter',
+    demo: undefined as string | undefined, category: 'Agent infrastructure', featured: true,
   },
 ]
 
 const reveal = {
   hidden: { opacity: 0, y: 32, rotateX: 10, transformPerspective: 1200 },
-  visible: { opacity: 1, y: 0, rotateX: 0, transformPerspective: 1200, transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] } },
+  visible: { opacity: 1, y: 0, rotateX: 0, transformPerspective: 1200, transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } },
 }
 
 function TiltCard({ children, className, style, motionProps }: {
@@ -75,7 +66,7 @@ function TiltCard({ children, className, style, motionProps }: {
   )
 }
 
-interface Props { scrollRef: RefObject<HTMLDivElement> }
+interface Props { scrollRef: RefObject<HTMLDivElement | null> }
 
 export default function Projects({ scrollRef }: Props) {
   const vp = { root: scrollRef, once: true, margin: '-60px' } as const
@@ -83,12 +74,12 @@ export default function Projects({ scrollRef }: Props) {
   return (
     <div className="max-w-4xl mx-auto px-8 md:px-14 py-24">
       {/* Header */}
-      <motion.div initial="hidden" whileInView="visible" viewport={vp} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }} className="mb-16">
+      <motion.div initial="hidden" animate="visible" viewport={vp} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }} className="mb-16">
         <motion.span variants={reveal} className="text-[10px] font-mono text-macos-subtext0 tracking-[0.4em] uppercase">
-          04 — Portfolio
+          01 - Selected work
         </motion.span>
         <motion.h2 variants={reveal} className="font-black text-macos-text mt-3 leading-none" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>
-          Featured Projects.
+          Qdrant work.
         </motion.h2>
         <motion.div variants={reveal} className="section-line mt-5 max-w-xs" />
       </motion.div>
@@ -101,9 +92,9 @@ export default function Projects({ scrollRef }: Props) {
             className="group flex flex-col rounded-2xl p-5 cursor-default bg-macos-surface border border-macos-borderLight/30 hover:border-macos-borderLight/80 transition-colors"
             motionProps={{
               initial: { opacity: 0, y: 32, rotateX: 8, transformPerspective: 900 },
-              whileInView: { opacity: 1, y: 0, rotateX: 0 },
+              animate: { opacity: 1, y: 0, rotateX: 0 },
               viewport: { ...vp, margin: '-40px' },
-              transition: { duration: 0.6, delay: (i % 2) * 0.08, ease: [0.25, 0.46, 0.45, 0.94] },
+              transition: { duration: 0.6, delay: (i % 2) * 0.08, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] },
             }}
           >
             {/* Top row */}
@@ -128,6 +119,7 @@ export default function Projects({ scrollRef }: Props) {
               </div>
               <div className="flex items-center gap-1.5 flex-shrink-0 ml-3">
                 <a
+                  aria-label={`View ${project.name} on GitHub`}
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -173,7 +165,7 @@ export default function Projects({ scrollRef }: Props) {
 
       {/* GitHub CTA */}
       <motion.div
-        initial="hidden" whileInView="visible" viewport={vp} variants={reveal}
+        initial="hidden" animate="visible" viewport={vp} variants={reveal}
         className="mt-10 text-center"
       >
         <a
