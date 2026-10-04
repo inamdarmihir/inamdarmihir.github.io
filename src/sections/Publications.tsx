@@ -19,7 +19,7 @@ const PUBLICATIONS = [
     title: 'On Importance of Code-Mixed Embeddings for Hate Speech Identification',
     venue: 'Springer ICCCN 2024 · pp. 269–277',
     type: 'Conference Paper',
-    year: '2024',
+    year: '2025 (ICCCN 2024)',
     authors: 'Shruti Jagdale, Mihir Inamdar, Gauri Takalikar, Omkar Khade, Raviraj Joshi',
     abstract: 'Analyzes the significance of code-mixed embeddings for hate speech detection in multilingual settings. Evaluates BERT and HingBERT models trained on the Hindi-English corpus L3Cube-HingCorpus, demonstrating that HingBERT outperforms standard BERT on code-mixed hate speech datasets.',
     tags: ['Hate Speech', 'Code-Mixing', 'HingBERT', 'NLP', 'Hindi-English'],
@@ -31,10 +31,10 @@ const PUBLICATIONS = [
 
 const reveal = {
   hidden: { opacity: 0, y: 32, rotateX: 10, transformPerspective: 1200 },
-  visible: { opacity: 1, y: 0, rotateX: 0, transformPerspective: 1200, transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] } },
+  visible: { opacity: 1, y: 0, rotateX: 0, transformPerspective: 1200, transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } },
 }
 
-interface Props { scrollRef: RefObject<HTMLDivElement> }
+interface Props { scrollRef: RefObject<HTMLDivElement | null> }
 
 export default function Publications({ scrollRef }: Props) {
   const vp = { root: scrollRef, once: true, margin: '-60px' } as const
@@ -42,9 +42,9 @@ export default function Publications({ scrollRef }: Props) {
   return (
     <div className="max-w-4xl mx-auto px-8 md:px-14 py-24">
       {/* Header */}
-      <motion.div initial="hidden" whileInView="visible" viewport={vp} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }} className="mb-16">
+      <motion.div initial="hidden" animate="visible" viewport={vp} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }} className="mb-16">
         <motion.span variants={reveal} className="text-[10px] font-mono text-macos-subtext0 tracking-[0.4em] uppercase">
-          06 — Research
+          02 - Published research
         </motion.span>
         <motion.h2 variants={reveal} className="font-black text-macos-text mt-3 leading-none" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>
           Publications.
@@ -58,7 +58,7 @@ export default function Publications({ scrollRef }: Props) {
           <motion.div
             key={pub.title}
             initial="hidden"
-            whileInView="visible"
+            animate="visible"
             viewport={{ ...vp, margin: '-40px' }}
             variants={{ hidden: { opacity: 0, y: 28, rotateX: 9, transformPerspective: 1200 }, visible: { opacity: 1, y: 0, rotateX: 0, transformPerspective: 1200, transition: { duration: 0.65, delay: i * 0.1 } } }}
             className="group rounded-2xl p-6 bg-macos-surface border border-macos-borderLight/30 hover:border-macos-borderLight/80 transition-colors"
@@ -149,7 +149,7 @@ export default function Publications({ scrollRef }: Props) {
 
       {/* Scholar link */}
       <motion.div
-        initial="hidden" whileInView="visible" viewport={vp} variants={reveal}
+        initial="hidden" animate="visible" viewport={vp} variants={reveal}
         className="mt-10 text-center"
       >
         <a
