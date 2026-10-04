@@ -20,13 +20,13 @@ const SECTIONS = [
 ]
 
 // Each non-hero section rotates in from depth as it enters the viewport
-function Section3D({ children, scrollRef }: { children: ReactNode; scrollRef: RefObject<HTMLDivElement> }) {
+function Section3D({ children, scrollRef }: { children: ReactNode; scrollRef: RefObject<HTMLDivElement | null> }) {
   return (
     <motion.div
       initial={{ opacity: 0, rotateX: 24, scale: 0.88 }}
       whileInView={{ opacity: 1, rotateX: 0, scale: 1 }}
       viewport={{ root: scrollRef, once: true, margin: '-5%' }}
-      transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+      transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] }}
       style={{ perspective: '1100px' }}
     >
       {children}
