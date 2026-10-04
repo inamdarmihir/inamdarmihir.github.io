@@ -4,7 +4,7 @@ import { MapPin, GraduationCap, Briefcase, Award } from 'lucide-react'
 
 const reveal = {
   hidden: { opacity: 0, y: 32, rotateX: 10, transformPerspective: 1200 },
-  visible: { opacity: 1, y: 0, rotateX: 0, transformPerspective: 1200, transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] } },
+  visible: { opacity: 1, y: 0, rotateX: 0, transformPerspective: 1200, transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } },
 }
 
 const stagger = {
@@ -12,7 +12,7 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.1 } },
 }
 
-interface Props { scrollRef: RefObject<HTMLDivElement> }
+interface Props { scrollRef: RefObject<HTMLDivElement | null> }
 
 export default function About({ scrollRef }: Props) {
   const vp = { root: scrollRef, once: true, margin: '-80px' } as const
